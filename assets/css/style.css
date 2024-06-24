@@ -1233,6 +1233,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   width: 80%;
   margin: 0 auto;
 }
+
+
 .modal-description li{
   list-style: disc;
 }
@@ -1257,7 +1259,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .main-image {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   height: auto;
   object-fit: cover;
@@ -1276,7 +1278,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   object-fit: cover;
   cursor: pointer;
 }
-/* Gallery navigation arrows */
+
 .gallery-arrow {
   position: absolute;
   top: 50%;
@@ -1302,12 +1304,16 @@ textarea.form-input::-webkit-resizer { display: none; }
   position: relative;
 }
 
-/* Adjusting gallery for mobile responsiveness */
 @media (max-width: 768px) {
   .gallery img {
     max-width: 100%;
   }
+  .modal-description{
+    display: none;
+  }
 }
+
+
 
 .gallery {
   display: flex;
