@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Losowanie pytań</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+      color: #333;
+      max-width: 480px;
+      margin: auto;
+    }
+    h2 {
+      margin-top: 30px;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 2em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    button {
+      margin: 30px auto 0;
+      display: block;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pytania ogólne</h2>
+  <div class="box" id="ogolne">-</div>
+
+  <h2>Pytania kierunkowe</h2>
+  <div class="box" id="kier1">-</div>
+  <div class="box" id="kier2">-</div>
+
+  <button onclick="losuj()">LOSUJ</button>
+
+  <script>
+    function losuj() {
+      const ogolne = Math.floor(Math.random() * 15) + 1;
+
+      let kier1, kier2;
+      do {
+        kier1 = Math.floor(Math.random() * 35) + 16;
+        kier2 = Math.floor(Math.random() * 35) + 16;
+      } while (kier1 === kier2);
+
+      document.getElementById('ogolne').textContent = ogolne;
+      document.getElementById('kier1').textContent = kier1;
+      document.getElementById('kier2').textContent = kier2;
+    }
+  </script>
+
+</body>
+</html>
