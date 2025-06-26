@@ -27,6 +27,13 @@
       font-size: 2em;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+    .checkbox-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    label {
+      font-size: 1em;
+    }
     button {
       margin: 30px auto 0;
       display: block;
@@ -53,17 +60,35 @@
   <div class="box" id="kier1">-</div>
   <div class="box" id="kier2">-</div>
 
+  <div class="checkbox-container">
+    <label>
+      <input type="checkbox" id="filtrUsuniete" checked>
+      NIE LOSUJ USUNIĘTYCH
+    </label>
+  </div>
+
   <button onclick="losuj()">LOSUJ</button>
 
   <script>
     function losuj() {
+      const usuniete = [38, 39, 40, 41, 42, 43];
+      const filtr = document.getElementById('filtrUsuniete').checked;
+
       const ogolne = Math.floor(Math.random() * 15) + 1;
 
-      let kier1, kier2;
+      function losujKierunkowe() {
+        let num;
+        do {
+          num = Math.floor(Math.random() * 35) + 16;
+        } while (filtr && usuniete.includes(num));
+        return num;
+      }
+
+      let kier1 = losujKierunkowe();
+      let kier2;
       do {
-        kier1 = Math.floor(Math.random() * 35) + 16;
-        kier2 = Math.floor(Math.random() * 35) + 16;
-      } while (kier1 === kier2);
+        kier2 = losujKierunkowe();
+      } while (kier2 === kier1);
 
       document.getElementById('ogolne').textContent = ogolne;
       document.getElementById('kier1').textContent = kier1;
