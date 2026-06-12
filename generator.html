@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Generator kalendarza MOODLE</title>
+
+<style>
+body { font-family: Arial; padding: 20px; }
+
+.group {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+input, button, select, textarea {
+    margin: 5px;
+    padding: 5px;
+}
+
+textarea {
+    width: 100%;
+    height: 250px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td, th {
+    border: 1px solid #aaa;
+    padding: 5px;
+}
+
+.preview-c1-dark { background:#1565c0; color:white; }
+.preview-c1-light { background:#90caf9; }
+
+.preview-c2-dark { background:#ef6c00; color:white; }
+.preview-c2-light { background:#ffcc80; }
+
+.preview-c3-dark { background:#2e7d32; color:white; }
+.preview-c3-light { background:#a5d6a7; }
+
+.preview-c4-dark { background:#6a1b9a; color:white; }
+.preview-c4-light { background:#ce93d8; }
+
+.preview-c5-dark { background:#ad1457; color:white; }
+.preview-c5-light { background:#f48fb1; }
+
+.preview-c6-dark { background:#00838f; color:white; }
+.preview-c6-light { background:#80deea; }
+
+.preview-c7-dark { background:#424242; color:white; }
+.preview-c7-light { background:#e0e0e0; }
+
+.preview-c8-dark { background:#f9a825; color:black; }
+.preview-c8-light { background:#fff59d; }
+
+.preview-c9-dark { background:#c62828; color:white; }
+.preview-c9-light { background:#ef9a9a; }
+
+.preview-c10-dark { background:#283593; color:white; }
+.preview-c10-light { background:#9fa8da; }
+</style>
+</head>
+
+<body>
+
+<h2>Generator kalendarza</h2>
+
+<button onclick="addGroup()">➕ Dodaj grupę</button>
+<button onclick="generate()">⚙️ Generuj HTML</button>
+<button onclick="importHTML()">📥 Import HTML</button>
+
+<br>
+
+<textarea id="importBox" placeholder="Wklej HTML do importu..."></textarea>
+
+<div id="groups"></div>
+
+<h3>Wynik:</h3>
+<textarea id="output"></textarea>
+
+<script>
+
+let groupId = 0;
+
+/* ===== KOLORY ===== */
+const colorMap = {
+    c1: { dark:"#1565c0", light:"#90caf9", text:"#fff" },
+    c2: { dark:"#ef6c00", light:"#ffcc80", text:"#fff" },
+    c3: { dark:"#2e7d32", light:"#a5d6a7", text:"#fff" },
+    c4: { dark:"#6a1b9a", light:"#ce93d8", text:"#fff" },
+    c5: { dark:"#ad1457", light:"#f48fb1", text:"#fff" },
+    c6: { dark:"#00838f", light:"#80deea", text:"#fff" },
+    c7: { dark:"#424242", light:"#e0e0e0", text:"#fff" },
+    c8: { dark:"#f9a825", light:"#fff59d", text:"#000" },
+    c9: { dark:"#c62828", light:"#ef9a9a", text:"#fff" },
+    c10:{ dark:"#283593", light:"#9fa8da", text:"#fff" }
+};
+
+function addGroup(name = "", color = "c1") {
+    groupId++;
+
+    const div = document.createElement("div");
+    div.className = "group";
+
+    div.innerHTML = `
+        <input placeholder="Nazwa grupy" class="group-name" value="${name}">
+
+        <select class="group-color" onchange="updatePreview(this)">
+            <option value="c1">Niebieski</option>
+            <option value="c2">Pomarańczowy</option>
+            <option value="c3">Zielony</option>
+            <option value="c4">Fioletowy</option>
+            <option value="c5">Różowy</option>
+            <option value="c6">Turkusowy</option>
+            <option value="c7">Szary</option>
+            <option value="c8">Żółty</option>
+            <option value="c9">Czerwony</option>
+            <option value="c10">Indygo</option>
+        </select>
+
+        <button onclick="addRow(this)">➕ Wiersz</button>
+<input type="date" class="start-date">
+
+<button onclick="addWeek(this, 7)">+7 dni</button>
+<button onclick="addWeek(this, 14)">+14 dni</button>
+<button onclick="addRow(this)">➕ ręcznie</button>
+        <table>
+            <thead>
+                <tr class="header">
+                    <th colspan="3">NAZWA</th>
+                </tr>
+                <tr class="subheader">
+                    <th>Data</th>
+                    <th>Temat</th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
+            <tbody class="rows"></tbody>
+        </table>
+    `;
+
+    document.getElementById("groups").appendChild(div);
+
+    div.querySelector(".group-color").value = color;
+    updatePreview(div.querySelector(".group-color"));
+    bindGroupName(div);
+}
+function bindGroupName(group) {
+    const input = group.querySelector(".group-name");
+    const header = group.querySelector(".header th");
+
+    function update() {
+        header.textContent = input.value || "NAZWA";
+    }
+
+    input.addEventListener("input", update);
+    update();
+}
+
+function addWeek(btn, days) {
+    const group = btn.closest(".group");
+
+    const startInput = group.querySelector(".start-date");
+    const tbody = group.querySelector(".rows");
+
+    if (!startInput.value) {
+        alert("Najpierw ustaw datę startową");
+        return;
+    }
+
+    let date = new Date(startInput.value);
+
+    const count = tbody.querySelectorAll("tr").length;
+
+    date.setDate(date.getDate() + (count) * days);
+
+    const formatted = date.toLocaleDateString("pl-PL");
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+        <td><input value="${formatted}"></td>
+        <td><input placeholder="Temat"></td>
+        <td><button onclick="this.closest('tr').remove()">✖</button></td>
+    `;
+
+    tbody.appendChild(tr);
+}
+
+function updatePreview(select) {
+    const group = select.closest(".group");
+    const color = select.value;
+
+    const header = group.querySelector(".header");
+    const sub = group.querySelector(".subheader");
+
+    header.className = "header preview-" + color + "-dark";
+    sub.className = "subheader preview-" + color + "-light";
+}
+
+function addRow(btn) {
+    const tbody = btn.parentElement.querySelector(".rows");
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+        <td><input placeholder="dd.mm.rrrr"></td>
+        <td><input placeholder="Temat"></td>
+        <td><button onclick="this.closest('tr').remove()">✖</button></td>
+    `;
+    tbody.appendChild(tr);
+}
+
+function generate() {
+    let html = `<div style="display:flex;gap:20px;flex-wrap:wrap;">\n`;
+
+    document.querySelectorAll(".group").forEach(g => {
+
+        const name = g.querySelector(".group-name").value;
+        const color = g.querySelector(".group-color").value;
+
+        const c = colorMap[color];
+
+        html += `
+<table border="1" style="border-collapse:collapse;min-width:220px;">
+<thead>
+<tr style="background:${c.dark};color:${c.text};">
+<th colspan="2" style="padding:8px;">${name}</th>
+</tr>
+<tr style="background:${c.light};">
+<th style="padding:6px;">Data</th>
+<th style="padding:6px;">Temat</th>
+</tr>
+</thead>
+<tbody>
+`;
+
+        g.querySelectorAll("tbody tr").forEach(r => {
+            const data = r.children[0].querySelector("input").value;
+            const temat = r.children[1].querySelector("input").value;
+
+            html += `
+<tr>
+<td style="padding:6px;">${data}</td>
+<td style="padding:6px;">${temat}</td>
+</tr>`;
+        });
+
+        html += `</tbody></table>\n`;
+    });
+
+    html += `</div>`;
+    document.getElementById("output").value = html;
+}
+
+function importHTML() {
+    const container = document.getElementById("groups");
+    container.innerHTML = "";
+
+    const html = document.getElementById("importBox").value;
+    const doc = new DOMParser().parseFromString(html, "text/html");
+
+    doc.querySelectorAll("table").forEach(t => {
+
+        const name = t.querySelector("thead tr th")?.innerText || "Grupa";
+
+        addGroup(name);
+
+        const group = container.lastElementChild;
+
+        t.querySelectorAll("tbody tr").forEach(row => {
+            const td = row.querySelectorAll("td");
+            if (td.length < 2) return;
+
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td><input value="${td[0].innerText}"></td>
+                <td><input value="${td[1].innerText}"></td>
+                <td><button onclick="this.closest('tr').remove()">✖</button></td>
+            `;
+            group.querySelector(".rows").appendChild(tr);
+        });
+    });
+}
+
+</script>
+
+</body>
+</html>
