@@ -1,0 +1,2799 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Baza pytań</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    margin:40px;
+}
+.question{
+    background:white;
+    padding:20px;
+    margin-bottom:25px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+.question h3{
+    margin-top:0;
+}
+ul{
+    list-style:none;
+    padding-left:0;
+}
+li{
+    padding:8px 12px;
+    margin:5px 0;
+    border-radius:6px;
+    background:#eee;
+}
+.correct{
+    background:#b8f5b8;
+    font-weight:bold;
+}
+.label{
+    display:inline-block;
+    width:25px;
+    font-weight:bold;
+}
+.buttons{
+    margin-bottom:30px;
+}
+
+.buttons button{
+    padding:10px 20px;
+    margin-right:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#1976d2;
+    color:white;
+    font-size:12px;
+}
+
+.buttons button:hover{
+    background:#1565c0;
+}
+
+.question{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+</style>
+</head>
+<body>
+
+<div class="buttons">
+    <button onclick="showCategory(1)">Ogólne</button>
+    <button onclick="showCategory(2)">Rolnictwo</button>
+    <button onclick="showCategory(3)">Bajki</button>
+</div>
+<div class="question" data-category="1">
+<h3>1. Który z tych ssaków potrafi aktywnie latać?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wiewiórka</li>
+<li class="correct"><span class="label">b)</span> Nietoperz</li>
+<li class=""><span class="label">c)</span> Lemur</li>
+<li class=""><span class="label">d)</span> Lotopałanka</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>1. Która maszyna służy do siewu zbóż?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Siewnik</li>
+<li class=""><span class="label">b)</span> Prasa</li>
+<li class=""><span class="label">c)</span> Opryskiwacz</li>
+<li class=""><span class="label">d)</span> Kombajn</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>1. Kto pomógł Kopciuszkowi dostać się na bal?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Dobra wróżka</li>
+<li class=""><span class="label">b)</span> Królowa</li>
+<li class=""><span class="label">c)</span> Babcia</li>
+<li class=""><span class="label">d)</span> Siostra</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>2. Jak nazywa się samiec krowy?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Byk</li>
+<li class=""><span class="label">b)</span> Baran</li>
+<li class=""><span class="label">c)</span> Knur</li>
+<li class=""><span class="label">d)</span> Kozioł</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>2. W czym mieszkał Kubuś Puchatek?</h3>
+<ul>
+<li class=""><span class="label">a)</span> W namiocie</li>
+<li class="correct"><span class="label">b)</span> W dziupli drzewa</li>
+<li class=""><span class="label">c)</span> W zamku</li>
+<li class=""><span class="label">d)</span> W jaskini</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>2. Który pierwiastek chemiczny ma symbol Fe?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Fluor</li>
+<li class=""><span class="label">b)</span> Fosfor</li>
+<li class="correct"><span class="label">c)</span> Żelazo</li>
+<li class=""><span class="label">d)</span> Fr</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>3. Ile wynosi 15% z liczby 200?</h3>
+<ul>
+<li class=""><span class="label">a)</span> 20</li>
+<li class=""><span class="label">b)</span> 25</li>
+<li class="correct"><span class="label">c)</span> 30</li>
+<li class=""><span class="label">d)</span> 35</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>3. W jakim budynku najczęściej utrzymuje się świnie?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Chlewnia</li>
+<li class=""><span class="label">b)</span> Obora</li>
+<li class=""><span class="label">c)</span> Kurnik</li>
+<li class=""><span class="label">d)</span> Stajnia</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>3. Jakie zwierzę było przyjacielem Ariel?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rekin</li>
+<li class=""><span class="label">b)</span> Delfin</li>
+<li class="correct"><span class="label">c)</span> Rybka Florek</li>
+<li class=""><span class="label">d)</span> Wieloryb</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>4. Jak miał na imię ojciec Elsy i Anny?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Olaf</li>
+<li class=""><span class="label">b)</span> Kristoff</li>
+<li class=""><span class="label">c)</span> Hans</li>
+<li class="correct"><span class="label">d)</span> Agnarr</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>4. Który nawóz zawiera dużo azotu?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Mocznik</li>
+<li class=""><span class="label">b)</span> Wapno nawozowe</li>
+<li class=""><span class="label">c)</span> Gips</li>
+<li class=""><span class="label">d)</span> Piasek</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>4. Która planeta obraca się najszybciej wokół własnej osi?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Mars</li>
+<li class="correct"><span class="label">b)</span> Jowisz</li>
+<li class=""><span class="label">c)</span> Wenus</li>
+<li class=""><span class="label">d)</span> Saturn</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>5. Jak nazywa się najwyższy wodospad świata?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Niagara</li>
+<li class=""><span class="label">b)</span> Victoria</li>
+<li class="correct"><span class="label">c)</span> Angel</li>
+<li class=""><span class="label">d)</span> Iguazu</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>5. Jak nazywa się okres intensywnego wzrostu roślin?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Wegetacja</li>
+<li class=""><span class="label">b)</span> Spoczynek</li>
+<li class=""><span class="label">c)</span> Dojrzewanie</li>
+<li class=""><span class="label">d)</span> Zapylenie</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>5. Który z siedmiu krasnoludków nosił okulary?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Żaden z nich</li>
+<li class=""><span class="label">b)</span> Gapcio</li>
+<li class=""><span class="label">c)</span> Apsik</li>
+<li class=""><span class="label">d)</span> Wesołek</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>6. Które zwierzę jest hodowane głównie dla wełny?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Owca</li>
+<li class=""><span class="label">b)</span> Świnia</li>
+<li class=""><span class="label">c)</span> Kaczka</li>
+<li class=""><span class="label">d)</span> Indyk</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>6. Jak nazywa się chłopiec wychowany przez wilki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Tarzan</li>
+<li class="correct"><span class="label">b)</span> Mowgli</li>
+<li class=""><span class="label">c)</span> Piotruś Pan</li>
+<li class=""><span class="label">d)</span> Pinokio</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>6. W którym roku Polska przystąpiła do Unii Europejskiej?</h3>
+<ul>
+<li class=""><span class="label">a)</span> 1999</li>
+<li class="correct"><span class="label">b)</span> 2004</li>
+<li class=""><span class="label">c)</span> 2007</li>
+<li class=""><span class="label">d)</span> 2010</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>7. W piłce nożnej ilu zawodników jednej drużyny przebywa jednocześnie na boisku?</h3>
+<ul>
+<li class=""><span class="label">a)</span> 9</li>
+<li class=""><span class="label">b)</span> 10</li>
+<li class="correct"><span class="label">c)</span> 11</li>
+<li class=""><span class="label">d)</span> 12</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>7. Kto napisał „Brzydkie kaczątko”?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Charles Perrault</li>
+<li class=""><span class="label">b)</span> Astrid Lindgren</li>
+<li class="correct"><span class="label">c)</span> Hans Christian Andersen</li>
+<li class=""><span class="label">d)</span> Bracia Grimm</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>7. Jaką maszyną wykonuje się oprysk pola?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Opryskiwacz</li>
+<li class=""><span class="label">b)</span> Rozrzutnik</li>
+<li class=""><span class="label">c)</span> Brona</li>
+<li class=""><span class="label">d)</span> Pług</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>8. Jak nazywa się osioł, który podróżuje z Shrekiem?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Muł</li>
+<li class=""><span class="label">b)</span> Kłapouchy</li>
+<li class=""><span class="label">c)</span> Maximus</li>
+<li class="correct"><span class="label">d)</span> Osioł</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>8. Która z tych roślin jest zbożem?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Pszenica</li>
+<li class=""><span class="label">b)</span> Marchew</li>
+<li class=""><span class="label">c)</span> Burak cukrowy</li>
+<li class=""><span class="label">d)</span> Ziemniak</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>8. Co oznacza skrót WWW?</h3>
+<ul>
+<li class=""><span class="label">a)</span> World Web Window</li>
+<li class="correct"><span class="label">b)</span> World Wide Web</li>
+<li class=""><span class="label">c)</span> Web World Window</li>
+<li class=""><span class="label">d)</span> Wide World Web</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>9. Jak nazywa się osoba kierująca orkiestrą?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Dyrygent</li>
+<li class=""><span class="label">b)</span> Reżyser</li>
+<li class=""><span class="label">c)</span> Producent</li>
+<li class=""><span class="label">d)</span> Konduktor</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>9. Jak nazywa się budynek przeznaczony dla koni?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Stajnia</li>
+<li class=""><span class="label">b)</span> Owczarnia</li>
+<li class=""><span class="label">c)</span> Chlewnia</li>
+<li class=""><span class="label">d)</span> Kurnik</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>9. Co zgubił Kopciuszek podczas ucieczki z balu?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Pantofelek</li>
+<li class=""><span class="label">b)</span> Koronę</li>
+<li class=""><span class="label">c)</span> Torebkę</li>
+<li class=""><span class="label">d)</span> Naszyjnik</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>10. Do czego służy rozsiewacz nawozów?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Do rozsiewania nawozów</li>
+<li class=""><span class="label">b)</span> Do zbioru ziemniaków</li>
+<li class=""><span class="label">c)</span> Do koszenia trawy</li>
+<li class=""><span class="label">d)</span> Do belowania słomy</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>10. Jak nazywa się kot Gargamela?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Bonifacy</li>
+<li class="correct"><span class="label">b)</span> Azrael</li>
+<li class=""><span class="label">c)</span> Filemon</li>
+<li class=""><span class="label">d)</span> Mruczek</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>10. Który z tych filmów zdobył Oscara za najlepszy film?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Titanic</li>
+<li class=""><span class="label">b)</span> Kevin sam w domu</li>
+<li class=""><span class="label">c)</span> Shrek</li>
+<li class=""><span class="label">d)</span> Piraci z Karaibów</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>11. Który narząd wytwarza insulinę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wątroba</li>
+<li class="correct"><span class="label">b)</span> Trzustka</li>
+<li class=""><span class="label">c)</span> Nerka</li>
+<li class=""><span class="label">d)</span> Śledziona</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>11. Który środek ochrony roślin zwalcza chwasty?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Herbicyd</li>
+<li class=""><span class="label">b)</span> Fungicyd</li>
+<li class=""><span class="label">c)</span> Insektycyd</li>
+<li class=""><span class="label">d)</span> Zaprawa nasienna</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>11. Jakie zwierzę potrafił hipnotyzować Mowgliego?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Wąż Kaa</li>
+<li class=""><span class="label">b)</span> Tygrys</li>
+<li class=""><span class="label">c)</span> Niedźwiedź</li>
+<li class=""><span class="label">d)</span> Wilk</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>12. Jak nazywa się renifer z Krainy Lodu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Olaf</li>
+<li class="correct"><span class="label">b)</span> Sven</li>
+<li class=""><span class="label">c)</span> Kristoff</li>
+<li class=""><span class="label">d)</span> Hans</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>12. Jak nazywa się młoda kura?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Kurczę</li>
+<li class=""><span class="label">b)</span> Jagnię</li>
+<li class=""><span class="label">c)</span> Cielę</li>
+<li class=""><span class="label">d)</span> Prosię</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>12. Jak nazywa się proces przejścia cieczy w gaz?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Topnienie</li>
+<li class=""><span class="label">b)</span> Krzepnięcie</li>
+<li class="correct"><span class="label">c)</span> Parowanie</li>
+<li class=""><span class="label">d)</span> Resublimacja</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>13. Które warzywo rośnie pod ziemią?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Marchew</li>
+<li class=""><span class="label">b)</span> Pomidor</li>
+<li class=""><span class="label">c)</span> Ogórek</li>
+<li class=""><span class="label">d)</span> Papryka</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>13. Jakie światła należy włączyć podczas gęstej mgły z tyłu pojazdu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Drogowe</li>
+<li class="correct"><span class="label">b)</span> Przeciwmgłowe tylne</li>
+<li class=""><span class="label">c)</span> Postojowe</li>
+<li class=""><span class="label">d)</span> Awaryjne</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>13. W jakim miejscu mieszkała Roszpunka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> W pałacu</li>
+<li class=""><span class="label">b)</span> W lesie</li>
+<li class="correct"><span class="label">c)</span> W wysokiej wieży</li>
+<li class=""><span class="label">d)</span> W zamku</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>14. Która z tych dyscyplin nie wykorzystuje piłki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rugby</li>
+<li class=""><span class="label">b)</span> Baseball</li>
+<li class="correct"><span class="label">c)</span> Szermierka</li>
+<li class=""><span class="label">d)</span> Piłka ręczna</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>14. Co zamieniło się w karocę dla Kopciuszka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jabłko</li>
+<li class=""><span class="label">b)</span> Arbuz</li>
+<li class=""><span class="label">c)</span> Kapusta</li>
+<li class="correct"><span class="label">d)</span> Dynia</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>14. Jaką maszyną najczęściej zbiera się zboże?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Kombajn zbożowy</li>
+<li class=""><span class="label">b)</span> Przetrząsacz</li>
+<li class=""><span class="label">c)</span> Glebogryzarka</li>
+<li class=""><span class="label">d)</span> Wał uprawowy</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>15. Co najczęściej przechowuje się w silosie zbożowym?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Ziarno</li>
+<li class=""><span class="label">b)</span> Siano</li>
+<li class=""><span class="label">c)</span> Drewno</li>
+<li class=""><span class="label">d)</span> Węgiel</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>15. Który pisarz stworzył postać Bilba Bagginsa?</h3>
+<ul>
+<li class=""><span class="label">a)</span> C.S. Lewis</li>
+<li class="correct"><span class="label">b)</span> J.R.R. Tolkien</li>
+<li class=""><span class="label">c)</span> George R.R. Martin</li>
+<li class=""><span class="label">d)</span> Andrzej Sapkowski</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>15. Jak nazywa się ojciec Pinokia?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Gepetto</li>
+<li class=""><span class="label">b)</span> Antonio</li>
+<li class=""><span class="label">c)</span> Carlo</li>
+<li class=""><span class="label">d)</span> Lorenzo</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>16. Jak miała na imię syrenka z bajki Disneya?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Elsa</li>
+<li class="correct"><span class="label">b)</span> Ariel</li>
+<li class=""><span class="label">c)</span> Bella</li>
+<li class=""><span class="label">d)</span> Aurora</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>16. Jak nazywa się najdłuższa kość w ludzkim ciele?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Piszczel</li>
+<li class=""><span class="label">b)</span> Ramienna</li>
+<li class="correct"><span class="label">c)</span> Udowa</li>
+<li class=""><span class="label">d)</span> Promieniowa</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>16. Która roślina jest często uprawiana na kiszonkę?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Kukurydza</li>
+<li class=""><span class="label">b)</span> Cebula</li>
+<li class=""><span class="label">c)</span> Len</li>
+<li class=""><span class="label">d)</span> Chmiel</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>17. W którym miesiącu najczęściej rozpoczynają się żniwa zbóż w Polsce?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Lipcu</li>
+<li class=""><span class="label">b)</span> Lutym</li>
+<li class=""><span class="label">c)</span> Marcu</li>
+<li class=""><span class="label">d)</span> Grudniu</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>17. Który z tych krajów leży jednocześnie w Europie i Azji?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Portugalia</li>
+<li class="correct"><span class="label">b)</span> Turcja</li>
+<li class=""><span class="label">c)</span> Austria</li>
+<li class=""><span class="label">d)</span> Belgia</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>17. Jak nazywa się smok z filmu Mulan?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Falkor</li>
+<li class=""><span class="label">b)</span> Sisu</li>
+<li class="correct"><span class="label">c)</span> Mushu</li>
+<li class=""><span class="label">d)</span> Draco</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>18. Który król Polski zwyciężył pod Grunwaldem?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kazimierz Wielki</li>
+<li class="correct"><span class="label">b)</span> Władysław Jagiełło</li>
+<li class=""><span class="label">c)</span> Jan III Sobieski</li>
+<li class=""><span class="label">d)</span> Zygmunt August</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>18. Kto mieszkał w chatce z piernika?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Król</li>
+<li class=""><span class="label">b)</span> Krasnoludki</li>
+<li class=""><span class="label">c)</span> Wróżka</li>
+<li class="correct"><span class="label">d)</span> Czarownica</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>18. Jak nazywa się budynek do przechowywania siana i słomy?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Stodoła</li>
+<li class=""><span class="label">b)</span> Obora</li>
+<li class=""><span class="label">c)</span> Chlewnia</li>
+<li class=""><span class="label">d)</span> Szklarnia</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>19. W chemii pH = 7 oznacza roztwór:</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kwasowy</li>
+<li class=""><span class="label">b)</span> Zasadowy</li>
+<li class="correct"><span class="label">c)</span> Obojętny</li>
+<li class=""><span class="label">d)</span> Toksyczny</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>19. Jak miał na imię ojciec Simby?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Mufasa</li>
+<li class=""><span class="label">b)</span> Skaza</li>
+<li class=""><span class="label">c)</span> Zazu</li>
+<li class=""><span class="label">d)</span> Kovu</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>19. Które zwierzę jest przeżuwaczem?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Krowa</li>
+<li class=""><span class="label">b)</span> Świnia</li>
+<li class=""><span class="label">c)</span> Kura</li>
+<li class=""><span class="label">d)</span> Królik</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>20. Który portal społecznościowy został stworzony jako platforma do krótkich filmów?</h3>
+<ul>
+<li class=""><span class="label">a)</span> LinkedIn</li>
+<li class="correct"><span class="label">b)</span> TikTok</li>
+<li class=""><span class="label">c)</span> Reddit</li>
+<li class=""><span class="label">d)</span> Pinterest</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>20. Jakie zwierzę jest Meeko?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Lis</li>
+<li class="correct"><span class="label">b)</span> Szop pracz</li>
+<li class=""><span class="label">c)</span> Bóbr</li>
+<li class=""><span class="label">d)</span> Wilk</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>20. Który nawóz jest pochodzenia naturalnego?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Obornik</li>
+<li class=""><span class="label">b)</span> Saletra amonowa</li>
+<li class=""><span class="label">c)</span> Mocznik</li>
+<li class=""><span class="label">d)</span> Superfosfat</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>21. Co napędza większość ciągników rolniczych?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Silnik wysokoprężny</li>
+<li class=""><span class="label">b)</span> Silnik parowy</li>
+<li class=""><span class="label">c)</span> Silnik odrzutowy</li>
+<li class=""><span class="label">d)</span> Silnik rakietowy</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>21. Kto napisał Pinokia?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Carlo Collodi</li>
+<li class=""><span class="label">b)</span> Lewis Carroll</li>
+<li class=""><span class="label">c)</span> Jan Brzechwa</li>
+<li class=""><span class="label">d)</span> A.A. Milne</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>21. Jak nazywa się najwyższa kara w hokeju na lodzie za szczególnie brutalny faul?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Żółta kartka</li>
+<li class="correct"><span class="label">b)</span> Kara meczu</li>
+<li class=""><span class="label">c)</span> Rzut karny</li>
+<li class=""><span class="label">d)</span> Dogrywka</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>22. Która roślina należy do okopowych?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Ziemniak</li>
+<li class=""><span class="label">b)</span> Pszenica</li>
+<li class=""><span class="label">c)</span> Żyto</li>
+<li class=""><span class="label">d)</span> Owies</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>22. Jak nazywa się koń Mulan?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Pegasus</li>
+<li class="correct"><span class="label">b)</span> Khan</li>
+<li class=""><span class="label">c)</span> Maximus</li>
+<li class=""><span class="label">d)</span> Angus</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>22. Który z tych obrazów namalował Leonardo da Vinci?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Krzyk</li>
+<li class="correct"><span class="label">b)</span> Mona Lisa</li>
+<li class=""><span class="label">c)</span> Guernica</li>
+<li class=""><span class="label">d)</span> Słoneczniki</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>23. Do czego służy pług?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Do wykonywania orki</li>
+<li class=""><span class="label">b)</span> Do siania zbóż</li>
+<li class=""><span class="label">c)</span> Do opryskiwania roślin</li>
+<li class=""><span class="label">d)</span> Do belowania słomy</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>23. Jakie zwierzę jest symbolem filmu Bambi?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Zając</li>
+<li class=""><span class="label">b)</span> Wilk</li>
+<li class="correct"><span class="label">c)</span> Jeleń</li>
+<li class=""><span class="label">d)</span> Lis</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>23. W chrześcijaństwie Boże Narodzenie upamiętnia:</h3>
+<ul>
+<li class=""><span class="label">a)</span> Chrzest Jezusa</li>
+<li class="correct"><span class="label">b)</span> Narodzenie Jezusa</li>
+<li class=""><span class="label">c)</span> Zmartwychwstanie Jezusa</li>
+<li class=""><span class="label">d)</span> Wniebowstąpienie Jezusa</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>24. Jak nazywa się ustrój, w którym obywatele wybierają swoich przedstawicieli w wyborach?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Monarchia absolutna</li>
+<li class=""><span class="label">b)</span> Dyktatura</li>
+<li class="correct"><span class="label">c)</span> Demokracja przedstawicielska</li>
+<li class=""><span class="label">d)</span> Oligarchia</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>24. Jak nazywa się królestwo Elsy i Anny?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Narnia</li>
+<li class=""><span class="label">b)</span> Atlantyda</li>
+<li class=""><span class="label">c)</span> Camelot</li>
+<li class="correct"><span class="label">d)</span> Arendelle</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>24. Jak nazywa się młode owcy?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Jagnię</li>
+<li class=""><span class="label">b)</span> Źrebię</li>
+<li class=""><span class="label">c)</span> Prosię</li>
+<li class=""><span class="label">d)</span> Koźlę</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>25. Symbol którego składnika pokarmowego to litera K?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Potas</li>
+<li class=""><span class="label">b)</span> Azot</li>
+<li class=""><span class="label">c)</span> Fosfor</li>
+<li class=""><span class="label">d)</span> Magnez</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>25. Jak miał na imię chłopiec, który nie chciał dorosnąć?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jaś</li>
+<li class=""><span class="label">b)</span> Mowgli</li>
+<li class=""><span class="label">c)</span> Aladyn</li>
+<li class="correct"><span class="label">d)</span> Piotruś Pan</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>25. Który z tych celebrytów jest przede wszystkim znany jako kucharz?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Robert Makłowicz</li>
+<li class=""><span class="label">b)</span> Kuba Wojewódzki</li>
+<li class=""><span class="label">c)</span> Marcin Prokop</li>
+<li class=""><span class="label">d)</span> Tomasz Kammel</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>26. Który z tych oceanów jest największy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Ocean Indyjski</li>
+<li class=""><span class="label">b)</span> Ocean Arktyczny</li>
+<li class="correct"><span class="label">c)</span> Ocean Spokojny</li>
+<li class=""><span class="label">d)</span> Ocean Atlantycki</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>26. Jak nazywa się tygrys z Kubusia Puchatka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kłapouchy</li>
+<li class="correct"><span class="label">b)</span> Tygrysek</li>
+<li class=""><span class="label">c)</span> Prosiaczek</li>
+<li class=""><span class="label">d)</span> Królik</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>26. Która maszyna służy do belowania siana i słomy w bele?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kosiarka</li>
+<li class="correct"><span class="label">b)</span> Prasa rolująca</li>
+<li class=""><span class="label">c)</span> Opryskiwacz</li>
+<li class=""><span class="label">d)</span> Agregat uprawowy</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>27. Jak nazywa się samica świni?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jałówka</li>
+<li class="correct"><span class="label">b)</span> Maciora</li>
+<li class=""><span class="label">c)</span> Owca</li>
+<li class=""><span class="label">d)</span> Klacz</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>27. Jak miał na imię książę Kopciuszka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Filip</li>
+<li class="correct"><span class="label">b)</span> Nie podano</li>
+<li class=""><span class="label">c)</span> Adam</li>
+<li class=""><span class="label">d)</span> Eryk</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>27. Jak nazywa się wynik mnożenia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Iloraz</li>
+<li class=""><span class="label">b)</span> Suma</li>
+<li class="correct"><span class="label">c)</span> Iloczyn</li>
+<li class=""><span class="label">d)</span> Różnica</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>28. Który gaz stanowi największą część atmosfery Ziemi?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Tlen</li>
+<li class="correct"><span class="label">b)</span> Azot</li>
+<li class=""><span class="label">c)</span> Dwutlenek węgla</li>
+<li class=""><span class="label">d)</span> Argon</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>28. Jak nazywa się pantera Mowgliego?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Akela</li>
+<li class=""><span class="label">b)</span> Balu</li>
+<li class="correct"><span class="label">c)</span> Bagira</li>
+<li class=""><span class="label">d)</span> Kaa</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>28. W którym budynku najczęściej utrzymuje się kury?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Obora</li>
+<li class="correct"><span class="label">b)</span> Kurnik</li>
+<li class=""><span class="label">c)</span> Chlewnia</li>
+<li class=""><span class="label">d)</span> Stajnia</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>29. Jak nazywa się proces, dzięki któremu rośliny produkują pokarm?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Fermentacja</li>
+<li class="correct"><span class="label">b)</span> Fotosynteza</li>
+<li class=""><span class="label">c)</span> Oddychanie komórkowe</li>
+<li class=""><span class="label">d)</span> Kiełkowanie</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>29. Który składnik pokarmowy wspomaga rozwój systemu korzeniowego roślin?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Potas</li>
+<li class="correct"><span class="label">b)</span> Fosfor</li>
+<li class=""><span class="label">c)</span> Wapń</li>
+<li class=""><span class="label">d)</span> Sód</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>29. Co było zatrute u Śnieżki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Gruszka</li>
+<li class=""><span class="label">b)</span> Śliwka</li>
+<li class=""><span class="label">c)</span> Winogrono</li>
+<li class="correct"><span class="label">d)</span> Jabłko</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>30. Jak nazywa się bałwan z Krainy Lodu?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Olaf</li>
+<li class=""><span class="label">b)</span> Sven</li>
+<li class=""><span class="label">c)</span> Kristoff</li>
+<li class=""><span class="label">d)</span> Hans</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>30. Jak nazywa się młode kozy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jagnię</li>
+<li class="correct"><span class="label">b)</span> Koźlę</li>
+<li class=""><span class="label">c)</span> Cielę</li>
+<li class=""><span class="label">d)</span> Źrebię</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>30. W którym mieście znajduje się Koloseum?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Ateny</li>
+<li class=""><span class="label">b)</span> Paryż</li>
+<li class="correct"><span class="label">c)</span> Rzym</li>
+<li class=""><span class="label">d)</span> Madryt</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>31. Który z tych królów był ostatnim królem Polski?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Stefan Batory</li>
+<li class="correct"><span class="label">b)</span> Stanisław August Poniatowski</li>
+<li class=""><span class="label">c)</span> Jan III Sobieski</li>
+<li class=""><span class="label">d)</span> Władysław IV Waza</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>31. Towarzysz Vaiany?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Papuga</li>
+<li class="correct"><span class="label">b)</span> Hei Hei</li>
+<li class=""><span class="label">c)</span> Pingwin</li>
+<li class=""><span class="label">d)</span> Paw</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>31. Kiedy najczęściej wysiewa się kukurydzę w Polsce?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jesienią</li>
+<li class="correct"><span class="label">b)</span> Wiosną</li>
+<li class=""><span class="label">c)</span> Zimą</li>
+<li class=""><span class="label">d)</span> W środku lata</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>32. Autor Alicji w Krainie Czarów?</h3>
+<ul>
+<li class=""><span class="label">a)</span> A.A. Milne</li>
+<li class=""><span class="label">b)</span> Astrid Lindgren</li>
+<li class="correct"><span class="label">c)</span> Lewis Carroll</li>
+<li class=""><span class="label">d)</span> Jan Brzechwa</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>32. Która roślina należy do roślin strączkowych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Pszenica</li>
+<li class="correct"><span class="label">b)</span> Groch</li>
+<li class=""><span class="label">c)</span> Żyto</li>
+<li class=""><span class="label">d)</span> Kukurydza</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>32. Jak nazywa się urządzenie mierzące temperaturę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Barometr</li>
+<li class=""><span class="label">b)</span> Higrometr</li>
+<li class="correct"><span class="label">c)</span> Termometr</li>
+<li class=""><span class="label">d)</span> Manometr</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>33. Który z tych sportów rozgrywany jest na lodzie?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Curling</li>
+<li class=""><span class="label">b)</span> Squash</li>
+<li class=""><span class="label">c)</span> Rugby</li>
+<li class=""><span class="label">d)</span> Baseball</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>33. Jak nazywa się budynek do przechowywania maszyn rolniczych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Stodoła</li>
+<li class="correct"><span class="label">b)</span> Wiata</li>
+<li class=""><span class="label">c)</span> Owczarnia</li>
+<li class=""><span class="label">d)</span> Kurnik</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>33. Ojciec Ariel?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Neptun</li>
+<li class=""><span class="label">b)</span> Posejdon</li>
+<li class=""><span class="label">c)</span> Atlas</li>
+<li class="correct"><span class="label">d)</span> Tryton</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>34. Co oznacza skrót GPS?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Global Positioning System</li>
+<li class=""><span class="label">b)</span> General Position Service</li>
+<li class=""><span class="label">c)</span> Global Phone System</li>
+<li class=""><span class="label">d)</span> Geographic Program Service</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>34. Który środek ochrony roślin zwalcza choroby grzybowe?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Herbicyd</li>
+<li class="correct"><span class="label">b)</span> Fungicyd</li>
+<li class=""><span class="label">c)</span> Insektycyd</li>
+<li class=""><span class="label">d)</span> Adiuwant</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>34. Kot z Alicji?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Garfield</li>
+<li class="correct"><span class="label">b)</span> Kot z Cheshire</li>
+<li class=""><span class="label">c)</span> Bonifacy</li>
+<li class=""><span class="label">d)</span> Azrael</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>35. Który aktor wcielił się w Jacka Sparrowa?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Leonardo DiCaprio</li>
+<li class=""><span class="label">b)</span> Brad Pitt</li>
+<li class="correct"><span class="label">c)</span> Johnny Depp</li>
+<li class=""><span class="label">d)</span> Tom Cruise</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>35. Które zwierzę jest najczęściej hodowane dla mleka w Polsce?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Koza</li>
+<li class="correct"><span class="label">b)</span> Krowa</li>
+<li class=""><span class="label">c)</span> Owca</li>
+<li class=""><span class="label">d)</span> Gęś</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>35. Smok z Raya?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Mushu</li>
+<li class=""><span class="label">b)</span> Falkor</li>
+<li class="correct"><span class="label">c)</span> Sisu</li>
+<li class=""><span class="label">d)</span> Draco</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>36. Kto wychował Tarzana?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Goryle</li>
+<li class=""><span class="label">b)</span> Wilki</li>
+<li class=""><span class="label">c)</span> Tygrysy</li>
+<li class=""><span class="label">d)</span> Słonie</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>36. Jak nazywa się zakonserwowana zielona pasza dla bydła?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Słoma</li>
+<li class="correct"><span class="label">b)</span> Kiszonka</li>
+<li class=""><span class="label">c)</span> Plewy</li>
+<li class=""><span class="label">d)</span> Śruta</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>36. Jak nazywa się największy organ ludzkiego ciała?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wątroba</li>
+<li class="correct"><span class="label">b)</span> Skóra</li>
+<li class=""><span class="label">c)</span> Płuco</li>
+<li class=""><span class="label">d)</span> Serce</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>37. Który metal jest ciekły w temperaturze pokojowej?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Aluminium</li>
+<li class=""><span class="label">b)</span> Miedź</li>
+<li class="correct"><span class="label">c)</span> Rtęć</li>
+<li class=""><span class="label">d)</span> Cynk</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>37. Najlepszy przyjaciel Puchatka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Królik</li>
+<li class="correct"><span class="label">b)</span> Prosiaczek</li>
+<li class=""><span class="label">c)</span> Tygrysek</li>
+<li class=""><span class="label">d)</span> Kłapouchy</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>37. Która maszyna rozrzuca obornik na polu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rozsiewacz nawozów</li>
+<li class="correct"><span class="label">b)</span> Rozrzutnik obornika</li>
+<li class=""><span class="label">c)</span> Owijarka</li>
+<li class=""><span class="label">d)</span> Prasa</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>38. Która roślina wiosną tworzy charakterystyczne żółte pola?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Pszenica</li>
+<li class="correct"><span class="label">b)</span> Rzepak</li>
+<li class=""><span class="label">c)</span> Owies</li>
+<li class=""><span class="label">d)</span> Żyto</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>38. W czym mieszkały Smerfy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Pnie</li>
+<li class=""><span class="label">b)</span> Kamień</li>
+<li class="correct"><span class="label">c)</span> Grzybki</li>
+<li class=""><span class="label">d)</span> Jaskinie</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>38. Jak nazywa się znak używany do oznaczania adresów e-mail?</h3>
+<ul>
+<li class=""><span class="label">a)</span> #</li>
+<li class="correct"><span class="label">b)</span> @</li>
+<li class=""><span class="label">c)</span> &amp;</li>
+<li class=""><span class="label">d)</span> %</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>39. Który z tych instrumentów należy do instrumentów strunowych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Flet</li>
+<li class="correct"><span class="label">b)</span> Gitara</li>
+<li class=""><span class="label">c)</span> Trąbka</li>
+<li class=""><span class="label">d)</span> Klarnet</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>39. Koń Roszpunki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Khan</li>
+<li class=""><span class="label">b)</span> Samson</li>
+<li class=""><span class="label">c)</span> Pegasus</li>
+<li class="correct"><span class="label">d)</span> Maximus</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>39. Jak nazywa się młody koń?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Cielę</li>
+<li class="correct"><span class="label">b)</span> Źrebię</li>
+<li class=""><span class="label">c)</span> Jagnię</li>
+<li class=""><span class="label">d)</span> Koźlę</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>40. Która część rośliny pobiera wodę z gleby?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Łodyga</li>
+<li class="correct"><span class="label">b)</span> Korzeń</li>
+<li class=""><span class="label">c)</span> Liść</li>
+<li class=""><span class="label">d)</span> Kwiat</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>40. Ojciec Belli?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Maurice</li>
+<li class=""><span class="label">b)</span> Gaston</li>
+<li class=""><span class="label">c)</span> Filip</li>
+<li class=""><span class="label">d)</span> Adam</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>40. W którym sporcie zdobywa się hat-tricka, strzelając trzy gole?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Siatkówka</li>
+<li class="correct"><span class="label">b)</span> Piłka nożna</li>
+<li class=""><span class="label">c)</span> Tenis</li>
+<li class=""><span class="label">d)</span> Koszykówka</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>41. Jak nazywa się święta księga islamu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Biblia</li>
+<li class=""><span class="label">b)</span> Tora</li>
+<li class="correct"><span class="label">c)</span> Koran</li>
+<li class=""><span class="label">d)</span> Wedy</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>41. Autor Calineczki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Perrault</li>
+<li class="correct"><span class="label">b)</span> Andersen</li>
+<li class=""><span class="label">c)</span> Grimm</li>
+<li class=""><span class="label">d)</span> Carroll</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>41. Do czego służy kosiarka rotacyjna?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Do oprysku</li>
+<li class="correct"><span class="label">b)</span> Do koszenia trawy</li>
+<li class=""><span class="label">c)</span> Do siewu</li>
+<li class=""><span class="label">d)</span> Do nawożenia</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>42. Które zboże jest najczęściej wykorzystywane do produkcji mąki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Owies</li>
+<li class="correct"><span class="label">b)</span> Pszenica</li>
+<li class=""><span class="label">c)</span> Proso</li>
+<li class=""><span class="label">d)</span> Sorgo</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>42. Zły lew?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Simba</li>
+<li class=""><span class="label">b)</span> Mufasa</li>
+<li class="correct"><span class="label">c)</span> Skaza</li>
+<li class=""><span class="label">d)</span> Kion</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>42. Który z tych ustrojów oznacza rządy króla lub królowej?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Republika</li>
+<li class=""><span class="label">b)</span> Demokracja</li>
+<li class="correct"><span class="label">c)</span> Monarchia</li>
+<li class=""><span class="label">d)</span> Federacja</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>43. Ukochany Ariel?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Filip</li>
+<li class="correct"><span class="label">b)</span> Eryk</li>
+<li class=""><span class="label">c)</span> Adam</li>
+<li class=""><span class="label">d)</span> Henryk</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>43. Który z tych samochodów jest produkowany przez firmę Ferrari?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Civic</li>
+<li class=""><span class="label">b)</span> Corolla</li>
+<li class="correct"><span class="label">c)</span> Roma</li>
+<li class=""><span class="label">d)</span> Astra</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>43. Jak nazywa się samiec owcy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Byk</li>
+<li class="correct"><span class="label">b)</span> Baran</li>
+<li class=""><span class="label">c)</span> Knur</li>
+<li class=""><span class="label">d)</span> Kozioł</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>44. Która platforma służy głównie do oglądania filmów wideo?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Spotify</li>
+<li class="correct"><span class="label">b)</span> YouTube</li>
+<li class=""><span class="label">c)</span> WhatsApp</li>
+<li class=""><span class="label">d)</span> Discord</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>44. Przyjaciel Roszpunki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Papuga</li>
+<li class=""><span class="label">b)</span> Wiewiórka</li>
+<li class=""><span class="label">c)</span> Żółw</li>
+<li class="correct"><span class="label">d)</span> Pascal</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>44. Kiedy najczęściej sadzi się ziemniaki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jesienią</li>
+<li class="correct"><span class="label">b)</span> Wiosną</li>
+<li class=""><span class="label">c)</span> Zimą</li>
+<li class=""><span class="label">d)</span> W grudniu</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>45. Który składnik pokarmowy najsilniej wpływa na intensywny wzrost liści?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Magnez</li>
+<li class="correct"><span class="label">b)</span> Azot</li>
+<li class=""><span class="label">c)</span> Wapń</li>
+<li class=""><span class="label">d)</span> Siarka</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>45. Renifer?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Sven</li>
+<li class=""><span class="label">b)</span> Olaf</li>
+<li class=""><span class="label">c)</span> Kristoff</li>
+<li class=""><span class="label">d)</span> Hans</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>45. Kto namalował obraz &#x27;Sąd Ostateczny&#x27; na sklepieniu Kaplicy Sykstyńskiej?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rafael</li>
+<li class="correct"><span class="label">b)</span> Michał Anioł</li>
+<li class=""><span class="label">c)</span> Rembrandt</li>
+<li class=""><span class="label">d)</span> Claude Monet</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>46. Jak nazywa się układ służący do podłączania maszyn z tyłu ciągnika?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wał napędowy</li>
+<li class="correct"><span class="label">b)</span> Trzypunktowy układ zawieszenia (TUZ)</li>
+<li class=""><span class="label">c)</span> Chłodnica</li>
+<li class=""><span class="label">d)</span> Skrzynia biegów</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>46. Autor Piotrusia Pana?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Milne</li>
+<li class="correct"><span class="label">b)</span> J.M. Barrie</li>
+<li class=""><span class="label">c)</span> Collodi</li>
+<li class=""><span class="label">d)</span> Perrault</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>46. Jak nazywa się największa pustynia świata?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Sahara</li>
+<li class=""><span class="label">b)</span> Gobi</li>
+<li class="correct"><span class="label">c)</span> Antarktyda</li>
+<li class=""><span class="label">d)</span> Kalahari</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>47. Która roślina jest najczęściej uprawiana na produkcję cukru?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Marchew</li>
+<li class="correct"><span class="label">b)</span> Burak cukrowy</li>
+<li class=""><span class="label">c)</span> Rzepak</li>
+<li class=""><span class="label">d)</span> Ziemniak</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>47. Meeko to?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Lis</li>
+<li class="correct"><span class="label">b)</span> Szop pracz</li>
+<li class=""><span class="label">c)</span> Jeż</li>
+<li class=""><span class="label">d)</span> Bóbr</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>47. Jak nazywa się najwyższa liga piłkarska w Polsce?</h3>
+<ul>
+<li class=""><span class="label">a)</span> I Liga</li>
+<li class=""><span class="label">b)</span> II Liga</li>
+<li class="correct"><span class="label">c)</span> Ekstraklasa</li>
+<li class=""><span class="label">d)</span> Superliga</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>48. Który z tych owoców jest cytrusem?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kiwi</li>
+<li class="correct"><span class="label">b)</span> Mandarynka</li>
+<li class=""><span class="label">c)</span> Winogrono</li>
+<li class=""><span class="label">d)</span> Śliwka</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>48. Wróżka Piotrusia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Flora</li>
+<li class=""><span class="label">b)</span> Różyczka</li>
+<li class="correct"><span class="label">c)</span> Dzwoneczek</li>
+<li class=""><span class="label">d)</span> Iskierka</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>48. Jak nazywa się okres koszenia traw na siano?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Żniwa</li>
+<li class="correct"><span class="label">b)</span> Sianokosy</li>
+<li class=""><span class="label">c)</span> Wykopki</li>
+<li class=""><span class="label">d)</span> Orka</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>49. Który owad jest najważniejszym zapylaczem roślin uprawnych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Biedronka</li>
+<li class="correct"><span class="label">b)</span> Pszczoła</li>
+<li class=""><span class="label">c)</span> Ważka</li>
+<li class=""><span class="label">d)</span> Komar</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>49. Gdzie mieszkał Shrek?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Zamek</li>
+<li class=""><span class="label">b)</span> Las</li>
+<li class=""><span class="label">c)</span> Pałac</li>
+<li class="correct"><span class="label">d)</span> Bagno</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>49. Jak nazywa się twórca Facebooka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Bill Gates</li>
+<li class=""><span class="label">b)</span> Steve Jobs</li>
+<li class="correct"><span class="label">c)</span> Mark Zuckerberg</li>
+<li class=""><span class="label">d)</span> Elon Musk</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>50. Która polska noblistka otrzymała Nagrodę Nobla w dziedzinie literatury w 2018 roku?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wisława Szymborska</li>
+<li class="correct"><span class="label">b)</span> Olga Tokarczuk</li>
+<li class=""><span class="label">c)</span> Maria Konopnicka</li>
+<li class=""><span class="label">d)</span> Zofia Nałkowska</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>50. Ojciec Vaiany?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Maui</li>
+<li class="correct"><span class="label">b)</span> Tui</li>
+<li class=""><span class="label">c)</span> Tamatoa</li>
+<li class=""><span class="label">d)</span> Te Fiti</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>50. Jak nazywa się urządzenie w ciągniku przekazujące napęd na maszynę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Alternator</li>
+<li class="correct"><span class="label">b)</span> Wał odbioru mocy (WOM)</li>
+<li class=""><span class="label">c)</span> Akumulator</li>
+<li class=""><span class="label">d)</span> Rozrusznik</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>51. Która maszyna służy do sadzenia ziemniaków?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Prasa rolująca</li>
+<li class=""><span class="label">b)</span> Opryskiwacz</li>
+<li class="correct"><span class="label">c)</span> Sadzarka do ziemniaków</li>
+<li class=""><span class="label">d)</span> Rozrzutnik obornika</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>51. Przyjaciel Mowgliego niedźwiedź?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Akela</li>
+<li class=""><span class="label">b)</span> Kaa</li>
+<li class="correct"><span class="label">c)</span> Balu</li>
+<li class=""><span class="label">d)</span> Bagira</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>51. Który z tych ptaków nie potrafi latać?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Bocian</li>
+<li class="correct"><span class="label">b)</span> Pingwin</li>
+<li class=""><span class="label">c)</span> Jaskółka</li>
+<li class=""><span class="label">d)</span> Mewa</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>52. Ile boków ma ośmiokąt?</h3>
+<ul>
+<li class=""><span class="label">a)</span> 6</li>
+<li class=""><span class="label">b)</span> 7</li>
+<li class="correct"><span class="label">c)</span> 8</li>
+<li class=""><span class="label">d)</span> 9</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>52. Sanie Kristoffa ciągnął?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Koń</li>
+<li class="correct"><span class="label">b)</span> Renifer</li>
+<li class=""><span class="label">c)</span> Łoś</li>
+<li class=""><span class="label">d)</span> Jeleń</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>52. Jak nazywa się samiec kozy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Baran</li>
+<li class=""><span class="label">b)</span> Knur</li>
+<li class="correct"><span class="label">c)</span> Kozioł</li>
+<li class=""><span class="label">d)</span> Byk</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>53. W jakim budynku najczęściej utrzymuje się owce?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Chlewnia</li>
+<li class=""><span class="label">b)</span> Obora</li>
+<li class="correct"><span class="label">c)</span> Owczarnia</li>
+<li class=""><span class="label">d)</span> Kurnik</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>53. Księżniczka z Merida Waleczna?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Elsa</li>
+<li class=""><span class="label">b)</span> Aurora</li>
+<li class="correct"><span class="label">c)</span> Merida</li>
+<li class=""><span class="label">d)</span> Ariel</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>53. Co jest jednostką natężenia prądu elektrycznego?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wat</li>
+<li class=""><span class="label">b)</span> Wolt</li>
+<li class="correct"><span class="label">c)</span> Amper</li>
+<li class=""><span class="label">d)</span> Om</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>54. Który nawóz naturalny powstaje z rozłożonych resztek roślinnych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Saletra amonowa</li>
+<li class=""><span class="label">b)</span> Mocznik</li>
+<li class="correct"><span class="label">c)</span> Kompost</li>
+<li class=""><span class="label">d)</span> Superfosfat</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>54. Kot Pinokia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Azrael</li>
+<li class=""><span class="label">b)</span> Bonifacy</li>
+<li class=""><span class="label">c)</span> Mruczek</li>
+<li class="correct"><span class="label">d)</span> Figaro</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>54. Jak nazywa się największy kontynent świata?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Afryka</li>
+<li class=""><span class="label">b)</span> Ameryka Północna</li>
+<li class="correct"><span class="label">c)</span> Azja</li>
+<li class=""><span class="label">d)</span> Europa</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>55. Jak nazywa się zimowy okres zahamowania wzrostu wielu roślin?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kwitnienie</li>
+<li class=""><span class="label">b)</span> Kłoszenie</li>
+<li class="correct"><span class="label">c)</span> Spoczynek zimowy</li>
+<li class=""><span class="label">d)</span> Dojrzewanie</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>55. Kraina Alicji?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Kraina Czarów</li>
+<li class=""><span class="label">b)</span> Narnia</li>
+<li class=""><span class="label">c)</span> Arendelle</li>
+<li class=""><span class="label">d)</span> Nibylandia</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>55. Który narząd odpowiada głównie za filtrowanie krwi?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Żołądek</li>
+<li class="correct"><span class="label">b)</span> Nerki</li>
+<li class=""><span class="label">c)</span> Trzustka</li>
+<li class=""><span class="label">d)</span> Jelito cienkie</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>56. Kto był pierwszym człowiekiem na Księżycu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jurij Gagarin</li>
+<li class=""><span class="label">b)</span> Buzz Aldrin</li>
+<li class="correct"><span class="label">c)</span> Neil Armstrong</li>
+<li class=""><span class="label">d)</span> Michael Collins</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>56. Wróg Smerfów?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Klakier</li>
+<li class="correct"><span class="label">b)</span> Gargamel</li>
+<li class=""><span class="label">c)</span> Ogry</li>
+<li class=""><span class="label">d)</span> Czarownica</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>56. Które zwierzę hodowane jest głównie dla miodu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Osa</li>
+<li class=""><span class="label">b)</span> Trzmiel</li>
+<li class="correct"><span class="label">c)</span> Pszczoła</li>
+<li class=""><span class="label">d)</span> Motyl</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>57. Jak nazywa się maszyna do przewracania skoszonej trawy podczas suszenia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wał uprawowy</li>
+<li class=""><span class="label">b)</span> Brona</li>
+<li class="correct"><span class="label">c)</span> Przetrząsacz</li>
+<li class=""><span class="label">d)</span> Siewnik</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>57. Symbol Dumbo?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Żyrafa</li>
+<li class=""><span class="label">b)</span> Hipopotam</li>
+<li class="correct"><span class="label">c)</span> Słoń</li>
+<li class=""><span class="label">d)</span> Nosorożec</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>57. Która część samochodu odpowiada za zatrzymanie pojazdu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Chłodnica</li>
+<li class="correct"><span class="label">b)</span> Hamulce</li>
+<li class=""><span class="label">c)</span> Alternator</li>
+<li class=""><span class="label">d)</span> Sprzęgło</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>58. Za rzut zza linii w koszykówce drużyna otrzymuje:</h3>
+<ul>
+<li class=""><span class="label">a)</span> 2</li>
+<li class="correct"><span class="label">b)</span> 3</li>
+<li class=""><span class="label">c)</span> 4</li>
+<li class=""><span class="label">d)</span> 5</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>58. Co nosił Kot w Butach?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kapelusz</li>
+<li class="correct"><span class="label">b)</span> Buty</li>
+<li class=""><span class="label">c)</span> Koronę</li>
+<li class=""><span class="label">d)</span> Pelerynę</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>58. Która roślina jest zaliczana do oleistych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Żyto</li>
+<li class=""><span class="label">b)</span> Owies</li>
+<li class="correct"><span class="label">c)</span> Słonecznik</li>
+<li class=""><span class="label">d)</span> Jęczmień</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>59. Jak nazywa się budynek do przechowywania płodów rolnych i maszyn?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Obora</li>
+<li class=""><span class="label">b)</span> Chlewnia</li>
+<li class="correct"><span class="label">c)</span> Stodoła</li>
+<li class=""><span class="label">d)</span> Kurnik</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>59. Ojciec Bambi?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rogacz</li>
+<li class=""><span class="label">b)</span> Daniel</li>
+<li class="correct"><span class="label">c)</span> Wielki Książę Lasu</li>
+<li class=""><span class="label">d)</span> Jeleń Król</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>59. Najpopularniejsza wyszukiwarka internetowa?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Yahoo!</li>
+<li class=""><span class="label">b)</span> Bing</li>
+<li class="correct"><span class="label">c)</span> Google</li>
+<li class=""><span class="label">d)</span> DuckDuckGo</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>60. Który serial opowiada o rodzinie Simpsonów?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rick i Morty</li>
+<li class=""><span class="label">b)</span> Family Guy</li>
+<li class="correct"><span class="label">c)</span> Simpsonowie</li>
+<li class=""><span class="label">d)</span> Futurama</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>60. Gdzie mieszkała Baba Jaga?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Zamek</li>
+<li class=""><span class="label">b)</span> Pałac</li>
+<li class=""><span class="label">c)</span> Jaskinia</li>
+<li class="correct"><span class="label">d)</span> Chatka na kurzej łapce</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>60. Który środek ochrony roślin zwalcza owady?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Fungicyd</li>
+<li class=""><span class="label">b)</span> Herbicyd</li>
+<li class="correct"><span class="label">c)</span> Insektycyd</li>
+<li class=""><span class="label">d)</span> Zaprawa nasienna</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>61. Jak nazywa się młode bydła?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jagnię</li>
+<li class=""><span class="label">b)</span> Koźlę</li>
+<li class="correct"><span class="label">c)</span> Cielę</li>
+<li class=""><span class="label">d)</span> Prosię</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>61. Wróżka Pinokia?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Wróżka o Błękitnych Włosach</li>
+<li class=""><span class="label">b)</span> Flora</li>
+<li class=""><span class="label">c)</span> Dzwoneczek</li>
+<li class=""><span class="label">d)</span> Różyczka</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>61. Główny składnik diamentu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Krzem</li>
+<li class="correct"><span class="label">b)</span> Węgiel</li>
+<li class=""><span class="label">c)</span> Wapń</li>
+<li class=""><span class="label">d)</span> Siarka</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>62. Która część rośliny odpowiada za fotosyntezę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Korzeń</li>
+<li class=""><span class="label">b)</span> Kwiat</li>
+<li class="correct"><span class="label">c)</span> Liść</li>
+<li class=""><span class="label">d)</span> Owoc</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>62. Ojciec Simby?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kovu</li>
+<li class=""><span class="label">b)</span> Skaza</li>
+<li class="correct"><span class="label">c)</span> Mufasa</li>
+<li class=""><span class="label">d)</span> Zazu</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>62. Największy oceaniczny ssak?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rekin wielorybi</li>
+<li class=""><span class="label">b)</span> Orka</li>
+<li class="correct"><span class="label">c)</span> Płetwal błękitny</li>
+<li class=""><span class="label">d)</span> Kaszalot</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>63. Jaką maszyną owija się bele folią?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Prasą kostkującą</li>
+<li class=""><span class="label">b)</span> Rozrzutnikiem</li>
+<li class="correct"><span class="label">c)</span> Owijarką</li>
+<li class=""><span class="label">d)</span> Glebogryzarką</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>63. Sebastian to?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Ośmiornica</li>
+<li class="correct"><span class="label">b)</span> Krab</li>
+<li class=""><span class="label">c)</span> Homar</li>
+<li class=""><span class="label">d)</span> Rak</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>63. W którym mieście znajduje się Wieża Eiffla?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Bruksela</li>
+<li class=""><span class="label">b)</span> Londyn</li>
+<li class="correct"><span class="label">c)</span> Paryż</li>
+<li class=""><span class="label">d)</span> Lyon</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>64. Autor teorii heliocentrycznej?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jan Heweliusz</li>
+<li class="correct"><span class="label">b)</span> Mikołaj Kopernik</li>
+<li class=""><span class="label">c)</span> Ignacy Łukasiewicz</li>
+<li class=""><span class="label">d)</span> Maria Skłodowska-Curie</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>64. Magiczna lampa?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Sindbad</li>
+<li class=""><span class="label">b)</span> Ali Baba</li>
+<li class="correct"><span class="label">c)</span> Aladyn</li>
+<li class=""><span class="label">d)</span> Kasym</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>64. Która roślina jest przyprawą?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kukurydza</li>
+<li class=""><span class="label">b)</span> Rzepak</li>
+<li class="correct"><span class="label">c)</span> Koper</li>
+<li class=""><span class="label">d)</span> Owies</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>65. Jak nazywa się samiec świni?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Byk</li>
+<li class=""><span class="label">b)</span> Kozioł</li>
+<li class="correct"><span class="label">c)</span> Knur</li>
+<li class=""><span class="label">d)</span> Baran</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>65. Kto opiekował się Tarzanem?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wilki</li>
+<li class=""><span class="label">b)</span> Tygrysy</li>
+<li class=""><span class="label">c)</span> Lwy</li>
+<li class="correct"><span class="label">d)</span> Goryle</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>65. Znak muzyczny oznaczający ciszę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Bemol</li>
+<li class="correct"><span class="label">b)</span> Pauza</li>
+<li class=""><span class="label">c)</span> Klucz wiolinowy</li>
+<li class=""><span class="label">d)</span> Takt</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>66. Jakie światła po zmroku przy dobrej widoczności?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Postojowe</li>
+<li class="correct"><span class="label">b)</span> Mijania</li>
+<li class=""><span class="label">c)</span> Awaryjne</li>
+<li class=""><span class="label">d)</span> Przeciwmgłowe</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>66. Jak miał na imię Osioł?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Muł</li>
+<li class="correct"><span class="label">b)</span> Nie miał imienia</li>
+<li class=""><span class="label">c)</span> Benio</li>
+<li class=""><span class="label">d)</span> Stefan</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>66. Kiedy najczęściej zbiera się ziemniaki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Zimą</li>
+<li class=""><span class="label">b)</span> Wiosną</li>
+<li class="correct"><span class="label">c)</span> Jesienią</li>
+<li class=""><span class="label">d)</span> W styczniu</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>67. Który składnik odpowiada za prawidłową gospodarkę wodną roślin?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Fosfor</li>
+<li class=""><span class="label">b)</span> Azot</li>
+<li class="correct"><span class="label">c)</span> Potas</li>
+<li class=""><span class="label">d)</span> Węgiel</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>67. Koń Meridy?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Angus</li>
+<li class=""><span class="label">b)</span> Maximus</li>
+<li class=""><span class="label">c)</span> Khan</li>
+<li class=""><span class="label">d)</span> Pegasus</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>67. Waluta Japonii?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Juan</li>
+<li class=""><span class="label">b)</span> Won</li>
+<li class="correct"><span class="label">c)</span> Jen</li>
+<li class=""><span class="label">d)</span> Rupia</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>68. W którym sporcie używa się rakiety?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Piłka ręczna</li>
+<li class="correct"><span class="label">b)</span> Tenis</li>
+<li class=""><span class="label">c)</span> Rugby</li>
+<li class=""><span class="label">d)</span> Hokej</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>68. Autor Królowej Śniegu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Grimm</li>
+<li class=""><span class="label">b)</span> Perrault</li>
+<li class="correct"><span class="label">c)</span> Andersen</li>
+<li class=""><span class="label">d)</span> Lindgren</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>68. Jak nazywa się urządzenie do nawadniania pól?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rozrzutnik</li>
+<li class=""><span class="label">b)</span> Brona</li>
+<li class="correct"><span class="label">c)</span> Deszczownia</li>
+<li class=""><span class="label">d)</span> Wał</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>69. Który owoc rośnie na krzewie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jabłko</li>
+<li class=""><span class="label">b)</span> Gruszka</li>
+<li class="correct"><span class="label">c)</span> Porzeczka</li>
+<li class=""><span class="label">d)</span> Śliwka</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>69. Pua to?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kura</li>
+<li class=""><span class="label">b)</span> Koza</li>
+<li class="correct"><span class="label">c)</span> Świnka</li>
+<li class=""><span class="label">d)</span> Owca</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>69. Twórca Microsoftu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Steve Jobs</li>
+<li class="correct"><span class="label">b)</span> Bill Gates</li>
+<li class=""><span class="label">c)</span> Jeff Bezos</li>
+<li class=""><span class="label">d)</span> Larry Page</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>70. Autor Słoneczników?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Vermeer</li>
+<li class="correct"><span class="label">b)</span> Vincent van Gogh</li>
+<li class=""><span class="label">c)</span> da Vinci</li>
+<li class=""><span class="label">d)</span> Monet</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>70. Kot Gargamela?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Filemon</li>
+<li class=""><span class="label">b)</span> Bonifacy</li>
+<li class=""><span class="label">c)</span> Mruczek</li>
+<li class="correct"><span class="label">d)</span> Azrael</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>70. Jak nazywa się okres zbioru zbóż?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wykopki</li>
+<li class=""><span class="label">b)</span> Sianokosy</li>
+<li class="correct"><span class="label">c)</span> Żniwa</li>
+<li class=""><span class="label">d)</span> Orka</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>71. Która maszyna rozdrabnia gałęzie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Opryskiwacz</li>
+<li class=""><span class="label">b)</span> Kombajn</li>
+<li class="correct"><span class="label">c)</span> Rębak</li>
+<li class=""><span class="label">d)</span> Prasa</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>71. Dzień odpoczynku w judaizmie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Niedziela</li>
+<li class=""><span class="label">b)</span> Piątek</li>
+<li class="correct"><span class="label">c)</span> Szabat</li>
+<li class=""><span class="label">d)</span> Ramadan</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>71. Mama Bambi?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Nie podano</li>
+<li class=""><span class="label">b)</span> Łania</li>
+<li class=""><span class="label">c)</span> Falina</li>
+<li class=""><span class="label">d)</span> Stella</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>72. Królestwo Bestii?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Arendelle</li>
+<li class="correct"><span class="label">b)</span> Nie podano</li>
+<li class=""><span class="label">c)</span> Camelot</li>
+<li class=""><span class="label">d)</span> Avalon</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>72. Szef rządu w Polsce?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Marszałek Sejmu</li>
+<li class="correct"><span class="label">b)</span> Premier</li>
+<li class=""><span class="label">c)</span> Wojewoda</li>
+<li class=""><span class="label">d)</span> Prezydent miasta</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>72. Która roślina jest najczęściej uprawiana na kiszonkę dla bydła?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Pszenica</li>
+<li class=""><span class="label">b)</span> Cebula</li>
+<li class="correct"><span class="label">c)</span> Kukurydza</li>
+<li class=""><span class="label">d)</span> Len</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>73. Jak nazywa się młoda owca?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Koźlę</li>
+<li class=""><span class="label">b)</span> Prosię</li>
+<li class="correct"><span class="label">c)</span> Jagnię</li>
+<li class=""><span class="label">d)</span> Źrebię</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>73. Samochód elektryczny?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Tesla Model 3</li>
+<li class=""><span class="label">b)</span> Toyota Hilux</li>
+<li class=""><span class="label">c)</span> Fiat Ducato</li>
+<li class=""><span class="label">d)</span> Golf GTI</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>73. Drewniany chłopiec?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Mowgli</li>
+<li class=""><span class="label">b)</span> Piotruś</li>
+<li class="correct"><span class="label">c)</span> Pinokio</li>
+<li class=""><span class="label">d)</span> Aladyn</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>74. Kto połknął Gepetta?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rekin</li>
+<li class=""><span class="label">b)</span> Ośmiornica</li>
+<li class=""><span class="label">c)</span> Delfin</li>
+<li class="correct"><span class="label">d)</span> Wieloryb</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>74. 5 złotych medali olimpijskich w chodzie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Adam Małysz</li>
+<li class="correct"><span class="label">b)</span> Robert Korzeniowski</li>
+<li class=""><span class="label">c)</span> Kamil Stoch</li>
+<li class=""><span class="label">d)</span> Anita Włodarczyk</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>74. Która część ciągnika odpowiada za zmianę przełożeń?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Chłodnica</li>
+<li class=""><span class="label">b)</span> Kabina</li>
+<li class="correct"><span class="label">c)</span> Skrzynia biegów</li>
+<li class=""><span class="label">d)</span> Błotnik</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>75. Która roślina jest najczęściej uprawiana w sadach?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Malina</li>
+<li class=""><span class="label">b)</span> Winorośl</li>
+<li class="correct"><span class="label">c)</span> Jabłoń</li>
+<li class=""><span class="label">d)</span> Truskawka</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>75. Kto reprezentował Polskę na Eurowizji 2022 z &#x27;River&#x27;?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Doda</li>
+<li class=""><span class="label">b)</span> Margaret</li>
+<li class="correct"><span class="label">c)</span> Ochman</li>
+<li class=""><span class="label">d)</span> Michał Wiśniewski</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>75. Królik z Puchatka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Tygrysek</li>
+<li class=""><span class="label">b)</span> Prosiaczek</li>
+<li class=""><span class="label">c)</span> Kłapouchy</li>
+<li class="correct"><span class="label">d)</span> Królik</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>76. Która maszyna służy do zbioru zbóż?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Opryskiwacz</li>
+<li class=""><span class="label">b)</span> Rozsiewacz nawozów</li>
+<li class=""><span class="label">c)</span> Pług</li>
+<li class="correct"><span class="label">d)</span> Kombajn zbożowy</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>76. Która planeta jest Czerwoną Planetą?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wenus</li>
+<li class="correct"><span class="label">b)</span> Mars</li>
+<li class=""><span class="label">c)</span> Merkury</li>
+<li class=""><span class="label">d)</span> Neptun</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>76. Kot z Pinokia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Bonifacy</li>
+<li class=""><span class="label">b)</span> Azrael</li>
+<li class=""><span class="label">c)</span> Mruczek</li>
+<li class="correct"><span class="label">d)</span> Figaro</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>77. Jak nazywa się samica konia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Jałówka</li>
+<li class=""><span class="label">b)</span> Maciora</li>
+<li class=""><span class="label">c)</span> Koza</li>
+<li class="correct"><span class="label">d)</span> Klacz</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>77. Jak nazywa się wynik dzielenia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Iloczyn</li>
+<li class=""><span class="label">b)</span> Różnica</li>
+<li class="correct"><span class="label">c)</span> Iloraz</li>
+<li class=""><span class="label">d)</span> Suma</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>77. Książę Śpiącej Królewny?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Adam</li>
+<li class="correct"><span class="label">b)</span> Filip</li>
+<li class=""><span class="label">c)</span> Eryk</li>
+<li class=""><span class="label">d)</span> Henryk</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>78. Pumba to?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Dzik</li>
+<li class=""><span class="label">b)</span> Bawół</li>
+<li class=""><span class="label">c)</span> Hipopotam</li>
+<li class=""><span class="label">d)</span> Nosorożec</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>78. Naturalny satelita Ziemi?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Mars</li>
+<li class=""><span class="label">b)</span> Wenus</li>
+<li class="correct"><span class="label">c)</span> Księżyc</li>
+<li class=""><span class="label">d)</span> Europa</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>78. W jakim budynku najczęściej utrzymuje się bydło mleczne?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Chlewnia</li>
+<li class=""><span class="label">b)</span> Kurnik</li>
+<li class=""><span class="label">c)</span> Owczarnia</li>
+<li class="correct"><span class="label">d)</span> Obora</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>79. Największy organ wewnętrzny?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Serce</li>
+<li class="correct"><span class="label">b)</span> Wątroba</li>
+<li class=""><span class="label">c)</span> Płuco</li>
+<li class=""><span class="label">d)</span> Żołądek</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>79. Który nawóz najczęściej stosuje się do odkwaszania gleby?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Saletra amonowa</li>
+<li class=""><span class="label">b)</span> Mocznik</li>
+<li class=""><span class="label">c)</span> Polifoska</li>
+<li class="correct"><span class="label">d)</span> Wapno nawozowe</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>79. Czarodziej z Miecza w kamieniu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Gandalf</li>
+<li class=""><span class="label">b)</span> Dumbledore</li>
+<li class="correct"><span class="label">c)</span> Merlin</li>
+<li class=""><span class="label">d)</span> Radagast</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>80. Jak nazywa się proces przenoszenia pyłku na znamię słupka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Kiełkowanie</li>
+<li class=""><span class="label">b)</span> Wegetacja</li>
+<li class=""><span class="label">c)</span> Krzewienie</li>
+<li class="correct"><span class="label">d)</span> Zapylenie</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>80. Dom Smerfów?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Drewno</li>
+<li class="correct"><span class="label">b)</span> Grzybowe domki</li>
+<li class=""><span class="label">c)</span> Zamki</li>
+<li class=""><span class="label">d)</span> Jaskinie</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>80. Rzeka przepływająca przez Warszawę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Odra</li>
+<li class="correct"><span class="label">b)</span> Wisła</li>
+<li class=""><span class="label">c)</span> Warta</li>
+<li class=""><span class="label">d)</span> Bug</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>81. Kiedy zakończyła się II wojna światowa w Europie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> 1944</li>
+<li class="correct"><span class="label">b)</span> 1945</li>
+<li class=""><span class="label">c)</span> 1946</li>
+<li class=""><span class="label">d)</span> 1947</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>81. Które zwierzę daje pierze wykorzystywane do produkcji poduszek i kołder?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Indyk</li>
+<li class=""><span class="label">b)</span> Kura</li>
+<li class=""><span class="label">c)</span> Paw</li>
+<li class="correct"><span class="label">d)</span> Gęś</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>81. Statek Haka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Czarna Perła</li>
+<li class=""><span class="label">b)</span> Latający Holender</li>
+<li class=""><span class="label">c)</span> Biała Mewa</li>
+<li class="correct"><span class="label">d)</span> Jolly Roger</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>82. Tata Peppy?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Tata Świnka</li>
+<li class=""><span class="label">b)</span> Dziadek</li>
+<li class=""><span class="label">c)</span> Wujek</li>
+<li class=""><span class="label">d)</span> Pan Byk</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>82. Jaką maszyną wyrównuje się i zagęszcza glebę po siewie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Brona</li>
+<li class=""><span class="label">b)</span> Siewnik</li>
+<li class=""><span class="label">c)</span> Kosiarka</li>
+<li class="correct"><span class="label">d)</span> Wał uprawowy</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>82. Film o dinozaurach?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Avatar</li>
+<li class="correct"><span class="label">b)</span> Jurassic Park</li>
+<li class=""><span class="label">c)</span> Gladiator</li>
+<li class=""><span class="label">d)</span> Incepcja</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>83. Co ładuje akumulator podczas jazdy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rozrusznik</li>
+<li class="correct"><span class="label">b)</span> Alternator</li>
+<li class=""><span class="label">c)</span> Chłodnica</li>
+<li class=""><span class="label">d)</span> Tłumik</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>83. Która roślina jest warzywem korzeniowym?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Pomidor</li>
+<li class=""><span class="label">b)</span> Ogórek</li>
+<li class=""><span class="label">c)</span> Sałata</li>
+<li class="correct"><span class="label">d)</span> Burak ćwikłowy</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>83. Przyjaciel Dumbo?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Słoń</li>
+<li class="correct"><span class="label">b)</span> Mysz Tymoteusz</li>
+<li class=""><span class="label">c)</span> Kaczka</li>
+<li class=""><span class="label">d)</span> Papuga</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>84. Koń Roszpunki?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Angus</li>
+<li class=""><span class="label">b)</span> Khan</li>
+<li class="correct"><span class="label">c)</span> Maximus</li>
+<li class=""><span class="label">d)</span> Pegasus</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>84. Jak nazywa się zbiornik do przechowywania płynnych nawozów naturalnych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Silos</li>
+<li class=""><span class="label">b)</span> Magazyn</li>
+<li class=""><span class="label">c)</span> Stodoła</li>
+<li class="correct"><span class="label">d)</span> Zbiornik na gnojowicę</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>84. Ile setów trzeba wygrać w siatkówce?</h3>
+<ul>
+<li class=""><span class="label">a)</span> 2</li>
+<li class="correct"><span class="label">b)</span> 3</li>
+<li class=""><span class="label">c)</span> 4</li>
+<li class=""><span class="label">d)</span> 5</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>85. Ojciec Elsy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Hans</li>
+<li class=""><span class="label">b)</span> Kristoff</li>
+<li class=""><span class="label">c)</span> Olaf</li>
+<li class="correct"><span class="label">d)</span> Agnarr</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>85. Który środek ochrony roślin zwalcza choroby wywoływane przez grzyby?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Herbicyd</li>
+<li class=""><span class="label">b)</span> Insektycyd</li>
+<li class=""><span class="label">c)</span> Akaracyd</li>
+<li class="correct"><span class="label">d)</span> Fungicyd</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>85. Technologia łączności bezprzewodowej?</h3>
+<ul>
+<li class=""><span class="label">a)</span> PDF</li>
+<li class=""><span class="label">b)</span> USB</li>
+<li class="correct"><span class="label">c)</span> Bluetooth</li>
+<li class=""><span class="label">d)</span> HTML</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>86. Autor Małej Syrenki?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Andersen</li>
+<li class=""><span class="label">b)</span> Grimm</li>
+<li class=""><span class="label">c)</span> Perrault</li>
+<li class=""><span class="label">d)</span> Carroll</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>86. Kto śpiewa Bad Romance?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rihanna</li>
+<li class="correct"><span class="label">b)</span> Lady Gaga</li>
+<li class=""><span class="label">c)</span> Beyoncé</li>
+<li class=""><span class="label">d)</span> Dua Lipa</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>86. Jak nazywa się młoda świnia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Cielę</li>
+<li class=""><span class="label">b)</span> Jagnię</li>
+<li class=""><span class="label">c)</span> Źrebię</li>
+<li class="correct"><span class="label">d)</span> Prosię</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>87. Metal używany do puszek?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Miedź</li>
+<li class="correct"><span class="label">b)</span> Aluminium</li>
+<li class=""><span class="label">c)</span> Cynk</li>
+<li class=""><span class="label">d)</span> Ołów</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>87. Która część rośliny rozwija się z zalążni po zapłodnieniu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Korzeń</li>
+<li class=""><span class="label">b)</span> Liść</li>
+<li class=""><span class="label">c)</span> Łodyga</li>
+<li class="correct"><span class="label">d)</span> Owoc</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>87. Mama Peppy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Mama Koza</li>
+<li class="correct"><span class="label">b)</span> Mama Świnka</li>
+<li class=""><span class="label">c)</span> Ciocia</li>
+<li class=""><span class="label">d)</span> Babcia</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>88. Autor Guerniki?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Pablo Picasso</li>
+<li class=""><span class="label">b)</span> da Vinci</li>
+<li class=""><span class="label">c)</span> Munch</li>
+<li class=""><span class="label">d)</span> van Gogh</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>88. Jaką maszyną najczęściej zbiera się ziemniaki na dużych plantacjach?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Prasą</li>
+<li class=""><span class="label">b)</span> Owijarką</li>
+<li class=""><span class="label">c)</span> Broną</li>
+<li class="correct"><span class="label">d)</span> Kombajnem do ziemniaków</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>88. Kot z Alicji?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Garfield</li>
+<li class=""><span class="label">b)</span> Bonifacy</li>
+<li class="correct"><span class="label">c)</span> Kot z Cheshire</li>
+<li class=""><span class="label">d)</span> Filemon</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>89. Przyjaciele Kopciuszka?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Koty</li>
+<li class=""><span class="label">b)</span> Psy</li>
+<li class="correct"><span class="label">c)</span> Myszy</li>
+<li class=""><span class="label">d)</span> Króliki</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>89. Która roślina jest uprawiana głównie dla nasion wykorzystywanych do produkcji oleju?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Sałata</li>
+<li class=""><span class="label">b)</span> Marchew</li>
+<li class=""><span class="label">c)</span> Pietruszka</li>
+<li class="correct"><span class="label">d)</span> Rzepak</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>89. Karma oznacza:</h3>
+<ul>
+<li class=""><span class="label">a)</span> Świątynię</li>
+<li class="correct"><span class="label">b)</span> Skutki własnych czynów</li>
+<li class=""><span class="label">c)</span> Księgę</li>
+<li class=""><span class="label">d)</span> Modlitwę</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>90. Organ władzy ustawodawczej?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rada Ministrów</li>
+<li class="correct"><span class="label">b)</span> Parlament</li>
+<li class=""><span class="label">c)</span> SN</li>
+<li class=""><span class="label">d)</span> TK</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>90. Ojciec Ariel?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Posejdon</li>
+<li class=""><span class="label">b)</span> Neptun</li>
+<li class=""><span class="label">c)</span> Atlas</li>
+<li class="correct"><span class="label">d)</span> Tryton</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>90. Kiedy najczęściej wykonuje się pierwszy pokos traw w Polsce?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Zimą</li>
+<li class=""><span class="label">b)</span> Późną jesienią</li>
+<li class=""><span class="label">c)</span> W grudniu</li>
+<li class="correct"><span class="label">d)</span> Późną wiosną</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>91. Japoński producent aut?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Opel</li>
+<li class="correct"><span class="label">b)</span> Toyota</li>
+<li class=""><span class="label">c)</span> Peugeot</li>
+<li class=""><span class="label">d)</span> Volvo</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>91. Chłopiec z Nibylandii?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Piotruś Pan</li>
+<li class=""><span class="label">b)</span> Pinokio</li>
+<li class=""><span class="label">c)</span> Mowgli</li>
+<li class=""><span class="label">d)</span> Aladyn</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>91. Jak nazywa się element ciągnika przekazujący napęd na maszyny rolnicze?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Chłodnica</li>
+<li class=""><span class="label">b)</span> Akumulator</li>
+<li class=""><span class="label">c)</span> Alternator</li>
+<li class="correct"><span class="label">d)</span> Wał odbioru mocy (WOM)</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>92. Która roślina jest najczęściej uprawiana na mąkę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Len</li>
+<li class=""><span class="label">b)</span> Rzepak</li>
+<li class=""><span class="label">c)</span> Groch</li>
+<li class="correct"><span class="label">d)</span> Pszenica</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>92. Zły czarodziej Smerfów?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Klakier</li>
+<li class="correct"><span class="label">b)</span> Gargamel</li>
+<li class=""><span class="label">c)</span> Hogata</li>
+<li class=""><span class="label">d)</span> Merlin</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>92. W którym sporcie używa się floretu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Boks</li>
+<li class="correct"><span class="label">b)</span> Szermierka</li>
+<li class=""><span class="label">c)</span> Badminton</li>
+<li class=""><span class="label">d)</span> Łucznictwo</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>93. Przeglądarka Google?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Firefox</li>
+<li class=""><span class="label">b)</span> Safari</li>
+<li class="correct"><span class="label">c)</span> Chrome</li>
+<li class=""><span class="label">d)</span> Opera</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>93. Które zwierzę jest przeżuwaczem?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Świnia</li>
+<li class=""><span class="label">b)</span> Kura</li>
+<li class=""><span class="label">c)</span> Królik</li>
+<li class="correct"><span class="label">d)</span> Krowa</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>93. Przyjaciel Meridy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Wilk</li>
+<li class=""><span class="label">b)</span> Jeleń</li>
+<li class="correct"><span class="label">c)</span> Koń Angus</li>
+<li class=""><span class="label">d)</span> Sokół</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>94. Gdzie mieszkał Shrek?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Zamek</li>
+<li class=""><span class="label">b)</span> Pałac</li>
+<li class=""><span class="label">c)</span> Las</li>
+<li class="correct"><span class="label">d)</span> Bagno</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>94. Jak nazywa się pole pozostawione czasowo bez uprawy?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Łąka</li>
+<li class=""><span class="label">b)</span> Pastwisko</li>
+<li class=""><span class="label">c)</span> Sad</li>
+<li class="correct"><span class="label">d)</span> Ugór</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>94. Główna rola w Forrest Gump?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Tom Hanks</li>
+<li class=""><span class="label">b)</span> Matt Damon</li>
+<li class=""><span class="label">c)</span> Russell Crowe</li>
+<li class=""><span class="label">d)</span> Harrison Ford</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>95. Lód bezpośrednio w parę?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Topnienie</li>
+<li class=""><span class="label">b)</span> Skraplanie</li>
+<li class="correct"><span class="label">c)</span> Sublimacja</li>
+<li class=""><span class="label">d)</span> Krzepnięcie</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>95. Który nawóz naturalny pochodzi od zwierząt gospodarskich?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Torf</li>
+<li class=""><span class="label">b)</span> Wapno</li>
+<li class=""><span class="label">c)</span> Kompost</li>
+<li class="correct"><span class="label">d)</span> Obornik</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>95. Smok z Raya?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Falkor</li>
+<li class=""><span class="label">b)</span> Mushu</li>
+<li class="correct"><span class="label">c)</span> Sisu</li>
+<li class=""><span class="label">d)</span> Draco</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>96. Ukochany Ariel?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Adam</li>
+<li class=""><span class="label">b)</span> Filip</li>
+<li class=""><span class="label">c)</span> Henryk</li>
+<li class="correct"><span class="label">d)</span> Eryk</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>96. Kontynent przecięty równikiem i Zwrotnikiem Koziorożca?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Europa</li>
+<li class="correct"><span class="label">b)</span> Afryka</li>
+<li class=""><span class="label">c)</span> Australia</li>
+<li class=""><span class="label">d)</span> Ameryka Północna</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>96. Jak nazywa się maszyna służąca do przewozu płynnej gnojowicy na pole?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Rozrzutnik</li>
+<li class=""><span class="label">b)</span> Przyczepa skorupowa</li>
+<li class=""><span class="label">c)</span> Prasa</li>
+<li class="correct"><span class="label">d)</span> Wóz asenizacyjny</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>97. Który owad jest najważniejszym zapylaczem sadów i wielu roślin uprawnych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Komar</li>
+<li class=""><span class="label">b)</span> Ważka</li>
+<li class=""><span class="label">c)</span> Mucha</li>
+<li class="correct"><span class="label">d)</span> Pszczoła</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>97. Pierwszy prezydent III RP wybrany powszechnie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Aleksander Kwaśniewski</li>
+<li class="correct"><span class="label">b)</span> Lech Wałęsa</li>
+<li class=""><span class="label">c)</span> Bronisław Komorowski</li>
+<li class=""><span class="label">d)</span> Andrzej Duda</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>97. Wróżka Piotrusia?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Flora</li>
+<li class="correct"><span class="label">b)</span> Dzwoneczek</li>
+<li class=""><span class="label">c)</span> Iskierka</li>
+<li class=""><span class="label">d)</span> Różyczka</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>98. Kaa to?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Tygrys</li>
+<li class=""><span class="label">b)</span> Niedźwiedź</li>
+<li class=""><span class="label">c)</span> Wilk</li>
+<li class="correct"><span class="label">d)</span> Wąż</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>98. Najwięcej medali olimpijskich spośród wymienionych?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Adam Małysz</li>
+<li class="correct"><span class="label">b)</span> Irena Szewińska</li>
+<li class=""><span class="label">c)</span> Robert Lewandowski</li>
+<li class=""><span class="label">d)</span> Justyna Kowalczyk</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>98. Jak nazywa się okres, w którym rośliny intensywnie rosną?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Spoczynek zimowy</li>
+<li class=""><span class="label">b)</span> Dojrzewanie</li>
+<li class=""><span class="label">c)</span> Zapylenie</li>
+<li class="correct"><span class="label">d)</span> Wegetacja</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>99. Która roślina jest zbożem ozimym?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Słonecznik</li>
+<li class=""><span class="label">b)</span> Ziemniak</li>
+<li class=""><span class="label">c)</span> Burak cukrowy</li>
+<li class="correct"><span class="label">d)</span> Żyto</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>99. Ojciec Pinokia?</h3>
+<ul>
+<li class="correct"><span class="label">a)</span> Gepetto</li>
+<li class=""><span class="label">b)</span> Carlo</li>
+<li class=""><span class="label">c)</span> Antonio</li>
+<li class=""><span class="label">d)</span> Lorenzo</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>99. Polska noblistka z chemii?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Olga Tokarczuk</li>
+<li class=""><span class="label">b)</span> Wisława Szymborska</li>
+<li class="correct"><span class="label">c)</span> Maria Skłodowska-Curie</li>
+<li class=""><span class="label">d)</span> Maria Konopnicka</li>
+</ul>
+</div>
+<div class="question" data-category="3">
+<h3>100. Kim chciał zostać Pinokio?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Książę</li>
+<li class=""><span class="label">b)</span> Czarodziej</li>
+<li class=""><span class="label">c)</span> Rycerz</li>
+<li class="correct"><span class="label">d)</span> Prawdziwy chłopiec</li>
+</ul>
+</div>
+<div class="question" data-category="1">
+<h3>100. Który owad przechodzi pełne przeobrażenie?</h3>
+<ul>
+<li class=""><span class="label">a)</span> Konik polny</li>
+<li class=""><span class="label">b)</span> Ważka</li>
+<li class="correct"><span class="label">c)</span> Motyl</li>
+<li class=""><span class="label">d)</span> Świerszcz</li>
+</ul>
+</div>
+<div class="question" data-category="2">
+<h3>100. Jak nazywa się system wykorzystujący sygnał satelitarny do precyzyjnego prowadzenia ciągnika po polu?</h3>
+<ul>
+<li class=""><span class="label">a)</span> EHR</li>
+<li class=""><span class="label">b)</span> ISOBUS</li>
+<li class=""><span class="label">c)</span> Hydraulika</li>
+<li class="correct"><span class="label">d)</span> Nawigacja GPS</li>
+</ul>
+</div>
+
+</body>
+<script>
+function showCategory(id){
+
+    const questions = document.querySelectorAll(".question");
+
+    questions.forEach(q=>{
+
+        if(q.dataset.category==id){
+            q.style.display="block";
+        }else{
+            q.style.display="none";
+        }
+
+    });
+
+}
+
+// domyślnie pierwsza kategoria
+showCategory(1);
+</script>
+</html>
