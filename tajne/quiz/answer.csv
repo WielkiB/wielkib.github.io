@@ -1,0 +1,1201 @@
+id,label,value,is_correct,number,question_id,lang
+1,a,Wiewiórka,0,1,1,pl
+2,b,Nietoperz,1,2,1,pl
+3,c,Lemur,0,3,1,pl
+4,d,Lotopałanka,0,4,1,pl
+5,a,Fluor,0,1,2,pl
+6,b,Fosfor,0,2,2,pl
+7,c,Żelazo,1,3,2,pl
+8,d,Fr,0,4,2,pl
+9,a,20,0,1,3,pl
+10,b,25,0,2,3,pl
+11,c,30,1,3,3,pl
+12,d,35,0,4,3,pl
+13,a,Mars,0,1,4,pl
+14,b,Jowisz,1,2,4,pl
+15,c,Wenus,0,3,4,pl
+16,d,Saturn,0,4,4,pl
+17,a,Niagara,0,1,5,pl
+18,b,Victoria,0,2,5,pl
+19,c,Angel,1,3,5,pl
+20,d,Iguazu,0,4,5,pl
+21,a,1999,0,1,6,pl
+22,b,2004,1,2,6,pl
+23,c,2007,0,3,6,pl
+24,d,2010,0,4,6,pl
+25,a,9,0,1,7,pl
+26,b,10,0,2,7,pl
+27,c,11,1,3,7,pl
+28,d,12,0,4,7,pl
+29,a,World Web Window,0,1,8,pl
+30,b,World Wide Web,1,2,8,pl
+31,c,Web World Window,0,3,8,pl
+32,d,Wide World Web,0,4,8,pl
+33,a,Dyrygent,1,1,9,pl
+34,b,Reżyser,0,2,9,pl
+35,c,Producent,0,3,9,pl
+36,d,Konduktor,0,4,9,pl
+37,a,Titanic,1,1,10,pl
+38,b,Kevin sam w domu,0,2,10,pl
+39,c,Shrek,0,3,10,pl
+40,d,Piraci z Karaibów,0,4,10,pl
+41,a,Wątroba,0,1,11,pl
+42,b,Trzustka,1,2,11,pl
+43,c,Nerka,0,3,11,pl
+44,d,Śledziona,0,4,11,pl
+45,a,Topnienie,0,1,12,pl
+46,b,Krzepnięcie,0,2,12,pl
+47,c,Parowanie,1,3,12,pl
+48,d,Resublimacja,0,4,12,pl
+49,a,Drogowe,0,1,13,pl
+50,b,Przeciwmgłowe tylne,1,2,13,pl
+51,c,Postojowe,0,3,13,pl
+52,d,Awaryjne,0,4,13,pl
+53,a,Rugby,0,1,14,pl
+54,b,Baseball,0,2,14,pl
+55,c,Szermierka,1,3,14,pl
+56,d,Piłka ręczna,0,4,14,pl
+57,a,C.S. Lewis,0,1,15,pl
+58,b,J.R.R. Tolkien,1,2,15,pl
+59,c,George R.R. Martin,0,3,15,pl
+60,d,Andrzej Sapkowski,0,4,15,pl
+61,a,Piszczel,0,1,16,pl
+62,b,Ramienna,0,2,16,pl
+63,c,Udowa,1,3,16,pl
+64,d,Promieniowa,0,4,16,pl
+65,a,Portugalia,0,1,17,pl
+66,b,Turcja,1,2,17,pl
+67,c,Austria,0,3,17,pl
+68,d,Belgia,0,4,17,pl
+69,a,Kazimierz Wielki,0,1,18,pl
+70,b,Władysław Jagiełło,1,2,18,pl
+71,c,Jan III Sobieski,0,3,18,pl
+72,d,Zygmunt August,0,4,18,pl
+73,a,Kwasowy,0,1,19,pl
+74,b,Zasadowy,0,2,19,pl
+75,c,Obojętny,1,3,19,pl
+76,d,Toksyczny,0,4,19,pl
+77,a,LinkedIn,0,1,20,pl
+78,b,TikTok,1,2,20,pl
+79,c,Reddit,0,3,20,pl
+80,d,Pinterest,0,4,20,pl
+81,a,Żółta kartka,0,1,21,pl
+82,b,Kara meczu,1,2,21,pl
+83,c,Rzut karny,0,3,21,pl
+84,d,Dogrywka,0,4,21,pl
+85,a,Krzyk,0,1,22,pl
+86,b,Mona Lisa,1,2,22,pl
+87,c,Guernica,0,3,22,pl
+88,d,Słoneczniki,0,4,22,pl
+89,a,Chrzest Jezusa,0,1,23,pl
+90,b,Narodzenie Jezusa,1,2,23,pl
+91,c,Zmartwychwstanie Jezusa,0,3,23,pl
+92,d,Wniebowstąpienie Jezusa,0,4,23,pl
+93,a,Monarchia absolutna,0,1,24,pl
+94,b,Dyktatura,0,2,24,pl
+95,c,Demokracja przedstawicielska,1,3,24,pl
+96,d,Oligarchia,0,4,24,pl
+97,a,Robert Makłowicz,1,1,25,pl
+98,b,Kuba Wojewódzki,0,2,25,pl
+99,c,Marcin Prokop,0,3,25,pl
+100,d,Tomasz Kammel,0,4,25,pl
+101,a,Ocean Indyjski,0,1,26,pl
+102,b,Ocean Arktyczny,0,2,26,pl
+103,c,Ocean Spokojny,1,3,26,pl
+104,d,Ocean Atlantycki,0,4,26,pl
+105,a,Iloraz,0,1,27,pl
+106,b,Suma,0,2,27,pl
+107,c,Iloczyn,1,3,27,pl
+108,d,Różnica,0,4,27,pl
+109,a,Tlen,0,1,28,pl
+110,b,Azot,1,2,28,pl
+111,c,Dwutlenek węgla,0,3,28,pl
+112,d,Argon,0,4,28,pl
+113,a,Fermentacja,0,1,29,pl
+114,b,Fotosynteza,1,2,29,pl
+115,c,Oddychanie komórkowe,0,3,29,pl
+116,d,Kiełkowanie,0,4,29,pl
+117,a,Ateny,0,1,30,pl
+118,b,Paryż,0,2,30,pl
+119,c,Rzym,1,3,30,pl
+120,d,Madryt,0,4,30,pl
+121,a,Stefan Batory,0,1,31,pl
+122,b,Stanisław August Poniatowski,1,2,31,pl
+123,c,Jan III Sobieski,0,3,31,pl
+124,d,Władysław IV Waza,0,4,31,pl
+125,a,Barometr,0,1,32,pl
+126,b,Higrometr,0,2,32,pl
+127,c,Termometr,1,3,32,pl
+128,d,Manometr,0,4,32,pl
+129,a,Curling,1,1,33,pl
+130,b,Squash,0,2,33,pl
+131,c,Rugby,0,3,33,pl
+132,d,Baseball,0,4,33,pl
+133,a,Global Positioning System,1,1,34,pl
+134,b,General Position Service,0,2,34,pl
+135,c,Global Phone System,0,3,34,pl
+136,d,Geographic Program Service,0,4,34,pl
+137,a,Leonardo DiCaprio,0,1,35,pl
+138,b,Brad Pitt,0,2,35,pl
+139,c,Johnny Depp,1,3,35,pl
+140,d,Tom Cruise,0,4,35,pl
+141,a,Wątroba,0,1,36,pl
+142,b,Skóra,1,2,36,pl
+143,c,Płuco,0,3,36,pl
+144,d,Serce,0,4,36,pl
+145,a,Aluminium,0,1,37,pl
+146,b,Miedź,0,2,37,pl
+147,c,Rtęć,1,3,37,pl
+148,d,Cynk,0,4,37,pl
+149,a,#,0,1,38,pl
+150,b,@,1,2,38,pl
+151,c,&,0,3,38,pl
+152,d,%,0,4,38,pl
+153,a,Flet,0,1,39,pl
+154,b,Gitara,1,2,39,pl
+155,c,Trąbka,0,3,39,pl
+156,d,Klarnet,0,4,39,pl
+157,a,Siatkówka,0,1,40,pl
+158,b,Piłka nożna,1,2,40,pl
+159,c,Tenis,0,3,40,pl
+160,d,Koszykówka,0,4,40,pl
+161,a,Biblia,0,1,41,pl
+162,b,Tora,0,2,41,pl
+163,c,Koran,1,3,41,pl
+164,d,Wedy,0,4,41,pl
+165,a,Republika,0,1,42,pl
+166,b,Demokracja,0,2,42,pl
+167,c,Monarchia,1,3,42,pl
+168,d,Federacja,0,4,42,pl
+169,a,Civic,0,1,43,pl
+170,b,Corolla,0,2,43,pl
+171,c,Roma,1,3,43,pl
+172,d,Astra,0,4,43,pl
+173,a,Spotify,0,1,44,pl
+174,b,YouTube,1,2,44,pl
+175,c,WhatsApp,0,3,44,pl
+176,d,Discord,0,4,44,pl
+177,a,Rafael,0,1,45,pl
+178,b,Michał Anioł,1,2,45,pl
+179,c,Rembrandt,0,3,45,pl
+180,d,Claude Monet,0,4,45,pl
+181,a,Sahara,0,1,46,pl
+182,b,Gobi,0,2,46,pl
+183,c,Antarktyda,1,3,46,pl
+184,d,Kalahari,0,4,46,pl
+185,a,I Liga,0,1,47,pl
+186,b,II Liga,0,2,47,pl
+187,c,Ekstraklasa,1,3,47,pl
+188,d,Superliga,0,4,47,pl
+189,a,Kiwi,0,1,48,pl
+190,b,Mandarynka,1,2,48,pl
+191,c,Winogrono,0,3,48,pl
+192,d,Śliwka,0,4,48,pl
+193,a,Bill Gates,0,1,49,pl
+194,b,Steve Jobs,0,2,49,pl
+195,c,Mark Zuckerberg,1,3,49,pl
+196,d,Elon Musk,0,4,49,pl
+197,a,Wisława Szymborska,0,1,50,pl
+198,b,Olga Tokarczuk,1,2,50,pl
+199,c,Maria Konopnicka,0,3,50,pl
+200,d,Zofia Nałkowska,0,4,50,pl
+201,a,Bocian,0,1,51,pl
+202,b,Pingwin,1,2,51,pl
+203,c,Jaskółka,0,3,51,pl
+204,d,Mewa,0,4,51,pl
+205,a,6,0,1,52,pl
+206,b,7,0,2,52,pl
+207,c,8,1,3,52,pl
+208,d,9,0,4,52,pl
+209,a,Wat,0,1,53,pl
+210,b,Wolt,0,2,53,pl
+211,c,Amper,1,3,53,pl
+212,d,Om,0,4,53,pl
+213,a,Afryka,0,1,54,pl
+214,b,Ameryka Północna,0,2,54,pl
+215,c,Azja,1,3,54,pl
+216,d,Europa,0,4,54,pl
+217,a,Żołądek,0,1,55,pl
+218,b,Nerki,1,2,55,pl
+219,c,Trzustka,0,3,55,pl
+220,d,Jelito cienkie,0,4,55,pl
+221,a,Jurij Gagarin,0,1,56,pl
+222,b,Buzz Aldrin,0,2,56,pl
+223,c,Neil Armstrong,1,3,56,pl
+224,d,Michael Collins,0,4,56,pl
+225,a,Chłodnica,0,1,57,pl
+226,b,Hamulce,1,2,57,pl
+227,c,Alternator,0,3,57,pl
+228,d,Sprzęgło,0,4,57,pl
+229,a,2,0,1,58,pl
+230,b,3,1,2,58,pl
+231,c,4,0,3,58,pl
+232,d,5,0,4,58,pl
+233,a,Yahoo!,0,1,59,pl
+234,b,Bing,0,2,59,pl
+235,c,Google,1,3,59,pl
+236,d,DuckDuckGo,0,4,59,pl
+237,a,Rick i Morty,0,1,60,pl
+238,b,Family Guy,0,2,60,pl
+239,c,Simpsonowie,1,3,60,pl
+240,d,Futurama,0,4,60,pl
+241,a,Krzem,0,1,61,pl
+242,b,Węgiel,1,2,61,pl
+243,c,Wapń,0,3,61,pl
+244,d,Siarka,0,4,61,pl
+245,a,Rekin wielorybi,0,1,62,pl
+246,b,Orka,0,2,62,pl
+247,c,Płetwal błękitny,1,3,62,pl
+248,d,Kaszalot,0,4,62,pl
+249,a,Bruksela,0,1,63,pl
+250,b,Londyn,0,2,63,pl
+251,c,Paryż,1,3,63,pl
+252,d,Lyon,0,4,63,pl
+253,a,Jan Heweliusz,0,1,64,pl
+254,b,Mikołaj Kopernik,1,2,64,pl
+255,c,Ignacy Łukasiewicz,0,3,64,pl
+256,d,Maria Skłodowska-Curie,0,4,64,pl
+257,a,Bemol,0,1,65,pl
+258,b,Pauza,1,2,65,pl
+259,c,Klucz wiolinowy,0,3,65,pl
+260,d,Takt,0,4,65,pl
+261,a,Postojowe,0,1,66,pl
+262,b,Mijania,1,2,66,pl
+263,c,Awaryjne,0,3,66,pl
+264,d,Przeciwmgłowe,0,4,66,pl
+265,a,Juan,0,1,67,pl
+266,b,Won,0,2,67,pl
+267,c,Jen,1,3,67,pl
+268,d,Rupia,0,4,67,pl
+269,a,Piłka ręczna,0,1,68,pl
+270,b,Tenis,1,2,68,pl
+271,c,Rugby,0,3,68,pl
+272,d,Hokej,0,4,68,pl
+273,a,Steve Jobs,0,1,69,pl
+274,b,Bill Gates,1,2,69,pl
+275,c,Jeff Bezos,0,3,69,pl
+276,d,Larry Page,0,4,69,pl
+277,a,Vermeer,0,1,70,pl
+278,b,Vincent van Gogh,1,2,70,pl
+279,c,da Vinci,0,3,70,pl
+280,d,Monet,0,4,70,pl
+281,a,Niedziela,0,1,71,pl
+282,b,Piątek,0,2,71,pl
+283,c,Szabat,1,3,71,pl
+284,d,Ramadan,0,4,71,pl
+285,a,Marszałek Sejmu,0,1,72,pl
+286,b,Premier,1,2,72,pl
+287,c,Wojewoda,0,3,72,pl
+288,d,Prezydent miasta,0,4,72,pl
+289,a,Tesla Model 3,1,1,73,pl
+290,b,Toyota Hilux,0,2,73,pl
+291,c,Fiat Ducato,0,3,73,pl
+292,d,Golf GTI,0,4,73,pl
+293,a,Adam Małysz,0,1,74,pl
+294,b,Robert Korzeniowski,1,2,74,pl
+295,c,Kamil Stoch,0,3,74,pl
+296,d,Anita Włodarczyk,0,4,74,pl
+297,a,Doda,0,1,75,pl
+298,b,Margaret,0,2,75,pl
+299,c,Ochman,1,3,75,pl
+300,d,Michał Wiśniewski,0,4,75,pl
+301,a,Wenus,0,1,76,pl
+302,b,Mars,1,2,76,pl
+303,c,Merkury,0,3,76,pl
+304,d,Neptun,0,4,76,pl
+305,a,Iloczyn,0,1,77,pl
+306,b,Różnica,0,2,77,pl
+307,c,Iloraz,1,3,77,pl
+308,d,Suma,0,4,77,pl
+309,a,Mars,0,1,78,pl
+310,b,Wenus,0,2,78,pl
+311,c,Księżyc,1,3,78,pl
+312,d,Europa,0,4,78,pl
+313,a,Serce,0,1,79,pl
+314,b,Wątroba,1,2,79,pl
+315,c,Płuco,0,3,79,pl
+316,d,Żołądek,0,4,79,pl
+317,a,Odra,0,1,80,pl
+318,b,Wisła,1,2,80,pl
+319,c,Warta,0,3,80,pl
+320,d,Bug,0,4,80,pl
+321,a,1944,0,1,81,pl
+322,b,1945,1,2,81,pl
+323,c,1946,0,3,81,pl
+324,d,1947,0,4,81,pl
+325,a,Avatar,0,1,82,pl
+326,b,Jurassic Park,1,2,82,pl
+327,c,Gladiator,0,3,82,pl
+328,d,Incepcja,0,4,82,pl
+329,a,Rozrusznik,0,1,83,pl
+330,b,Alternator,1,2,83,pl
+331,c,Chłodnica,0,3,83,pl
+332,d,Tłumik,0,4,83,pl
+333,a,2,0,1,84,pl
+334,b,3,1,2,84,pl
+335,c,4,0,3,84,pl
+336,d,5,0,4,84,pl
+337,a,PDF,0,1,85,pl
+338,b,USB,0,2,85,pl
+339,c,Bluetooth,1,3,85,pl
+340,d,HTML,0,4,85,pl
+341,a,Rihanna,0,1,86,pl
+342,b,Lady Gaga,1,2,86,pl
+343,c,Beyoncé,0,3,86,pl
+344,d,Dua Lipa,0,4,86,pl
+345,a,Miedź,0,1,87,pl
+346,b,Aluminium,1,2,87,pl
+347,c,Cynk,0,3,87,pl
+348,d,Ołów,0,4,87,pl
+349,a,Pablo Picasso,1,1,88,pl
+350,b,da Vinci,0,2,88,pl
+351,c,Munch,0,3,88,pl
+352,d,van Gogh,0,4,88,pl
+353,a,Świątynię,0,1,89,pl
+354,b,Skutki własnych czynów,1,2,89,pl
+355,c,Księgę,0,3,89,pl
+356,d,Modlitwę,0,4,89,pl
+357,a,Rada Ministrów,0,1,90,pl
+358,b,Parlament,1,2,90,pl
+359,c,SN,0,3,90,pl
+360,d,TK,0,4,90,pl
+361,a,Opel,0,1,91,pl
+362,b,Toyota,1,2,91,pl
+363,c,Peugeot,0,3,91,pl
+364,d,Volvo,0,4,91,pl
+365,a,Boks,0,1,92,pl
+366,b,Szermierka,1,2,92,pl
+367,c,Badminton,0,3,92,pl
+368,d,Łucznictwo,0,4,92,pl
+369,a,Firefox,0,1,93,pl
+370,b,Safari,0,2,93,pl
+371,c,Chrome,1,3,93,pl
+372,d,Opera,0,4,93,pl
+373,a,Tom Hanks,1,1,94,pl
+374,b,Matt Damon,0,2,94,pl
+375,c,Russell Crowe,0,3,94,pl
+376,d,Harrison Ford,0,4,94,pl
+377,a,Topnienie,0,1,95,pl
+378,b,Skraplanie,0,2,95,pl
+379,c,Sublimacja,1,3,95,pl
+380,d,Krzepnięcie,0,4,95,pl
+381,a,Europa,0,1,96,pl
+382,b,Afryka,1,2,96,pl
+383,c,Australia,0,3,96,pl
+384,d,Ameryka Północna,0,4,96,pl
+385,a,Aleksander Kwaśniewski,0,1,97,pl
+386,b,Lech Wałęsa,1,2,97,pl
+387,c,Bronisław Komorowski,0,3,97,pl
+388,d,Andrzej Duda,0,4,97,pl
+389,a,Adam Małysz,0,1,98,pl
+390,b,Irena Szewińska,1,2,98,pl
+391,c,Robert Lewandowski,0,3,98,pl
+392,d,Justyna Kowalczyk,0,4,98,pl
+393,a,Olga Tokarczuk,0,1,99,pl
+394,b,Wisława Szymborska,0,2,99,pl
+395,c,Maria Skłodowska-Curie,1,3,99,pl
+396,d,Maria Konopnicka,0,4,99,pl
+397,a,Konik polny,0,1,100,pl
+398,b,Ważka,0,2,100,pl
+399,c,Motyl,1,3,100,pl
+400,d,Świerszcz,0,4,100,pl
+401,a,Siewnik,1,1,101,pl
+402,b,Prasa,0,2,101,pl
+403,c,Opryskiwacz,0,3,101,pl
+404,d,Kombajn,0,4,101,pl
+405,a,Byk,1,1,102,pl
+406,b,Baran,0,2,102,pl
+407,c,Knur,0,3,102,pl
+408,d,Kozioł,0,4,102,pl
+409,a,Chlewnia,1,1,103,pl
+410,b,Obora,0,2,103,pl
+411,c,Kurnik,0,3,103,pl
+412,d,Stajnia,0,4,103,pl
+413,a,Mocznik,1,1,104,pl
+414,b,Wapno nawozowe,0,2,104,pl
+415,c,Gips,0,3,104,pl
+416,d,Piasek,0,4,104,pl
+417,a,Wegetacja,1,1,105,pl
+418,b,Spoczynek,0,2,105,pl
+419,c,Dojrzewanie,0,3,105,pl
+420,d,Zapylenie,0,4,105,pl
+421,a,Owca,1,1,106,pl
+422,b,Świnia,0,2,106,pl
+423,c,Kaczka,0,3,106,pl
+424,d,Indyk,0,4,106,pl
+425,a,Opryskiwacz,1,1,107,pl
+426,b,Rozrzutnik,0,2,107,pl
+427,c,Brona,0,3,107,pl
+428,d,Pług,0,4,107,pl
+429,a,Pszenica,1,1,108,pl
+430,b,Marchew,0,2,108,pl
+431,c,Burak cukrowy,0,3,108,pl
+432,d,Ziemniak,0,4,108,pl
+433,a,Stajnia,1,1,109,pl
+434,b,Owczarnia,0,2,109,pl
+435,c,Chlewnia,0,3,109,pl
+436,d,Kurnik,0,4,109,pl
+437,a,Do rozsiewania nawozów,1,1,110,pl
+438,b,Do zbioru ziemniaków,0,2,110,pl
+439,c,Do koszenia trawy,0,3,110,pl
+440,d,Do belowania słomy,0,4,110,pl
+441,a,Herbicyd,1,1,111,pl
+442,b,Fungicyd,0,2,111,pl
+443,c,Insektycyd,0,3,111,pl
+444,d,Zaprawa nasienna,0,4,111,pl
+445,a,Kurczę,1,1,112,pl
+446,b,Jagnię,0,2,112,pl
+447,c,Cielę,0,3,112,pl
+448,d,Prosię,0,4,112,pl
+449,a,Marchew,1,1,113,pl
+450,b,Pomidor,0,2,113,pl
+451,c,Ogórek,0,3,113,pl
+452,d,Papryka,0,4,113,pl
+453,a,Kombajn zbożowy,1,1,114,pl
+454,b,Przetrząsacz,0,2,114,pl
+455,c,Glebogryzarka,0,3,114,pl
+456,d,Wał uprawowy,0,4,114,pl
+457,a,Ziarno,1,1,115,pl
+458,b,Siano,0,2,115,pl
+459,c,Drewno,0,3,115,pl
+460,d,Węgiel,0,4,115,pl
+461,a,Kukurydza,1,1,116,pl
+462,b,Cebula,0,2,116,pl
+463,c,Len,0,3,116,pl
+464,d,Chmiel,0,4,116,pl
+465,a,Lipcu,1,1,117,pl
+466,b,Lutym,0,2,117,pl
+467,c,Marcu,0,3,117,pl
+468,d,Grudniu,0,4,117,pl
+469,a,Stodoła,1,1,118,pl
+470,b,Obora,0,2,118,pl
+471,c,Chlewnia,0,3,118,pl
+472,d,Szklarnia,0,4,118,pl
+473,a,Krowa,1,1,119,pl
+474,b,Świnia,0,2,119,pl
+475,c,Kura,0,3,119,pl
+476,d,Królik,0,4,119,pl
+477,a,Obornik,1,1,120,pl
+478,b,Saletra amonowa,0,2,120,pl
+479,c,Mocznik,0,3,120,pl
+480,d,Superfosfat,0,4,120,pl
+481,a,Silnik wysokoprężny,1,1,121,pl
+482,b,Silnik parowy,0,2,121,pl
+483,c,Silnik odrzutowy,0,3,121,pl
+484,d,Silnik rakietowy,0,4,121,pl
+485,a,Ziemniak,1,1,122,pl
+486,b,Pszenica,0,2,122,pl
+487,c,Żyto,0,3,122,pl
+488,d,Owies,0,4,122,pl
+489,a,Do wykonywania orki,1,1,123,pl
+490,b,Do siania zbóż,0,2,123,pl
+491,c,Do opryskiwania roślin,0,3,123,pl
+492,d,Do belowania słomy,0,4,123,pl
+493,a,Jagnię,1,1,124,pl
+494,b,Źrebię,0,2,124,pl
+495,c,Prosię,0,3,124,pl
+496,d,Koźlę,0,4,124,pl
+497,a,Potas,1,1,125,pl
+498,b,Azot,0,2,125,pl
+499,c,Fosfor,0,3,125,pl
+500,d,Magnez,0,4,125,pl
+501,a,Kosiarka,0,1,126,pl
+502,b,Prasa rolująca,1,2,126,pl
+503,c,Opryskiwacz,0,3,126,pl
+504,d,Agregat uprawowy,0,4,126,pl
+505,a,Jałówka,0,1,127,pl
+506,b,Maciora,1,2,127,pl
+507,c,Owca,0,3,127,pl
+508,d,Klacz,0,4,127,pl
+509,a,Obora,0,1,128,pl
+510,b,Kurnik,1,2,128,pl
+511,c,Chlewnia,0,3,128,pl
+512,d,Stajnia,0,4,128,pl
+513,a,Potas,0,1,129,pl
+514,b,Fosfor,1,2,129,pl
+515,c,Wapń,0,3,129,pl
+516,d,Sód,0,4,129,pl
+517,a,Jagnię,0,1,130,pl
+518,b,Koźlę,1,2,130,pl
+519,c,Cielę,0,3,130,pl
+520,d,Źrebię,0,4,130,pl
+521,a,Jesienią,0,1,131,pl
+522,b,Wiosną,1,2,131,pl
+523,c,Zimą,0,3,131,pl
+524,d,W środku lata,0,4,131,pl
+525,a,Pszenica,0,1,132,pl
+526,b,Groch,1,2,132,pl
+527,c,Żyto,0,3,132,pl
+528,d,Kukurydza,0,4,132,pl
+529,a,Stodoła,0,1,133,pl
+530,b,Wiata,1,2,133,pl
+531,c,Owczarnia,0,3,133,pl
+532,d,Kurnik,0,4,133,pl
+533,a,Herbicyd,0,1,134,pl
+534,b,Fungicyd,1,2,134,pl
+535,c,Insektycyd,0,3,134,pl
+536,d,Adiuwant,0,4,134,pl
+537,a,Koza,0,1,135,pl
+538,b,Krowa,1,2,135,pl
+539,c,Owca,0,3,135,pl
+540,d,Gęś,0,4,135,pl
+541,a,Słoma,0,1,136,pl
+542,b,Kiszonka,1,2,136,pl
+543,c,Plewy,0,3,136,pl
+544,d,Śruta,0,4,136,pl
+545,a,Rozsiewacz nawozów,0,1,137,pl
+546,b,Rozrzutnik obornika,1,2,137,pl
+547,c,Owijarka,0,3,137,pl
+548,d,Prasa,0,4,137,pl
+549,a,Pszenica,0,1,138,pl
+550,b,Rzepak,1,2,138,pl
+551,c,Owies,0,3,138,pl
+552,d,Żyto,0,4,138,pl
+553,a,Cielę,0,1,139,pl
+554,b,Źrebię,1,2,139,pl
+555,c,Jagnię,0,3,139,pl
+556,d,Koźlę,0,4,139,pl
+557,a,Łodyga,0,1,140,pl
+558,b,Korzeń,1,2,140,pl
+559,c,Liść,0,3,140,pl
+560,d,Kwiat,0,4,140,pl
+561,a,Do oprysku,0,1,141,pl
+562,b,Do koszenia trawy,1,2,141,pl
+563,c,Do siewu,0,3,141,pl
+564,d,Do nawożenia,0,4,141,pl
+565,a,Owies,0,1,142,pl
+566,b,Pszenica,1,2,142,pl
+567,c,Proso,0,3,142,pl
+568,d,Sorgo,0,4,142,pl
+569,a,Byk,0,1,143,pl
+570,b,Baran,1,2,143,pl
+571,c,Knur,0,3,143,pl
+572,d,Kozioł,0,4,143,pl
+573,a,Jesienią,0,1,144,pl
+574,b,Wiosną,1,2,144,pl
+575,c,Zimą,0,3,144,pl
+576,d,W grudniu,0,4,144,pl
+577,a,Magnez,0,1,145,pl
+578,b,Azot,1,2,145,pl
+579,c,Wapń,0,3,145,pl
+580,d,Siarka,0,4,145,pl
+581,a,Wał napędowy,0,1,146,pl
+582,b,Trzypunktowy układ zawieszenia (TUZ),1,2,146,pl
+583,c,Chłodnica,0,3,146,pl
+584,d,Skrzynia biegów,0,4,146,pl
+585,a,Marchew,0,1,147,pl
+586,b,Burak cukrowy,1,2,147,pl
+587,c,Rzepak,0,3,147,pl
+588,d,Ziemniak,0,4,147,pl
+589,a,Żniwa,0,1,148,pl
+590,b,Sianokosy,1,2,148,pl
+591,c,Wykopki,0,3,148,pl
+592,d,Orka,0,4,148,pl
+593,a,Biedronka,0,1,149,pl
+594,b,Pszczoła,1,2,149,pl
+595,c,Ważka,0,3,149,pl
+596,d,Komar,0,4,149,pl
+597,a,Alternator,0,1,150,pl
+598,b,Wał odbioru mocy (WOM),1,2,150,pl
+599,c,Akumulator,0,3,150,pl
+600,d,Rozrusznik,0,4,150,pl
+601,a,Prasa rolująca,0,1,151,pl
+602,b,Opryskiwacz,0,2,151,pl
+603,c,Sadzarka do ziemniaków,1,3,151,pl
+604,d,Rozrzutnik obornika,0,4,151,pl
+605,a,Baran,0,1,152,pl
+606,b,Knur,0,2,152,pl
+607,c,Kozioł,1,3,152,pl
+608,d,Byk,0,4,152,pl
+609,a,Chlewnia,0,1,153,pl
+610,b,Obora,0,2,153,pl
+611,c,Owczarnia,1,3,153,pl
+612,d,Kurnik,0,4,153,pl
+613,a,Saletra amonowa,0,1,154,pl
+614,b,Mocznik,0,2,154,pl
+615,c,Kompost,1,3,154,pl
+616,d,Superfosfat,0,4,154,pl
+617,a,Kwitnienie,0,1,155,pl
+618,b,Kłoszenie,0,2,155,pl
+619,c,Spoczynek zimowy,1,3,155,pl
+620,d,Dojrzewanie,0,4,155,pl
+621,a,Osa,0,1,156,pl
+622,b,Trzmiel,0,2,156,pl
+623,c,Pszczoła,1,3,156,pl
+624,d,Motyl,0,4,156,pl
+625,a,Wał uprawowy,0,1,157,pl
+626,b,Brona,0,2,157,pl
+627,c,Przetrząsacz,1,3,157,pl
+628,d,Siewnik,0,4,157,pl
+629,a,Żyto,0,1,158,pl
+630,b,Owies,0,2,158,pl
+631,c,Słonecznik,1,3,158,pl
+632,d,Jęczmień,0,4,158,pl
+633,a,Obora,0,1,159,pl
+634,b,Chlewnia,0,2,159,pl
+635,c,Stodoła,1,3,159,pl
+636,d,Kurnik,0,4,159,pl
+637,a,Fungicyd,0,1,160,pl
+638,b,Herbicyd,0,2,160,pl
+639,c,Insektycyd,1,3,160,pl
+640,d,Zaprawa nasienna,0,4,160,pl
+641,a,Jagnię,0,1,161,pl
+642,b,Koźlę,0,2,161,pl
+643,c,Cielę,1,3,161,pl
+644,d,Prosię,0,4,161,pl
+645,a,Korzeń,0,1,162,pl
+646,b,Kwiat,0,2,162,pl
+647,c,Liść,1,3,162,pl
+648,d,Owoc,0,4,162,pl
+649,a,Prasą kostkującą,0,1,163,pl
+650,b,Rozrzutnikiem,0,2,163,pl
+651,c,Owijarką,1,3,163,pl
+652,d,Glebogryzarką,0,4,163,pl
+653,a,Kukurydza,0,1,164,pl
+654,b,Rzepak,0,2,164,pl
+655,c,Koper,1,3,164,pl
+656,d,Owies,0,4,164,pl
+657,a,Byk,0,1,165,pl
+658,b,Kozioł,0,2,165,pl
+659,c,Knur,1,3,165,pl
+660,d,Baran,0,4,165,pl
+661,a,Zimą,0,1,166,pl
+662,b,Wiosną,0,2,166,pl
+663,c,Jesienią,1,3,166,pl
+664,d,W styczniu,0,4,166,pl
+665,a,Fosfor,0,1,167,pl
+666,b,Azot,0,2,167,pl
+667,c,Potas,1,3,167,pl
+668,d,Węgiel,0,4,167,pl
+669,a,Rozrzutnik,0,1,168,pl
+670,b,Brona,0,2,168,pl
+671,c,Deszczownia,1,3,168,pl
+672,d,Wał,0,4,168,pl
+673,a,Jabłko,0,1,169,pl
+674,b,Gruszka,0,2,169,pl
+675,c,Porzeczka,1,3,169,pl
+676,d,Śliwka,0,4,169,pl
+677,a,Wykopki,0,1,170,pl
+678,b,Sianokosy,0,2,170,pl
+679,c,Żniwa,1,3,170,pl
+680,d,Orka,0,4,170,pl
+681,a,Opryskiwacz,0,1,171,pl
+682,b,Kombajn,0,2,171,pl
+683,c,Rębak,1,3,171,pl
+684,d,Prasa,0,4,171,pl
+685,a,Pszenica,0,1,172,pl
+686,b,Cebula,0,2,172,pl
+687,c,Kukurydza,1,3,172,pl
+688,d,Len,0,4,172,pl
+689,a,Koźlę,0,1,173,pl
+690,b,Prosię,0,2,173,pl
+691,c,Jagnię,1,3,173,pl
+692,d,Źrebię,0,4,173,pl
+693,a,Chłodnica,0,1,174,pl
+694,b,Kabina,0,2,174,pl
+695,c,Skrzynia biegów,1,3,174,pl
+696,d,Błotnik,0,4,174,pl
+697,a,Malina,0,1,175,pl
+698,b,Winorośl,0,2,175,pl
+699,c,Jabłoń,1,3,175,pl
+700,d,Truskawka,0,4,175,pl
+701,a,Opryskiwacz,0,1,176,pl
+702,b,Rozsiewacz nawozów,0,2,176,pl
+703,c,Pług,0,3,176,pl
+704,d,Kombajn zbożowy,1,4,176,pl
+705,a,Jałówka,0,1,177,pl
+706,b,Maciora,0,2,177,pl
+707,c,Koza,0,3,177,pl
+708,d,Klacz,1,4,177,pl
+709,a,Chlewnia,0,1,178,pl
+710,b,Kurnik,0,2,178,pl
+711,c,Owczarnia,0,3,178,pl
+712,d,Obora,1,4,178,pl
+713,a,Saletra amonowa,0,1,179,pl
+714,b,Mocznik,0,2,179,pl
+715,c,Polifoska,0,3,179,pl
+716,d,Wapno nawozowe,1,4,179,pl
+717,a,Kiełkowanie,0,1,180,pl
+718,b,Wegetacja,0,2,180,pl
+719,c,Krzewienie,0,3,180,pl
+720,d,Zapylenie,1,4,180,pl
+721,a,Indyk,0,1,181,pl
+722,b,Kura,0,2,181,pl
+723,c,Paw,0,3,181,pl
+724,d,Gęś,1,4,181,pl
+725,a,Brona,0,1,182,pl
+726,b,Siewnik,0,2,182,pl
+727,c,Kosiarka,0,3,182,pl
+728,d,Wał uprawowy,1,4,182,pl
+729,a,Pomidor,0,1,183,pl
+730,b,Ogórek,0,2,183,pl
+731,c,Sałata,0,3,183,pl
+732,d,Burak ćwikłowy,1,4,183,pl
+733,a,Silos,0,1,184,pl
+734,b,Magazyn,0,2,184,pl
+735,c,Stodoła,0,3,184,pl
+736,d,Zbiornik na gnojowicę,1,4,184,pl
+737,a,Herbicyd,0,1,185,pl
+738,b,Insektycyd,0,2,185,pl
+739,c,Akaracyd,0,3,185,pl
+740,d,Fungicyd,1,4,185,pl
+741,a,Cielę,0,1,186,pl
+742,b,Jagnię,0,2,186,pl
+743,c,Źrebię,0,3,186,pl
+744,d,Prosię,1,4,186,pl
+745,a,Korzeń,0,1,187,pl
+746,b,Liść,0,2,187,pl
+747,c,Łodyga,0,3,187,pl
+748,d,Owoc,1,4,187,pl
+749,a,Prasą,0,1,188,pl
+750,b,Owijarką,0,2,188,pl
+751,c,Broną,0,3,188,pl
+752,d,Kombajnem do ziemniaków,1,4,188,pl
+753,a,Sałata,0,1,189,pl
+754,b,Marchew,0,2,189,pl
+755,c,Pietruszka,0,3,189,pl
+756,d,Rzepak,1,4,189,pl
+757,a,Zimą,0,1,190,pl
+758,b,Późną jesienią,0,2,190,pl
+759,c,W grudniu,0,3,190,pl
+760,d,Późną wiosną,1,4,190,pl
+761,a,Chłodnica,0,1,191,pl
+762,b,Akumulator,0,2,191,pl
+763,c,Alternator,0,3,191,pl
+764,d,Wał odbioru mocy (WOM),1,4,191,pl
+765,a,Len,0,1,192,pl
+766,b,Rzepak,0,2,192,pl
+767,c,Groch,0,3,192,pl
+768,d,Pszenica,1,4,192,pl
+769,a,Świnia,0,1,193,pl
+770,b,Kura,0,2,193,pl
+771,c,Królik,0,3,193,pl
+772,d,Krowa,1,4,193,pl
+773,a,Łąka,0,1,194,pl
+774,b,Pastwisko,0,2,194,pl
+775,c,Sad,0,3,194,pl
+776,d,Ugór,1,4,194,pl
+777,a,Torf,0,1,195,pl
+778,b,Wapno,0,2,195,pl
+779,c,Kompost,0,3,195,pl
+780,d,Obornik,1,4,195,pl
+781,a,Rozrzutnik,0,1,196,pl
+782,b,Przyczepa skorupowa,0,2,196,pl
+783,c,Prasa,0,3,196,pl
+784,d,Wóz asenizacyjny,1,4,196,pl
+785,a,Komar,0,1,197,pl
+786,b,Ważka,0,2,197,pl
+787,c,Mucha,0,3,197,pl
+788,d,Pszczoła,1,4,197,pl
+789,a,Spoczynek zimowy,0,1,198,pl
+790,b,Dojrzewanie,0,2,198,pl
+791,c,Zapylenie,0,3,198,pl
+792,d,Wegetacja,1,4,198,pl
+793,a,Słonecznik,0,1,199,pl
+794,b,Ziemniak,0,2,199,pl
+795,c,Burak cukrowy,0,3,199,pl
+796,d,Żyto,1,4,199,pl
+797,a,EHR,0,1,200,pl
+798,b,ISOBUS,0,2,200,pl
+799,c,Hydraulika,0,3,200,pl
+800,d,Nawigacja GPS,1,4,200,pl
+801,a,Dobra wróżka,1,1,201,pl
+802,b,Królowa,0,2,201,pl
+803,c,Babcia,0,3,201,pl
+804,d,Siostra,0,4,201,pl
+805,a,W namiocie,0,1,202,pl
+806,b,W dziupli drzewa,1,2,202,pl
+807,c,W zamku,0,3,202,pl
+808,d,W jaskini,0,4,202,pl
+809,a,Rekin,0,1,203,pl
+810,b,Delfin,0,2,203,pl
+811,c,Rybka Florek,1,3,203,pl
+812,d,Wieloryb,0,4,203,pl
+813,a,Olaf,0,1,204,pl
+814,b,Kristoff,0,2,204,pl
+815,c,Hans,0,3,204,pl
+816,d,Agnarr,1,4,204,pl
+817,a,Żaden z nich,1,1,205,pl
+818,b,Gapcio,0,2,205,pl
+819,c,Apsik,0,3,205,pl
+820,d,Wesołek,0,4,205,pl
+821,a,Tarzan,0,1,206,pl
+822,b,Mowgli,1,2,206,pl
+823,c,Piotruś Pan,0,3,206,pl
+824,d,Pinokio,0,4,206,pl
+825,a,Charles Perrault,0,1,207,pl
+826,b,Astrid Lindgren,0,2,207,pl
+827,c,Hans Christian Andersen,1,3,207,pl
+828,d,Bracia Grimm,0,4,207,pl
+829,a,Muł,0,1,208,pl
+830,b,Kłapouchy,0,2,208,pl
+831,c,Maximus,0,3,208,pl
+832,d,Osioł,1,4,208,pl
+833,a,Pantofelek,1,1,209,pl
+834,b,Koronę,0,2,209,pl
+835,c,Torebkę,0,3,209,pl
+836,d,Naszyjnik,0,4,209,pl
+837,a,Bonifacy,0,1,210,pl
+838,b,Azrael,1,2,210,pl
+839,c,Filemon,0,3,210,pl
+840,d,Mruczek,0,4,210,pl
+841,a,Wąż Kaa,1,1,211,pl
+842,b,Tygrys,0,2,211,pl
+843,c,Niedźwiedź,0,3,211,pl
+844,d,Wilk,0,4,211,pl
+845,a,Olaf,0,1,212,pl
+846,b,Sven,1,2,212,pl
+847,c,Kristoff,0,3,212,pl
+848,d,Hans,0,4,212,pl
+849,a,W pałacu,0,1,213,pl
+850,b,W lesie,0,2,213,pl
+851,c,W wysokiej wieży,1,3,213,pl
+852,d,W zamku,0,4,213,pl
+853,a,Jabłko,0,1,214,pl
+854,b,Arbuz,0,2,214,pl
+855,c,Kapusta,0,3,214,pl
+856,d,Dynia,1,4,214,pl
+857,a,Gepetto,1,1,215,pl
+858,b,Antonio,0,2,215,pl
+859,c,Carlo,0,3,215,pl
+860,d,Lorenzo,0,4,215,pl
+861,a,Elsa,0,1,216,pl
+862,b,Ariel,1,2,216,pl
+863,c,Bella,0,3,216,pl
+864,d,Aurora,0,4,216,pl
+865,a,Falkor,0,1,217,pl
+866,b,Sisu,0,2,217,pl
+867,c,Mushu,1,3,217,pl
+868,d,Draco,0,4,217,pl
+869,a,Król,0,1,218,pl
+870,b,Krasnoludki,0,2,218,pl
+871,c,Wróżka,0,3,218,pl
+872,d,Czarownica,1,4,218,pl
+873,a,Mufasa,1,1,219,pl
+874,b,Skaza,0,2,219,pl
+875,c,Zazu,0,3,219,pl
+876,d,Kovu,0,4,219,pl
+877,a,Lis,0,1,220,pl
+878,b,Szop pracz,1,2,220,pl
+879,c,Bóbr,0,3,220,pl
+880,d,Wilk,0,4,220,pl
+881,a,Carlo Collodi,1,1,221,pl
+882,b,Lewis Carroll,0,2,221,pl
+883,c,Jan Brzechwa,0,3,221,pl
+884,d,A.A. Milne,0,4,221,pl
+885,a,Pegasus,0,1,222,pl
+886,b,Khan,1,2,222,pl
+887,c,Maximus,0,3,222,pl
+888,d,Angus,0,4,222,pl
+889,a,Zając,0,1,223,pl
+890,b,Wilk,0,2,223,pl
+891,c,Jeleń,1,3,223,pl
+892,d,Lis,0,4,223,pl
+893,a,Narnia,0,1,224,pl
+894,b,Atlantyda,0,2,224,pl
+895,c,Camelot,0,3,224,pl
+896,d,Arendelle,1,4,224,pl
+897,a,Jaś,0,1,225,pl
+898,b,Mowgli,0,2,225,pl
+899,c,Aladyn,0,3,225,pl
+900,d,Piotruś Pan,1,4,225,pl
+901,a,Kłapouchy,0,1,226,pl
+902,b,Tygrysek,1,2,226,pl
+903,c,Prosiaczek,0,3,226,pl
+904,d,Królik,0,4,226,pl
+905,a,Filip,0,1,227,pl
+906,b,Nie podano,1,2,227,pl
+907,c,Adam,0,3,227,pl
+908,d,Eryk,0,4,227,pl
+909,a,Akela,0,1,228,pl
+910,b,Balu,0,2,228,pl
+911,c,Bagira,1,3,228,pl
+912,d,Kaa,0,4,228,pl
+913,a,Gruszka,0,1,229,pl
+914,b,Śliwka,0,2,229,pl
+915,c,Winogrono,0,3,229,pl
+916,d,Jabłko,1,4,229,pl
+917,a,Olaf,1,1,230,pl
+918,b,Sven,0,2,230,pl
+919,c,Kristoff,0,3,230,pl
+920,d,Hans,0,4,230,pl
+921,a,Papuga,0,1,231,pl
+922,b,Hei Hei,1,2,231,pl
+923,c,Pingwin,0,3,231,pl
+924,d,Paw,0,4,231,pl
+925,a,A.A. Milne,0,1,232,pl
+926,b,Astrid Lindgren,0,2,232,pl
+927,c,Lewis Carroll,1,3,232,pl
+928,d,Jan Brzechwa,0,4,232,pl
+929,a,Neptun,0,1,233,pl
+930,b,Posejdon,0,2,233,pl
+931,c,Atlas,0,3,233,pl
+932,d,Tryton,1,4,233,pl
+933,a,Garfield,0,1,234,pl
+934,b,Kot z Cheshire,1,2,234,pl
+935,c,Bonifacy,0,3,234,pl
+936,d,Azrael,0,4,234,pl
+937,a,Mushu,0,1,235,pl
+938,b,Falkor,0,2,235,pl
+939,c,Sisu,1,3,235,pl
+940,d,Draco,0,4,235,pl
+941,a,Goryle,1,1,236,pl
+942,b,Wilki,0,2,236,pl
+943,c,Tygrysy,0,3,236,pl
+944,d,Słonie,0,4,236,pl
+945,a,Królik,0,1,237,pl
+946,b,Prosiaczek,1,2,237,pl
+947,c,Tygrysek,0,3,237,pl
+948,d,Kłapouchy,0,4,237,pl
+949,a,Pnie,0,1,238,pl
+950,b,Kamień,0,2,238,pl
+951,c,Grzybki,1,3,238,pl
+952,d,Jaskinie,0,4,238,pl
+953,a,Khan,0,1,239,pl
+954,b,Samson,0,2,239,pl
+955,c,Pegasus,0,3,239,pl
+956,d,Maximus,1,4,239,pl
+957,a,Maurice,1,1,240,pl
+958,b,Gaston,0,2,240,pl
+959,c,Filip,0,3,240,pl
+960,d,Adam,0,4,240,pl
+961,a,Perrault,0,1,241,pl
+962,b,Andersen,1,2,241,pl
+963,c,Grimm,0,3,241,pl
+964,d,Carroll,0,4,241,pl
+965,a,Simba,0,1,242,pl
+966,b,Mufasa,0,2,242,pl
+967,c,Skaza,1,3,242,pl
+968,d,Kion,0,4,242,pl
+969,a,Filip,0,1,243,pl
+970,b,Eryk,1,2,243,pl
+971,c,Adam,0,3,243,pl
+972,d,Henryk,0,4,243,pl
+973,a,Papuga,0,1,244,pl
+974,b,Wiewiórka,0,2,244,pl
+975,c,Żółw,0,3,244,pl
+976,d,Pascal,1,4,244,pl
+977,a,Sven,1,1,245,pl
+978,b,Olaf,0,2,245,pl
+979,c,Kristoff,0,3,245,pl
+980,d,Hans,0,4,245,pl
+981,a,Milne,0,1,246,pl
+982,b,J.M. Barrie,1,2,246,pl
+983,c,Collodi,0,3,246,pl
+984,d,Perrault,0,4,246,pl
+985,a,Lis,0,1,247,pl
+986,b,Szop pracz,1,2,247,pl
+987,c,Jeż,0,3,247,pl
+988,d,Bóbr,0,4,247,pl
+989,a,Flora,0,1,248,pl
+990,b,Różyczka,0,2,248,pl
+991,c,Dzwoneczek,1,3,248,pl
+992,d,Iskierka,0,4,248,pl
+993,a,Zamek,0,1,249,pl
+994,b,Las,0,2,249,pl
+995,c,Pałac,0,3,249,pl
+996,d,Bagno,1,4,249,pl
+997,a,Maui,0,1,250,pl
+998,b,Tui,1,2,250,pl
+999,c,Tamatoa,0,3,250,pl
+1000,d,Te Fiti,0,4,250,pl
+1001,a,Akela,0,1,251,pl
+1002,b,Kaa,0,2,251,pl
+1003,c,Balu,1,3,251,pl
+1004,d,Bagira,0,4,251,pl
+1005,a,Koń,0,1,252,pl
+1006,b,Renifer,1,2,252,pl
+1007,c,Łoś,0,3,252,pl
+1008,d,Jeleń,0,4,252,pl
+1009,a,Elsa,0,1,253,pl
+1010,b,Aurora,0,2,253,pl
+1011,c,Merida,1,3,253,pl
+1012,d,Ariel,0,4,253,pl
+1013,a,Azrael,0,1,254,pl
+1014,b,Bonifacy,0,2,254,pl
+1015,c,Mruczek,0,3,254,pl
+1016,d,Figaro,1,4,254,pl
+1017,a,Kraina Czarów,1,1,255,pl
+1018,b,Narnia,0,2,255,pl
+1019,c,Arendelle,0,3,255,pl
+1020,d,Nibylandia,0,4,255,pl
+1021,a,Klakier,0,1,256,pl
+1022,b,Gargamel,1,2,256,pl
+1023,c,Ogry,0,3,256,pl
+1024,d,Czarownica,0,4,256,pl
+1025,a,Żyrafa,0,1,257,pl
+1026,b,Hipopotam,0,2,257,pl
+1027,c,Słoń,1,3,257,pl
+1028,d,Nosorożec,0,4,257,pl
+1029,a,Kapelusz,0,1,258,pl
+1030,b,Buty,1,2,258,pl
+1031,c,Koronę,0,3,258,pl
+1032,d,Pelerynę,0,4,258,pl
+1033,a,Rogacz,0,1,259,pl
+1034,b,Daniel,0,2,259,pl
+1035,c,Wielki Książę Lasu,1,3,259,pl
+1036,d,Jeleń Król,0,4,259,pl
+1037,a,Zamek,0,1,260,pl
+1038,b,Pałac,0,2,260,pl
+1039,c,Jaskinia,0,3,260,pl
+1040,d,Chatka na kurzej łapce,1,4,260,pl
+1041,a,Wróżka o Błękitnych Włosach,1,1,261,pl
+1042,b,Flora,0,2,261,pl
+1043,c,Dzwoneczek,0,3,261,pl
+1044,d,Różyczka,0,4,261,pl
+1045,a,Kovu,0,1,262,pl
+1046,b,Skaza,0,2,262,pl
+1047,c,Mufasa,1,3,262,pl
+1048,d,Zazu,0,4,262,pl
+1049,a,Ośmiornica,0,1,263,pl
+1050,b,Krab,1,2,263,pl
+1051,c,Homar,0,3,263,pl
+1052,d,Rak,0,4,263,pl
+1053,a,Sindbad,0,1,264,pl
+1054,b,Ali Baba,0,2,264,pl
+1055,c,Aladyn,1,3,264,pl
+1056,d,Kasym,0,4,264,pl
+1057,a,Wilki,0,1,265,pl
+1058,b,Tygrysy,0,2,265,pl
+1059,c,Lwy,0,3,265,pl
+1060,d,Goryle,1,4,265,pl
+1061,a,Muł,0,1,266,pl
+1062,b,Nie miał imienia,1,2,266,pl
+1063,c,Benio,0,3,266,pl
+1064,d,Stefan,0,4,266,pl
+1065,a,Angus,1,1,267,pl
+1066,b,Maximus,0,2,267,pl
+1067,c,Khan,0,3,267,pl
+1068,d,Pegasus,0,4,267,pl
+1069,a,Grimm,0,1,268,pl
+1070,b,Perrault,0,2,268,pl
+1071,c,Andersen,1,3,268,pl
+1072,d,Lindgren,0,4,268,pl
+1073,a,Kura,0,1,269,pl
+1074,b,Koza,0,2,269,pl
+1075,c,Świnka,1,3,269,pl
+1076,d,Owca,0,4,269,pl
+1077,a,Filemon,0,1,270,pl
+1078,b,Bonifacy,0,2,270,pl
+1079,c,Mruczek,0,3,270,pl
+1080,d,Azrael,1,4,270,pl
+1081,a,Nie podano,1,1,271,pl
+1082,b,Łania,0,2,271,pl
+1083,c,Falina,0,3,271,pl
+1084,d,Stella,0,4,271,pl
+1085,a,Arendelle,0,1,272,pl
+1086,b,Nie podano,1,2,272,pl
+1087,c,Camelot,0,3,272,pl
+1088,d,Avalon,0,4,272,pl
+1089,a,Mowgli,0,1,273,pl
+1090,b,Piotruś,0,2,273,pl
+1091,c,Pinokio,1,3,273,pl
+1092,d,Aladyn,0,4,273,pl
+1093,a,Rekin,0,1,274,pl
+1094,b,Ośmiornica,0,2,274,pl
+1095,c,Delfin,0,3,274,pl
+1096,d,Wieloryb,1,4,274,pl
+1097,a,Tygrysek,0,1,275,pl
+1098,b,Prosiaczek,0,2,275,pl
+1099,c,Kłapouchy,0,3,275,pl
+1100,d,Królik,1,4,275,pl
+1101,a,Bonifacy,0,1,276,pl
+1102,b,Azrael,0,2,276,pl
+1103,c,Mruczek,0,3,276,pl
+1104,d,Figaro,1,4,276,pl
+1105,a,Adam,0,1,277,pl
+1106,b,Filip,1,2,277,pl
+1107,c,Eryk,0,3,277,pl
+1108,d,Henryk,0,4,277,pl
+1109,a,Dzik,1,1,278,pl
+1110,b,Bawół,0,2,278,pl
+1111,c,Hipopotam,0,3,278,pl
+1112,d,Nosorożec,0,4,278,pl
+1113,a,Gandalf,0,1,279,pl
+1114,b,Dumbledore,0,2,279,pl
+1115,c,Merlin,1,3,279,pl
+1116,d,Radagast,0,4,279,pl
+1117,a,Drewno,0,1,280,pl
+1118,b,Grzybowe domki,1,2,280,pl
+1119,c,Zamki,0,3,280,pl
+1120,d,Jaskinie,0,4,280,pl
+1121,a,Czarna Perła,0,1,281,pl
+1122,b,Latający Holender,0,2,281,pl
+1123,c,Biała Mewa,0,3,281,pl
+1124,d,Jolly Roger,1,4,281,pl
+1125,a,Tata Świnka,1,1,282,pl
+1126,b,Dziadek,0,2,282,pl
+1127,c,Wujek,0,3,282,pl
+1128,d,Pan Byk,0,4,282,pl
+1129,a,Słoń,0,1,283,pl
+1130,b,Mysz Tymoteusz,1,2,283,pl
+1131,c,Kaczka,0,3,283,pl
+1132,d,Papuga,0,4,283,pl
+1133,a,Angus,0,1,284,pl
+1134,b,Khan,0,2,284,pl
+1135,c,Maximus,1,3,284,pl
+1136,d,Pegasus,0,4,284,pl
+1137,a,Hans,0,1,285,pl
+1138,b,Kristoff,0,2,285,pl
+1139,c,Olaf,0,3,285,pl
+1140,d,Agnarr,1,4,285,pl
+1141,a,Andersen,1,1,286,pl
+1142,b,Grimm,0,2,286,pl
+1143,c,Perrault,0,3,286,pl
+1144,d,Carroll,0,4,286,pl
+1145,a,Mama Koza,0,1,287,pl
+1146,b,Mama Świnka,1,2,287,pl
+1147,c,Ciocia,0,3,287,pl
+1148,d,Babcia,0,4,287,pl
+1149,a,Garfield,0,1,288,pl
+1150,b,Bonifacy,0,2,288,pl
+1151,c,Kot z Cheshire,1,3,288,pl
+1152,d,Filemon,0,4,288,pl
+1153,a,Koty,0,1,289,pl
+1154,b,Psy,0,2,289,pl
+1155,c,Myszy,1,3,289,pl
+1156,d,Króliki,0,4,289,pl
+1157,a,Posejdon,0,1,290,pl
+1158,b,Neptun,0,2,290,pl
+1159,c,Atlas,0,3,290,pl
+1160,d,Tryton,1,4,290,pl
+1161,a,Piotruś Pan,1,1,291,pl
+1162,b,Pinokio,0,2,291,pl
+1163,c,Mowgli,0,3,291,pl
+1164,d,Aladyn,0,4,291,pl
+1165,a,Klakier,0,1,292,pl
+1166,b,Gargamel,1,2,292,pl
+1167,c,Hogata,0,3,292,pl
+1168,d,Merlin,0,4,292,pl
+1169,a,Wilk,0,1,293,pl
+1170,b,Jeleń,0,2,293,pl
+1171,c,Koń Angus,1,3,293,pl
+1172,d,Sokół,0,4,293,pl
+1173,a,Zamek,0,1,294,pl
+1174,b,Pałac,0,2,294,pl
+1175,c,Las,0,3,294,pl
+1176,d,Bagno,1,4,294,pl
+1177,a,Falkor,0,1,295,pl
+1178,b,Mushu,0,2,295,pl
+1179,c,Sisu,1,3,295,pl
+1180,d,Draco,0,4,295,pl
+1181,a,Adam,0,1,296,pl
+1182,b,Filip,0,2,296,pl
+1183,c,Henryk,0,3,296,pl
+1184,d,Eryk,1,4,296,pl
+1185,a,Flora,0,1,297,pl
+1186,b,Dzwoneczek,1,2,297,pl
+1187,c,Iskierka,0,3,297,pl
+1188,d,Różyczka,0,4,297,pl
+1189,a,Tygrys,0,1,298,pl
+1190,b,Niedźwiedź,0,2,298,pl
+1191,c,Wilk,0,3,298,pl
+1192,d,Wąż,1,4,298,pl
+1193,a,Gepetto,1,1,299,pl
+1194,b,Carlo,0,2,299,pl
+1195,c,Antonio,0,3,299,pl
+1196,d,Lorenzo,0,4,299,pl
+1197,a,Książę,0,1,300,pl
+1198,b,Czarodziej,0,2,300,pl
+1199,c,Rycerz,0,3,300,pl
+1200,d,Prawdziwy chłopiec,1,4,300,pl
