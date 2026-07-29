@@ -258,7 +258,7 @@ next.scrollIntoView({
 
 }
 
-},700);
+},200);
     updateScore();
 
 }
