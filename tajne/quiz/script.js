@@ -258,7 +258,7 @@ next.scrollIntoView({
 
 }
 
-},200);
+},700);
     updateScore();
 
 }
@@ -405,3 +405,9 @@ document
     }
 
 };
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js")
+        .then(() => console.log("PWA ready"))
+        .catch(err => console.error(err));
+}
