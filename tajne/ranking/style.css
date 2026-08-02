@@ -1,0 +1,416 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #202040, #09090f 60%);
+    color: #eee;
+}
+
+
+header {
+
+    text-align:center;
+    padding:35px 20px;
+
+}
+
+
+header h1 {
+
+    font-size:42px;
+    margin:0;
+
+    background:linear-gradient(
+        90deg,
+        #ffd700,
+        #ff7b00
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+}
+
+
+header p {
+    color:#aaa;
+}
+
+
+
+
+/* STATYSTYKI */
+
+.stats {
+
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+    padding:20px;
+
+}
+
+
+
+.card {
+
+    background:
+    linear-gradient(
+        145deg,
+        #1c1c2b,
+        #11111a
+    );
+
+    border:1px solid #333;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    text-align:center;
+
+    box-shadow:
+    0 8px 25px #0008;
+
+}
+
+
+.card h3 {
+
+    margin:0;
+
+    color:#aaa;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+}
+
+
+.card span {
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+
+
+/* SEKCJE */
+
+h2 {
+
+    max-width:1100px;
+
+    margin:35px auto 15px;
+
+    padding:0 20px;
+
+}
+
+
+
+/* TOP 10 */
+
+
+.top10 {
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(210px,1fr));
+
+    gap:15px;
+
+}
+
+
+
+.player {
+
+
+    background:#171724;
+
+    border-radius:15px;
+
+    border:1px solid #303040;
+
+    padding:18px;
+
+    text-align:center;
+
+    transition:.2s;
+
+
+}
+
+
+.player:hover {
+
+    transform:translateY(-5px);
+
+    border-color:#ffd700;
+
+}
+
+
+
+.player h2 {
+
+    margin:0;
+
+    padding:0;
+
+    font-size:22px;
+
+}
+
+
+.player h3 {
+
+    color:#ffd700;
+
+    margin:10px;
+
+}
+
+
+
+.prize {
+
+    margin-top:15px;
+
+    padding:8px;
+
+    border-radius:10px;
+
+    background:#222235;
+
+    color:#ffcc55;
+
+}
+
+
+
+
+
+/* PODIUM */
+
+.player:nth-child(1){
+
+    border:2px solid #ffd700;
+
+}
+
+
+.player:nth-child(2){
+
+    border:2px solid #c0c0c0;
+
+}
+
+
+.player:nth-child(3){
+
+    border:2px solid #cd7f32;
+
+}
+
+
+
+
+
+/* TABELA */
+
+
+table {
+
+    width:calc(100% - 40px);
+
+    max-width:1100px;
+
+    margin:auto;
+
+    border-collapse:separate;
+
+    border-spacing:0;
+
+    overflow:hidden;
+
+    border-radius:15px;
+
+    background:#151520;
+
+}
+
+
+
+thead {
+
+    background:#25253a;
+
+}
+
+
+th {
+
+    padding:14px;
+
+    text-align:center;
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+td {
+
+    padding:12px;
+
+    text-align:center;
+
+    border-top:1px solid #292938;
+
+}
+
+
+
+tbody tr {
+
+    transition:.2s;
+
+}
+
+
+tbody tr:hover {
+
+    background:#22223a;
+
+}
+
+
+
+tbody tr:first-child td {
+
+    color:#ffd700;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* WYKRESY */
+
+
+.charts {
+
+    max-width:1100px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(400px,1fr));
+
+    gap:25px;
+
+}
+
+
+
+.charts div {
+
+    background:#151520;
+
+    padding:20px;
+
+    border-radius:20px;
+
+}
+
+
+
+canvas {
+
+    max-height:300px;
+
+}
+
+
+
+footer {
+
+    text-align:center;
+
+    color:#777;
+
+    padding:30px;
+
+}
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+header h1{
+    font-size:30px;
+}
+
+
+table{
+
+    font-size:13px;
+
+}
+
+
+th,td{
+
+    padding:8px;
+
+}
+
+
+.charts{
+
+    grid-template-columns:1fr;
+
+}
+
+}

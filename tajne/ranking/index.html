@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ranking Labirynt</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🏆 Ranking Labiryntu</h1>
+    <p>Aktualizacja na żywo</p>
+</header>
+
+
+<section class="stats">
+
+    <div class="card">
+        <h3>👥 Graczy</h3>
+        <span id="players">-</span>
+    </div>
+
+
+    <div class="card">
+        <h3>🎯 Średnie punkty</h3>
+        <span id="avgPoints">-</span>
+    </div>
+
+
+    <div class="card">
+        <h3>⏱ Średni czas</h3>
+        <span id="avgTime">-</span>
+    </div>
+
+
+    <div class="card">
+        <h3>🔥 Wyniki 10/10</h3>
+        <span id="perfect">-</span>
+    </div>
+
+</section>
+
+
+
+<h2>🏅 TOP 10 nagród</h2>
+
+<div id="top10" class="top10"></div>
+
+
+
+<h2>📋 Ranking</h2>
+
+
+<table>
+
+<thead>
+<tr>
+<th>#</th>
+<th>Nick</th>
+<th>Punkty</th>
+<th>Czas</th>
+<th>Data</th>
+<th>Nagroda</th>
+</tr>
+</thead>
+
+
+<tbody id="ranking">
+
+</tbody>
+
+</table>
+
+
+
+<section class="charts">
+
+<div>
+<h2>🎯 Punkty</h2>
+<canvas id="pointsChart"></canvas>
+</div>
+
+
+<div>
+<h2>⏱ Czasy</h2>
+<canvas id="timeChart"></canvas>
+</div>
+
+</section>
+
+
+<footer>
+    Ostatnia aktualizacja:
+    <span id="update">-</span>
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
