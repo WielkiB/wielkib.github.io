@@ -51,7 +51,7 @@ Promise.all([
 
 
     renderQuiz(questions, answers);
-
+    initTestMode(questions, answers);
 });
 
 

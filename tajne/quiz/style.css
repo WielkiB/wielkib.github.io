@@ -251,3 +251,269 @@ header h1{
     transform:scale(1.1);
 
 }
+
+
+/* ======================
+   TEST MODE
+====================== */
+
+
+.header-buttons{
+
+    display:flex;
+    gap:10px;
+
+}
+
+
+#test-btn{
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:20px;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+}
+
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+
+/* MODAL */
+
+
+#test-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:500;
+
+}
+
+
+
+.test-box{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    width:90%;
+
+    max-width:400px;
+
+    text-align:center;
+
+}
+
+
+
+.test-box button{
+
+    margin:6px;
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+
+
+.category-buttons button{
+
+    display:block;
+
+    width:100%;
+
+}
+
+
+
+.test-category.selected,
+.test-amount.selected{
+
+    background:#22c55e;
+
+    color:white;
+
+}
+
+
+
+#start-test-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    width:100%;
+
+}
+
+
+
+#close-test-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    width:100%;
+
+}
+
+
+
+/* EKRAN PYTAŃ */
+
+
+#test-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#f2f4f8;
+
+    z-index:400;
+
+    padding:20px;
+
+    overflow:auto;
+
+}
+
+
+
+.test-container{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+
+
+#test-progress{
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+
+
+#test-question{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    font-size:20px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+
+}
+
+
+
+#test-answers{
+
+    margin-top:20px;
+
+}
+
+
+
+.test-answer{
+
+    background:white;
+
+    padding:18px;
+
+    margin:12px 0;
+
+    border-radius:14px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+}
+
+
+
+.test-answer:hover{
+
+    background:#eef4ff;
+
+}
+
+
+
+.test-answer.correct{
+
+    background:#86efac;
+
+}
+
+
+
+.test-answer.wrong{
+
+    background:#fca5a5;
+
+}
+
+
+#test-progress-bar{
+
+    margin-top:15px;
+
+}

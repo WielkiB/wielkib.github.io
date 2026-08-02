@@ -18,12 +18,19 @@
 
     <h1>📚 Quiz</h1>
 
-    <button id="reset-btn">
-        🔄
-    </button>
+    <div class="header-buttons">
+
+        <button id="test-btn">
+            🎲
+        </button>
+
+        <button id="reset-btn">
+            🔄
+        </button>
+
+    </div>
 
 </div>
-
     <div id="score">
         Wynik: <span id="correct">0</span> / <span id="total">0</span>
         <br>
@@ -42,7 +49,94 @@
 
 <main id="quiz"></main>
 
+<!-- TRYB TESTOWY -->
+
+<div id="test-modal" class="hidden">
+
+    <div class="test-box">
+
+        <h2>🎲 Tryb testowy</h2>
+
+
+        <p>Wybierz kategorię:</p>
+
+
+        <div class="category-buttons">
+
+            <button class="test-category" data-category="1">
+                📘 Ogólne
+            </button>
+
+            <button class="test-category" data-category="2">
+                🐮 Rolnictwo
+            </button>
+
+            <button class="test-category" data-category="3">
+                🦄 Bajki
+            </button>
+
+        </div>
+
+
+        <p>Liczba pytań:</p>
+
+
+        <div class="amount-buttons">
+
+            <button class="test-amount" data-amount="10">
+                10
+            </button>
+
+            <button class="test-amount" data-amount="20">
+                20
+            </button>
+
+            <button class="test-amount" data-amount="0">
+                Wszystkie
+            </button>
+
+        </div>
+
+
+        <button id="start-test-btn">
+            ▶ Rozpocznij
+        </button>
+
+
+        <button id="close-test-btn">
+            ❌ Zamknij
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- EKRAN TESTU -->
+
+<div id="test-screen" class="hidden">
+
+    <div class="test-container">
+
+        <div id="test-progress">
+            Pytanie 0/0
+        </div>
+
+
+        <div id="test-question"></div>
+
+
+        <div id="test-answers"></div>
+
+
+    </div>
+
+</div>
+
 <script src="script.js"></script>
+<script src="test.js"></script>
 
 </body>
 </html>

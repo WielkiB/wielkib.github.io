@@ -1,10 +1,11 @@
-const CACHE_NAME = "quiz-v1";
+const CACHE_NAME = "quiz-v2";
 
 const FILES = [
     "./",
     "./index.html",
     "./style.css",
     "./script.js",
+    "./test.js",
     "./question.csv",
     "./answer.csv",
     "./manifest.json"
