@@ -1,6 +1,6 @@
 {
   "name": "Dietka Bubusia",
-  "short_name": "Elite Menu",
+  "short_name": "Dietka",
   "description": "Szybki podgląd menu Elite Diet 4 You.",
   "start_url": "./",
   "scope": "./",
@@ -9,7 +9,7 @@
   "theme_color": "#14101f",
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "./icon.png",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
