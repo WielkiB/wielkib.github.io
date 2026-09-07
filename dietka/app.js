@@ -338,15 +338,13 @@ document.querySelectorAll(".tab").forEach(tab => {
 });
 
 $("#prevWeek").addEventListener("click", () => {
-  const first = state.data?.dates?.[0] || mondayOf(state.anchorDate);
-  state.anchorDate = addDays(first, -7);
-  fetchWeek(state.anchorDate);
+  state.anchorDate = addDays(mondayOf(state.anchorDate), -7);
+  renderWeek();
 });
 
 $("#nextWeek").addEventListener("click", () => {
-  const first = state.data?.dates?.[0] || mondayOf(state.anchorDate);
-  state.anchorDate = addDays(first, 7);
-  fetchWeek(state.anchorDate);
+  state.anchorDate = addDays(mondayOf(state.anchorDate), 7);
+  renderWeek();
 });
 
 
