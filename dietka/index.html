@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="description" content="Menu Elite Diet 4 You bez klikania po stronie cateringu." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Elite Menu — 4 You</title>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <div class="brand">ELITE DIET</div>
+        <h1>4 You</h1>
+      </div>
+      <button id="refresh" class="round" aria-label="Odśwież" title="Odśwież">↻</button>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-view="today">Dziś</button>
+      <button class="tab" data-view="week">Tydzień</button>
+    </nav>
+
+    <section id="todayView">
+      <div class="day-switcher">
+        <button id="prevDay" class="round day-arrow" aria-label="Poprzedni dzień">←</button>
+        <div id="dayStrip" class="day-strip" aria-label="Wybór dnia"></div>
+        <button id="nextDay" class="round day-arrow" aria-label="Następny dzień">→</button>
+      </div>
+      <div id="todayContent"></div>
+    </section>
+
+    <section id="weekView" class="hidden">
+      <div class="week-nav">
+        <button id="prevWeek" class="round" aria-label="Poprzedni tydzień">←</button>
+        <div class="week-center">
+          <strong id="weekRange">—</strong>
+          <span>menu tygodniowe</span>
+        </div>
+        <button id="nextWeek" class="round" aria-label="Następny tydzień">→</button>
+      </div>
+
+      <div id="weekContent"></div>
+    </section>
+  </main>
+
+  <div id="loading" class="loading hidden">
+    <span class="spinner"></span>
+    Pobieram menu…
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

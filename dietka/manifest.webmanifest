@@ -1,0 +1,18 @@
+{
+  "name": "Elite Menu — 4 You",
+  "short_name": "Elite Menu",
+  "description": "Szybki podgląd menu Elite Diet 4 You.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#09090d",
+  "theme_color": "#14101f",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
