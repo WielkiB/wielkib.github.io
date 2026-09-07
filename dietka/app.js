@@ -85,9 +85,8 @@ function esc(s) {
 }
 
 function sortMeals(meals) {
-  return [...(meals || [])].sort((a, b) =>
-    (Number(a.priority) || 999) - (Number(b.priority) || 999)
-  );
+  const order = {"Śniadanie":1,"II Śniadanie":2,"Obiad":3,"Podwieczorek":4,"Kolacja":5};
+  return [...(meals || [])].sort((a,b) => (order[a.name || a.mealName] || 99) - (order[b.name || b.mealName] || 99));
 }
 
 function mealKind(mealName) {
@@ -114,18 +113,28 @@ function mealEmoji(mealName) {
   }[kind];
 }
 
-function mealHTML(meal) {
-  const kind = mealKind(meal.mealName);
+function firstOption(meal) { return meal?.options?.[0] || null; }
 
+function parseKcal(option) {
+  const m = String(option?.info || "").match(/(\d+(?:[.,]\d+)?)\s*kcal/i);
+  if (m) return Number(m[1].replace(",", "."));
+  const m2 = String(option?.details?.calories || "").match(/(\d+(?:[.,]\d+)?)\s*kcal/i);
+  return m2 ? Number(m2[1].replace(",", ".")) : 0;
+}
+
+function mealHTML(meal) {
+  const option = firstOption(meal);
+  const mealName = meal.name || meal.mealName || "Posiłek";
+  const dishName = option?.name || meal.menuMealName || "—";
+  const kind = mealKind(mealName);
   return `
     <article class="meal" data-kind="${kind}">
       <div class="meal-top">
-        <div class="meal-icon" aria-hidden="true">${mealEmoji(meal.mealName)}</div>
-        <div class="meal-name">${esc(meal.mealName || "Posiłek")}</div>
+        <div class="meal-icon" aria-hidden="true">${mealEmoji(mealName)}</div>
+        <div class="meal-name">${esc(mealName)}</div>
       </div>
-      <div class="meal-title">${esc(meal.menuMealName || "—")}</div>
-    </article>
-  `;
+      <div class="meal-title">${esc(dishName)}</div>
+    </article>`;
 }
 
 function emptyHTML(title, text) {
@@ -225,30 +234,80 @@ function renderDayStrip() {
   });
 }
 
+function skippedKey(date) { return `elite-menu-skipped:${date}`; }
+function getSkipped(date) { try { return new Set(JSON.parse(localStorage.getItem(skippedKey(date)) || "[]")); } catch { return new Set(); } }
+function saveSkipped(date, skipped) { localStorage.setItem(skippedKey(date), JSON.stringify([...skipped])); }
+function mealId(meal, index) { const o = firstOption(meal); return String(o?.dietCaloriesMealId ?? meal?.baseDietCaloriesMealId ?? `${meal?.name || "meal"}-${index}`); }
+function thermoBadge(option) {
+  if (option?.thermo === "WARM") return `<span class="thermo warm">🔥 NA CIEPŁO</span>`;
+  if (option?.thermo === "COLD") return `<span class="thermo cold">❄️ NA ZIMNO</span>`;
+  return "";
+}
+function cleanG(v) { return esc(String(v || "—").replace(/g$/i, "")); }
+function nutritionPills(option) {
+  const d = option?.details || {};
+  return `<div class="nutrition-row">
+    <span><strong>${parseKcal(option)}</strong> kcal</span>
+    <span>B <strong>${cleanG(d.protein)}</strong>g</span>
+    <span>W <strong>${cleanG(d.carbohydrate)}</strong>g</span>
+    <span>T <strong>${cleanG(d.fat)}</strong>g</span>
+  </div>`;
+}
+function detailsHTML(option) {
+  const d = option?.details || {};
+  const allergens = d.allergensWithExcluded?.length
+    ? d.allergensWithExcluded.filter(a => !a.excluded).map(a => a.dietlyAllergenName || a.companyAllergenName).filter(Boolean).join(" • ")
+    : (d.allergens || "Brak danych");
+  const val = v => v && String(v).trim() ? esc(String(v)) : "—";
+  return `<div class="meal-details hidden">
+    <div class="detail-grid">
+      <div><span>Błonnik</span><strong>${val(d.dietaryFiber)}</strong></div>
+      <div><span>Cukry</span><strong>${val(d.sugar)}</strong></div>
+      <div><span>Sól</span><strong>${val(d.salt)}</strong></div>
+      <div><span>Kwasy nasycone</span><strong>${val(d.saturatedFattyAcids)}</strong></div>
+    </div>
+    <div class="allergens"><span>Alergeny</span><strong>${esc(allergens)}</strong></div>
+  </div>`;
+}
+function dailyMealHTML(meal, index, skipped) {
+  const option = firstOption(meal); const mealName = meal.name || "Posiłek"; const id = mealId(meal,index); const isSkipped = skipped.has(id); const kind = mealKind(mealName);
+  return `<article class="meal daily-meal ${isSkipped ? "is-skipped" : ""}" data-kind="${kind}" data-meal-id="${esc(id)}">
+    <button class="meal-toggle" type="button" aria-label="${isSkipped ? "Przywróć posiłek" : "Pomiń posiłek"}">
+      <div class="daily-meal-main">
+        <div class="meal-heading-left"><div class="meal-icon" aria-hidden="true">${mealEmoji(mealName)}</div><div><div class="meal-name">${esc(mealName)}</div>${thermoBadge(option)}</div></div>
+        <div class="meal-title daily-title">${esc(option?.name || "—")}</div>
+        ${nutritionPills(option)}
+      </div>
+    </button>
+    <button class="eye-btn" type="button" aria-label="Pokaż szczegóły" title="Pokaż szczegóły">👁</button>
+    ${detailsHTML(option)}
+  </article>`;
+}
+
 function renderToday() {
   if (!state.data) return;
-
   renderDayStrip();
-
   const date = state.selectedDate;
-  const meals = sortMeals(state.data?.menu?.[date] || []);
-
+  const dayData = state.data?.menu?.[date];
+  const meals = sortMeals(dayData?.meals || []);
+  const skipped = getSkipped(date);
+  const totalKcal = meals.reduce((sum, meal, index) => skipped.has(mealId(meal,index)) ? sum : sum + parseKcal(firstOption(meal)), 0);
   $("#todayContent").innerHTML = `
-    <div class="today-head">
-      <small>${esc(relativeDayLabel(date))} • ${esc(weekday(date))}</small>
-      <strong>${esc(dateLong(date))}</strong>
+    <div class="today-head today-head-rich">
+      <div><small>${esc(relativeDayLabel(date))} • ${esc(weekday(date))}</small><strong>${esc(dateLong(date))}</strong></div>
+      <div class="daily-total"><span>AKTYWNE</span><strong>${Math.round(totalKcal)} kcal</strong></div>
     </div>
-    ${
-      meals.length
-        ? `<div class="meals">${meals.map(mealHTML).join("")}</div>`
-        : emptyHTML(
-            date > todayISO() ? "Menu nie jest jeszcze dostępne" : "Brak menu",
-            date > todayISO()
-              ? "Elite Diet nie opublikowało jeszcze menu na ten dzień."
-              : "Menu dla tego dnia nie jest dostępne."
-          )
-    }
-  `;
+    ${meals.length ? `<div class="meals">${meals.map((m,i)=>dailyMealHTML(m,i,skipped)).join("")}</div>` : emptyHTML(date > todayISO() ? "Menu nie jest jeszcze dostępne" : "Brak menu", date > todayISO() ? "Elite Diet nie opublikowało jeszcze menu na ten dzień." : "Menu dla tego dnia nie jest dostępne.")}`;
+
+  $("#todayContent").querySelectorAll(".daily-meal").forEach(card => {
+    const id = card.dataset.mealId;
+    card.querySelector(".meal-toggle")?.addEventListener("click", () => {
+      const next = getSkipped(date); if (next.has(id)) next.delete(id); else next.add(id); saveSkipped(date,next); renderToday();
+    });
+    card.querySelector(".eye-btn")?.addEventListener("click", e => {
+      e.stopPropagation(); const details = card.querySelector(".meal-details"); const nowHidden = details.classList.toggle("hidden"); e.currentTarget.classList.toggle("is-open", !nowHidden); e.currentTarget.textContent = nowHidden ? "👁" : "✕";
+    });
+  });
 }
 
 function renderWeek() {
@@ -261,7 +320,7 @@ function renderWeek() {
   $("#weekRange").textContent = rangeLabel(first, last);
 
   const totalMeals = dates.reduce(
-    (sum, d) => sum + (state.data.menu?.[d]?.length || 0),
+    (sum, d) => sum + (state.data.menu?.[d]?.meals?.length || 0),
     0
   );
 
@@ -284,7 +343,7 @@ function renderWeek() {
     <div class="calendar-wrap">
       <div class="calendar-grid">
         ${dates.map(date => {
-          const meals = sortMeals(state.data.menu?.[date] || []);
+          const meals = sortMeals(state.data.menu?.[date]?.meals || []);
           const isToday = date === today;
 
           return `

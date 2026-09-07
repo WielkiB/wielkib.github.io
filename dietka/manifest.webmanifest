@@ -1,7 +1,7 @@
 {
   "name": "Dietka Bubusia",
   "short_name": "Dietka",
-  "description": "Szybki podgląd menu Elite Diet 4 You.",
+  "description": "Dietka Bubusia",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -1,6 +1,7 @@
 {
-  "dietId": 21,
   "companyId": "elitediet",
+  "menuId": 142,
+  "cityId": 982954,
   "dates": [],
   "menu": {},
   "fetchedAt": null

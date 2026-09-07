@@ -1,4 +1,4 @@
-const CACHE = "dietka-v2";
+const CACHE = "elite-menu-gh-pages-v4";
 const APP = [
   "./",
   "./index.html",
