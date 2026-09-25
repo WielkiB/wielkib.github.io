@@ -5,7 +5,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 COMPANY_ID = "elitediet"
-MENU_ID = 142
+MENU_ID = 99
 CITY_ID = 982954
 
 today = datetime.now(ZoneInfo("Europe/Warsaw")).date()
