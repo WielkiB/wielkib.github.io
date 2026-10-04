@@ -241,6 +241,8 @@ function mealId(meal, index) { const o = firstOption(meal); return String(o?.die
 function thermoBadge(option) {
   if (option?.thermo === "WARM") return `<span class="thermo warm">🔥 NA CIEPŁO</span>`;
   if (option?.thermo === "COLD") return `<span class="thermo cold">❄️ NA ZIMNO</span>`;
+  if (option?.thermo === "COLD_WARM") return `<span class="thermo cold">❄️ NA ZIMNO</span><span class="thermo warm">🔥 NA CIEPŁO</span>`;
+  
   return "";
 }
 function cleanG(v) { return esc(String(v || "—").replace(/g$/i, "")); }
