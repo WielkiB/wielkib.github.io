@@ -1,4 +1,4 @@
-const CACHE = "elite-menu-gh-pages-v6";
+const CACHE = "elite-menu-gh-pages-v7";
 const APP = [
   "./",
   "./index.html",
