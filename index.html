@@ -1,1240 +1,1504 @@
 <!DOCTYPE html>
-<html lang="pl">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bartłomiej Bugara Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bartłomiej Bugara — Portfolio</title>
 
-  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+<style>
+:root {
+    --bg: #0b0c0d;
+    --fg: #f1f0ec;
+    --muted: #8d8d89;
+    --dim: #EF7A1B;
+    --line: #282a29;
+    --accent: #EF7A1B;
 
-  <link rel="stylesheet" href="./assets/css/style.css">
+    --mx: 50%;
+    --my: 50%;
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    --max: 1600px;
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at var(--mx) var(--my),
+            rgba(239, 122, 27, 0.075),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--fg);
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#wireframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .95;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 0%,
+            transparent 78%
+        );
+}
+
+.vignette {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(11,12,13,.35) 75%,
+            rgba(11,12,13,.9) 100%
+        );
+}
+
+.noise {
+    position: absolute;
+    inset: 0;
+    opacity: .035;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+    mix-blend-mode: screen;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: var(--max);
+    height: 100vh;
+    min-height: 680px;
+
+    margin: auto;
+    padding: 30px 48px 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 48px;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    font-size: 13px;
+    letter-spacing: .18em;
+    font-weight: 700;
+}
+
+.brand-mark {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--accent);
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: -.04em;
+
+    box-shadow:
+        0 0 20px rgba(239,122,27,.08);
+}
+
+.top-links {
+    display: flex;
+    gap: 28px;
+}
+
+.top-links a {
+    position: relative;
+
+    color: var(--muted);
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+
+    transition: color .2s ease;
+}
+
+.top-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: width .25s ease;
+}
+
+.top-links a:hover {
+    color: var(--fg);
+}
+
+.top-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns:
+        minmax(430px, .9fr)
+        minmax(650px, 1.1fr);
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding: 42px 0 34px;
+}
+
+
+/* =========================================================
+   LEFT / INTRO
+========================================================= */
+
+.intro {
+    position: relative;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 30px;
+    height: 1px;
+
+    background: var(--accent);
+
+    box-shadow: 0 0 10px rgba(239,122,27,.45);
+}
+
+h1 {
+    font-size: clamp(64px, 6.4vw, 108px);
+    line-height: .84;
+    letter-spacing: -.065em;
+    font-weight: 700;
+
+    margin-left: -5px;
+}
+
+h1 span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(241,240,236,.55);
+
+    transition:
+        color .35s ease,
+        -webkit-text-stroke .35s ease;
+}
+
+h1:hover span {
+    color: var(--accent);
+    -webkit-text-stroke-color: var(--accent);
+}
+
+.intro-text {
+    max-width: 590px;
+
+    margin-top: 34px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.intro-text strong {
+    color: var(--fg);
+    font-weight: 500;
+}
+
+.intro-text p + p {
+    margin-top: 13px;
+}
+
+
+/* =========================================================
+   RIGHT / CAPABILITIES
+========================================================= */
+
+.capabilities {
+    width: 100%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid rgba(255,255,255,.11);
+}
+
+.section-heading h2 {
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: .17em;
+    text-transform: uppercase;
+}
+
+.section-heading span {
+    color: var(--dim);
+
+    font-size: 10px;
+    letter-spacing: .16em;
+}
+
+
+/* CAPABILITY GRID */
+
+.capability-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0;
+
+    border-top: 1px solid rgba(255,255,255,.06);
+    border-left: 1px solid rgba(255,255,255,.06);
+}
+
+.capability {
+    position: relative;
+
+    min-height: 112px;
+
+    padding: 19px 22px 18px;
+
+    border-right: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+
+    overflow: hidden;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+.capability::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition: width .35s ease;
+}
+
+.capability::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -55px;
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    opacity: 0;
+
+    filter: blur(30px);
+
+    transition: opacity .35s ease;
+}
+
+.capability:hover {
+    background: rgba(239,122,27,.045);
+
+    border-color: rgba(239,122,27,.22);
+
+    transform: translateY(-2px);
+}
+
+.capability:hover::before {
+    width: 100%;
+}
+
+.capability:hover::after {
+    opacity: .18;
+}
+
+.capability-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--accent);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+.capability h3 {
+    font-size: 20px;
+    line-height: 1;
+
+    font-weight: 650;
+    letter-spacing: -.025em;
+
+    margin-bottom: 10px;
+}
+
+.capability p {
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.capability p span {
+    color: #b7b7b2;
+}
+
+
+/* =========================================================
+   TOOLS
+========================================================= */
+
+.tools {
+    margin-top: 25px;
+}
+
+.tools-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 12px;
+
+    color: var(--dim);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.tools-title::after {
+    content: "";
+
+    height: 1px;
+    flex: 1;
+
+    background: rgba(255,255,255,.07);
+}
+
+.tool-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tool {
+    padding: 7px 10px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    color: #bdbdb8;
+
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .02em;
+
+    background: rgba(255,255,255,.015);
+
+    transition:
+        color .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.tool:hover {
+    color: var(--accent);
+
+    border-color: rgba(239,122,27,.45);
+
+    background: rgba(239,122,27,.05);
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr;
+
+    margin-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,.09);
+}
+
+.info-item {
+    padding-top: 14px;
+
+    min-width: 0;
+}
+
+.info-item + .info-item {
+    padding-left: 22px;
+    border-left: 1px solid rgba(255,255,255,.08);
+}
+
+.info-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--dim);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.info-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #d7d6d1;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 0 4px rgba(239,122,27,.08),
+        0 0 15px rgba(239,122,27,.6);
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow:
+            0 0 0 4px rgba(239,122,27,.08),
+            0 0 15px rgba(239,122,27,.6);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 7px rgba(239,122,27,.025),
+            0 0 25px rgba(239,122,27,.8);
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 32px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    color: var(--dim);
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+
+    transition: color .2s ease;
+}
+
+.footer a:hover {
+    color: var(--accent);
+}
+
+.coordinates {
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   DECORATIVE MARKS
+========================================================= */
+
+.corner {
+    position: absolute;
+
+    color: rgba(255,255,255,.18);
+
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: .18em;
+
+    pointer-events: none;
+}
+
+.corner.top-left {
+    left: 48px;
+    top: 93px;
+}
+
+.corner.top-right {
+    right: 48px;
+    top: 93px;
+}
+
+.corner::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    border-left: 1px solid var(--accent);
+    border-top: 1px solid var(--accent);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+    .page {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .main {
+        gap: 45px;
+
+        grid-template-columns:
+            minmax(380px, .85fr)
+            minmax(560px, 1.15fr);
+    }
+
+    h1 {
+        font-size: clamp(58px, 7vw, 84px);
+    }
+
+    .capability {
+        min-height: 105px;
+    }
+
+    .capability h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .main {
+        grid-template-columns: 1fr;
+
+        overflow: hidden;
+
+        gap: 25px;
+    }
+
+    .intro-text {
+        display: none;
+    }
+
+    .capability {
+        min-height: 90px;
+    }
+
+    .capability h3 {
+        font-size: 17px;
+    }
+
+    .corner {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .page {
+        min-height: 600px;
+        padding: 20px;
+    }
+
+    .top-links {
+        gap: 14px;
+    }
+
+    .top-links a {
+        font-size: 9px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    .main {
+        padding-top: 25px;
+        padding-bottom: 20px;
+    }
+
+    .capability-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .capability {
+        padding: 13px;
+        min-height: 92px;
+    }
+
+    .capability h3 {
+        font-size: 15px;
+    }
+
+    .capability p {
+        font-size: 10px;
+    }
+
+    .info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info-item:last-child {
+        display: none;
+    }
+
+    .footer-right {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!--
-  - #MAIN
--->
+<div class="background">
+    <canvas id="wireframe"></canvas>
+    <div class="grid"></div>
+    <div class="vignette"></div>
+    <div class="noise"></div>
+</div>
 
-<main>
 
-  <!--
-    - #SIDEBAR
-  -->
+<div class="page">
 
-  <aside class="sidebar" data-sidebar>
+    <!-- TOP -->
 
-    <div class="sidebar-info">
+    <header class="topbar">
 
-      <figure class="avatar-box">
-        <img src="./assets/images/my-avatar.png" alt="Bartłomiej Bugara" width="200">
-      </figure>
+        <div class="brand">
+            <div class="brand-mark">BB</div>
+        </div>
 
-      <div class="info-content">
-        <h1 class="name" title="Bartłomiej Bugara">Bartłomiej Bugara</h1>
+        <nav class="top-links">
+            <a href="https://github.com/WielkiB" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/bartlomiej-bugara/" target="_blank">LinkedIn</a>
+        </nav>
 
-        <p class="title">Programista</p>
-      </div>
+    </header>
 
-      <button class="info_more-btn" data-sidebar-btn>
-        <span>Pokaż dane</span>
 
-        <ion-icon name="chevron-down"></ion-icon>
-      </button>
-
+    <div class="corner top-left">
+        SYSTEM / PROFILE_01
     </div>
 
-    <div class="sidebar-info_more">
-
-      <div class="separator"></div>
-
-      <ul class="contacts-list">
-
-        <li class="contact-item">
-
-          <div class="icon-box">
-            <ion-icon name="mail-outline"></ion-icon>
-          </div>
-
-          <div class="contact-info">
-            <p class="contact-title">Email</p>
-
-            <a href="mailto:b.bugara.kontakt@gmail.com" class="contact-link">b.bugara.kontakt@gmail.com</a>
-          </div>
-
-        </li>
-
-        <li class="contact-item">
-
-          <div class="icon-box">
-            <ion-icon name="phone-portrait-outline"></ion-icon>
-          </div>
-
-          <div class="contact-info">
-            <p class="contact-title">Telefon</p>
-
-            <a href="tel:+48731258702" class="contact-link">+48 731 258 702</a>
-          </div>
-
-        </li>
-
-        <li class="contact-item">
-
-          <div class="icon-box">
-            <ion-icon name="calendar-outline"></ion-icon>
-          </div>
-
-          <div class="contact-info">
-            <p class="contact-title">Data urodzenia</p>
-
-            <time datetime="2000-02-18">Luty 18, 2000</time>
-          </div>
-
-        </li>
-
-        <li class="contact-item">
-
-          <div class="icon-box">
-            <ion-icon name="location-outline"></ion-icon>
-          </div>
-
-          <div class="contact-info">
-            <p class="contact-title">Miejscowość</p>
-
-            <address>Kielce, Świętokrzyskie, Polska</address>
-          </div>
-
-        </li>
-
-      </ul>
-
-      <div class="separator"></div>
-
-      <ul class="social-list">
-
-        <li class="social-item">
-          <a href="https://github.com/WielkiB" class="social-link">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-        </li>
-
-        <li class="social-item">
-          <a href="https://www.linkedin.com/in/bart%C5%82omiej-bugara-089bb2315/" class="social-link">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li>
-
-        <li class="social-item">
-          <a href="https://sketchfab.com/wielkib213" class="social-link">
-            <ion-icon name="link"></ion-icon>
-          </a>
-        </li>
-
-      </ul>
-
+    <div class="corner top-right">
+        50.8661° N / 20.6286° E
     </div>
 
-  </aside>
 
-  <!--
-    - MAIN
-  -->
+    <!-- MAIN -->
 
-  <div class="main-content">
+    <main class="main">
 
-    <!--
-      - NAVBAR
-    -->
+        <!-- LEFT -->
 
-    <nav class="navbar">
+        <section class="intro">
 
-      <ul class="navbar-list">
-
-        <li class="navbar-item">
-          <button class="navbar-link  active" data-nav-link>O mnie</button>
-        </li>
-
-        <li class="navbar-item">
-          <button class="navbar-link" data-nav-link>CV</button>
-        </li>
-
-        <li class="navbar-item">
-          <button class="navbar-link" data-nav-link>Portfolio</button>
-        </li>
-
-
-
-        <li class="navbar-item">
-          <button class="navbar-link" data-nav-link>Kontakt</button>
-        </li>
-		<li class="navbar-item">
-			<a href="en.html">
-				<button  class="navbar-link" data-nav-link>English language 
-					<i class="flag-icon flag-icon-us"></i>
-					<i class="flag-icon flag-icon-gb"></i>
-				</button>
-			</a>
-		</li>
-		
-      </ul>
-
-    </nav>
-
-
-
-
-
-    <!--
-      - ABOUT
-    -->
-
-    <article class="about active" data-page="o mnie">
-
-      <header>
-        <h2 class="h2 article-title">O mnie</h2>
-      </header>
-
-      <section class="about-text">
-        <p>
-          Jestem studentem drugiego stopnia na Politechnice Świętokrzyskiej. Tytuł inżyniera obroniłem w lutym 2024 na ocenę 5, tematem mojej pracy był "Projekt i implementacja geograficznej gry edukacyjnej.".
-          Była to jedna z wielu gier wykonanych w okresie studiów, zarówno w ramach projektów, jak i samodzielnych inicjatyw.
-          Prócz tworzenia mechanik zajmuję się wszelkimi niezbędnymi zasobami, takimi jak modele 3D, animacje, tekstury czy pliki audio.
-        </p>
-
-        <p>
-          Moim celem jest tworzenie gier, wkładając w nie pełnię wiedzy, pasję oraz doświadczenie.
-          Staram się przywiązywać wagę do najmniejszych detali, ponieważ uważam, że to one w grach budują pewnego rodzaju atmosferę.
-          Szybko uczę się nowych technologii, które pomagają tworzyć zarówno gry, jak i różnorodne zasoby, dostosowane do potrzeb różnych projektów.
-          Ludzie postrzegają mnie jako osobę niezwykle kreatywną, pełną zwariowanych pomysłów.
-        </p>
-      </section>
-
-      <!--
-        - service
-      -->
-
-      <section class="service">
-
-        <h3 class="h3 service-title">Czym się zajmuję?</h3>
-
-        <ul class="service-list">
-
-          <li class="service-item">
-
-            <div class="service-icon-box">
-              <img src="./assets/images/icons/icon-game-dev.svg" alt="Game Dev icon" width="40">
+            <div class="eyebrow">
+                Software · Games · Graphics · AI
             </div>
 
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">Game Dev</h4>
+            <h1>
+                Bartłomiej<br>
+                <span>Bugara</span>
+            </h1>
 
-              <p class="service-item-text">
-                Tworzenie zaawansowanych gier przy użyciu silników Unreal Engine oraz Unity.
-              </p>
+            <div class="intro-text">
+
+                <p>
+                    I build things across disciplines —
+                    from <strong>2D and 3D graphics</strong>,
+                    real-time rendering and games to web applications,
+                    desktop software, AI and custom tools.
+                </p>
+
+                <p>
+                    I don't really fit into one box.
+                    I learn what a project needs, connect different
+                    technologies and build things end to end.
+                </p>
+
             </div>
 
-          </li>
+        </section>
 
-          <li class="service-item">
 
-            <div class="service-icon-box">
-              <img src="./assets/images/icons/icon-web.svg" alt="websites icon" width="40">
+        <!-- RIGHT -->
+
+        <section class="capabilities">
+
+            <div class="section-heading">
+                <h2>Capabilities</h2>
             </div>
 
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">Strony internetowe</h4>
 
-              <p class="service-item-text">
-                Proste blogi, portfolia na wysokim poziomie z zachowaniem pełnej responsywności
-              </p>
+            <div class="capability-grid">
+
+                <article class="capability">
+
+                    <span class="capability-number">01</span>
+
+                    <h3>GRAPHICS</h3>
+
+                    <p>
+                        <span>2D · 3D · Rendering</span><br>
+                        Shaders · OpenGL
+                    </p>
+
+                </article>
+
+
+                <article class="capability">
+
+                    <span class="capability-number">02</span>
+
+                    <h3>GAMES</h3>
+
+                    <p>
+                        <span>Unity · Unreal Engine</span><br>
+                        Gameplay · Tools · C++
+                    </p>
+
+                </article>
+
+
+                <article class="capability">
+
+                    <span class="capability-number">03</span>
+
+                    <h3>SOFTWARE</h3>
+
+                    <p>
+                        <span>Web · Desktop · APIs</span><br>
+                        Automation · Systems
+                    </p>
+
+                </article>
+
+
+                <article class="capability">
+
+                    <span class="capability-number">04</span>
+
+                    <h3>AI / VISION</h3>
+
+                    <p>
+                        <span>Machine Learning</span><br>
+                        Computer Vision · Python
+                    </p>
+
+                </article>
+
+
+                <article class="capability">
+
+                    <span class="capability-number">05</span>
+
+                    <h3>PROGRAMMING</h3>
+
+                    <p>
+                        <span>C++ · C# · Python</span><br>
+                        JavaScript · SQL
+                    </p>
+
+                </article>
+
+
+                <article class="capability">
+
+                    <span class="capability-number">06</span>
+
+                    <h3>TEACHING</h3>
+
+                    <p>
+                        <span>Programming · Graphics</span><br>
+                        Game Development
+                    </p>
+
+                </article>
+
             </div>
 
-          </li>
 
-          <li class="service-item">
+            <!-- TOOLS -->
 
-            <div class="service-icon-box">
-              <img src="./assets/images/icons/icon-models.svg" alt="models icon" width="40">
+            <div class="tools">
+
+                <div class="tools-title">
+                    Tools & technologies
+                </div>
+
+                <div class="tool-list">
+
+                    <span class="tool">C++</span>
+                    <span class="tool">C#</span>
+                    <span class="tool">Python</span>
+                    <span class="tool">JavaScript</span>
+                    <span class="tool">SQL</span>
+                    <span class="tool">Unity</span>
+                    <span class="tool">Unreal</span>
+                    <span class="tool">OpenGL</span>
+                    <span class="tool">Git</span>
+                    <span class="tool">Blender</span>
+                    <span class="tool">VS Code</span>
+                    <span class="tool">LaTeX</span>
+                    <span class="tool">AI</span>
+
+                </div>
+
             </div>
 
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">Modelowanie i animacje</h4>
 
-              <p class="service-item-text">
-                Profesjonalne modele na wysokim poziomie.<br/>
-                Tworzenie tekstur PBR oraz map normalnych.<br/>
-                Animacje 2D oraz 3D - z zachowaniem 12 zasad animacji.
-              </p>
+            <!-- INFO -->
+
+            <div class="info">
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Based in
+                    </span>
+
+                    <span class="info-value">
+                        Kielce, Poland
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Role
+                    </span>
+
+                    <span class="info-value">
+                        Teaching Assistant
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Status
+                    </span>
+
+                    <span class="info-value">
+
+                        <i class="status-dot"></i>
+
+                        Turning ideas into systems
+
+                    </span>
+
+                </div>
+
             </div>
 
-          </li>
+        </section>
 
-          <li class="service-item">
+    </main>
 
-            <div class="service-icon-box">
-              <img src="./assets/images/icons/icon-graphic.svg" alt="graphic icon" width="40">
-            </div>
 
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">Grafika</h4>
+    <!-- FOOTER -->
 
-              <p class="service-item-text">
-                Tworzenie tekstur, grafik, elementów UI, takich jak przyciski, suwaki.<br/>
-                Zarówno grafika wektorowa, jak i rastrowa, a także pixel-art.
-              </p>
-            </div>
+    <footer class="footer">
 
-          </li>
+        <div class="footer-left">
 
-          <li class="service-item">
+            <span>Kielce, Poland</span>
 
-            <div class="service-icon-box">
-              <img src="./assets/images/icons/icon-code.svg" alt="code icon" width="40">
-            </div>
-
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">Programowanie oraz AI</h4>
-
-              <p class="service-item-text">
-                Doświadczenie w wielu językach takich jak: C, C++, C#, Java czy Python.<br/>
-                Znajomość podstaw AI, tworzenie własnych modeli oraz sieci neuronowych.
-              </p>
-            </div>
-
-          </li>
-
-          <li class="service-item">
-
-            <div class="service-icon-box">
-              <img src="./assets/images/icons/icon-audio.svg" alt="audio icon" width="40">
-            </div>
-
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">Audio</h4>
-
-              <p class="service-item-text">
-                Tworzenie ścieżek dźwiękowych do autorskich gier.<br/>
-                Udźwiękowienie gier, dźwięki FX takie jak wybuchy, strzały i inne.<br/>
-                Lektor, dubbing — rejestrowanie nagrań głosu na potrzeby przerywników filmowych, narracji gry.
-              </p>
-            </div>
-
-          </li>
-
-        </ul>
-
-      </section>
-
-      <!--
-        - clients
-      -->
-
-
-      <section class="logos">
-
-        <h3 class="h3 logos-title">Projekty</h3>
-
-        <ul class="logos-list has-scrollbar">
-
-          <li class="logos-item">
-            <img src="./assets/images/ft.png" alt="logo">
-          </li>
-
-          <li class="logos-item">
-            <img src="./assets/images/s3d.png" alt="logo">
-          </li>
-
-          <li class="logos-item">
-            <img src="./assets/images/mc.png" alt="logo">
-          </li>
-
-          <li class="logos-item">
-            <img src="./assets/images/SandTetris.png" alt="logo">
-          </li>
-
-          <li class="logos-item">
-            <img src="./assets/images/snake.png" alt="logo">
-          </li>
-
-          <li class="logos-item">
-            <img src="./assets/images/zpo.png" alt="logo">
-          </li>
-
-        </ul>
-
-      </section>
-
-    </article>
-
-
-
-
-
-    <!--
-      - CV
-    -->
-
-    <article class="resume" data-page="cv">
-
-      <header>
-        <h2 class="h2 article-title">CV</h2>
-      </header>
-
-      <section class="timeline">
-
-        <div class="title-wrapper">
-          <div class="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
-          </div>
-
-          <h3 class="h3">Edukacja</h3>
-        </div>
-
-        <ol class="timeline-list">
-
-          <li class="timeline-item">
-
-            <h4 class="h4 timeline-item-title">Politechnika Świętokrzyska w Kielcach</h4>
-
-            <span>2020 — obecnie</span>
-
-            <p class="timeline-text">
-              Kierunek: informatyka<br/>
-              Specjalizacja: grafika komputerowa<br/>
-              Luty 2024 — uzyskano tytuł inżyniera.<br/>
-              Obecnie kontynuacja na drugim stopniu studiów — tytuł magistra.
-            </p>
-
-          </li>
-
-          <li class="timeline-item">
-
-            <h4 class="h4 timeline-item-title">Technikum nr 4 w Kielcach</h4>
-
-            <span>2016 — 2020</span>
-
-            <p class="timeline-text">
-              Specjalizacja: technik informatyk<br/>
-              Poziom wykształcenia: średnie
-            </p>
-
-          </li>
-
-        </ol>
-
-      </section>
-
-      <section class="timeline">
-
-        <div class="title-wrapper">
-          <div class="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
-          </div>
-
-          <h3 class="h3">Doświadczenie (praktyki, staże)</h3>
-        </div>
-
-        <ol class="timeline-list">
-
-          <li class="timeline-item">
-
-            <h4 class="h4 timeline-item-title">Papal Games Michał Sydoryk</h4>
-
-            <span>lipiec — sierpień 2023</span>
-
-            <p class="timeline-text">
-              Praktyki studenckie — projekt gry o tematyce zombie w silniku Unreal Engine
-            </p>
-
-          </li>
-
-          <li class="timeline-item">
-
-            <h4 class="h4 timeline-item-title">Infover</h4>
-
-            <span>lipiec 2022</span>
-
-            <p class="timeline-text">
-              Staż w ramach projektu "Politechnika Świętokrzyska nowoczesną uczelnią w europejskiej przestrzeni gospodarczej"
-            </p>
-
-          </li>
-
-          <li class="timeline-item">
-
-            <h4 class="h4 timeline-item-title">Infover</h4>
-
-            <span>maj 2019</span>
-
-            <p class="timeline-text">
-              Praktyki w technikum — kierunek: technik informatyk.
-            </p>
-
-          </li>
-
-
-
-        </ol>
-
-      </section>
-
-      <section class="skill">
-
-        <h3 class="h3 skills-title">Umiejętności</h3>
-
-        <ul class="skills-list content-card">
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Unreal Engine</h5>
-              <data value="70">70%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 70%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Unity</h5>
-              <data value="85">85%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 85%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Blender — modelowanie i animacje</h5>
-              <data value="90">90%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 90%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Grafika 2D oraz teksturowanie modeli</h5>
-              <data value="90">90%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 90%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Tworzenie UI</h5>
-              <data value="85">85%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 85%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">HTML, CSS, JS - technologie web</h5>
-              <data value="80">80%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 80%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Programowanie w C/C++</h5>
-              <data value="90">90%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 90%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Programowanie w C#/.NET</h5>
-              <data value="70">70%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 70%;"></div>
-            </div>
-
-          </li>
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Języki skryptowe</h5>
-              <data value="60">60%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 60%;"></div>
-            </div>
-
-          </li>
-
-
-
-        </ul>
-
-      </section>
-
-    </article>
-
-
-
-
-    <!--
-      - PORTFOLIO
-    -->
-
-    <article class="portfolio" data-page="portfolio">
-
-      <header>
-        <h2 class="h2 article-title">Portfolio</h2>
-      </header>
-
-      <section class="projects">
-
-        <ul class="filter-list">
-
-          <li class="filter-item">
-            <button class="active" data-filter-btn>Wszystko</button>
-          </li>
-
-          <li class="filter-item">
-            <button data-filter-btn>Z użyciem Unreal Engine lub Unity</button>
-          </li>
-
-          <li class="filter-item">
-            <button data-filter-btn>Gry i AI</button>
-          </li>
-
-          <li class="filter-item">
-            <button data-filter-btn>Modelowanie</button>
-          </li>
-
-        </ul>
-
-        <div class="filter-select-box">
-
-          <button class="filter-select" data-select>
-
-            <div class="select-value" data-selecct-value>Wybierz kategorię</div>
-
-            <div class="select-icon">
-              <ion-icon name="chevron-down"></ion-icon>
-            </div>
-
-          </button>
-
-          <ul class="select-list">
-
-            <li class="select-item">
-              <button data-select-item>Wszystko</button>
-            </li>
-
-            <li class="select-item">
-              <button data-select-item>Z użyciem Unreal Engine lub Unity</button>
-            </li>
-
-            <li class="select-item">
-              <button data-select-item>Gry i AI</button>
-            </li>
-
-            <li class="select-item">
-              <button data-select-item>Modelowanie</button>
-            </li>
-
-          </ul>
+            <span class="coordinates">
+                X <span id="mouseX">000</span>
+                /
+                Y <span id="mouseY">000</span>
+            </span>
 
         </div>
 
-        <ul class="project-list">
 
+        <div class="footer-right">
 
-
-
-          <!--
-          UNITY UNREAL
-          -->
-          <li class="project-item active" data-filter-item data-category="z użyciem unreal engine lub unity">
-            <a href="#" class="open-modal" data-project="forest-tracks"
-               data-title="Forest Tracks"
-               data-description="
-Forest Tracks to symulator polowania, który przenosi graczy w gęste lasy pełne dzikiej przyrody. Gra oferuje realistyczne doświadczenie polowania, gdzie gracze mogą śledzić i polować na różnorodne zwierzęta, korzystając z szerokiego arsenału broni.<br><br>
-Wykorzystane technologie:<br>
-<ul>
-  <li>Unreal Engine – użyty do tworzenia realistycznego środowiska i mechanik gry.</li>
-  <li>Blender – do stworzenia przerywników filmowych oraz zaawansowanych modeli zwierząt.</li>
-</ul>
-Gra posiada wiele ciekawych aspektów:<br>
-<ul>
-  <li>Zaawansowane animacje</li>
-  <li>System cutscen</li>
-  <li>Różnorodne zwierzęta</li>
-  <li>Szeroki wachlarz broni</li>
-  <li>System śledzenia</li>
-</ul>
-"
-               data-gallery='[
-               "./assets/images/projects/ForestTracks/1.png", "./assets/images/projects/ForestTracks/2.png",
-               "./assets/images/projects/ForestTracks/3.png", "./assets/images/projects/ForestTracks/4.png",
-               "./assets/images/projects/ForestTracks/5.png", "./assets/images/projects/ForestTracks/6.png",
-               "./assets/images/projects/ForestTracks/7.png"
-               ]'>
-
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/ForestTracks/1.png" alt="Forest Tracks" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Forest Tracks</h3>
-
-              <p class="project-category">Z użyciem Unreal Engine lub Unity</p>
-
+            <a href="https://witchjam.tu.kielce.pl/" target="_blank">
+                Witch Jam ↗
             </a>
-          </li>
 
-          <li class="project-item  active" data-filter-item data-category="z użyciem unreal engine lub unity">
-            <a href="#" class="open-modal" data-project="sand-tetris"
-               data-title="Sand Tetris"
-               data-description="Sand Tetris to gra wzorowana na tradycyjnym tetrisie,
-                ale z dodanym elementem fizyki piasku oraz innych żywiołów.
-                 Gra łączy klasyczną mechanikę Tetrisa z dynamicznym zachowaniem piasku,
-                  co wprowadza nowe wyzwania i możliwości. Bloki w grze nie tylko układają się w linie,
-                   ale także reagują na grawitację i inne siły, co sprawia, że rozgrywka jest bardziej zróżnicowana i nieprzewidywalna.
-                    Dodanie elementów fizyki różnych żywiołów, takich jak woda czy ogień, dodaje dodatkową warstwę strategii i planowania do gry,
-                     czyniąc ją bardziej wciągającą i innowacyjną.
-"
-               data-gallery='[
-               "./assets/images/projects/SandTetris/1.png", "./assets/images/projects/SandTetris/2.png",
-               "./assets/images/projects/SandTetris/3.png", "./assets/images/projects/SandTetris/4.png",
-               "./assets/images/projects/SandTetris/5.png", "./assets/images/projects/SandTetris/6.png",
-               "./assets/images/projects/SandTetris/7.png", "./assets/images/projects/SandTetris/8.png"
-               ]'>
+            <span>© <span id="currentYear"></span></span>
 
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/SandTetris/3.png" alt="Sand Tetris" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Sand Tetris</h3>
-
-              <p class="project-category">Z użyciem Unreal Engine lub Unity</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="z użyciem unreal engine lub unity">
-            <a href="#" class="open-modal" data-project="snake3d"
-               data-title="Snake3D"
-               data-description="
-Snake 3D to trójwymiarowa wersja klasycznej gry Snake, oferująca wiele poziomów i trybów gry. Gracze sterują wężem, starając się zjeść jak najwięcej różnorodnych owoców, unikając przeszkód.<br><br>
-Wykorzystane technologie:<br>
-<ul>
-  <li>Unity: Silnik gry użyty do stworzenia mechanik gry i map.</li>
-  <li>Blender: Narzędzie do modelowania oraz teksturowania węża, owoców oraz przeszkód.</li>
-</ul>
-W grze wyróżnić możemy:<br>
-<ul>
-  <li>Różnorodne typy węży</li>
-  <li>Ciekawe poziomy</li>
-  <li>2 tryby gry</li>
-  <li>Shader śniegu i lodu</li>
-  <li>Unity Particle System – czyli deszcz oraz śnieg</li>
-  <li>Gra działa zarówno na PC oraz urządzeniach mobilnych</li>
-</ul>
-"
-               data-gallery='[
-               "./assets/images/projects/Snake3D/1.png", "./assets/images/projects/Snake3D/2.png",
-                "./assets/images/projects/Snake3D/3.png", "./assets/images/projects/Snake3D/4.png",
-                "./assets/images/projects/Snake3D/5.png", "./assets/images/projects/Snake3D/6.png"
-                ]'>
-
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/Snake3D/1.png" alt="Snake3D" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Snake3D</h3>
-
-              <p class="project-category">Z użyciem Unreal Engine lub Unity</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="z użyciem unreal engine lub unity">
-            <a href="#" class="open-modal" data-project="zaginiony-w-krzakach"
-               data-title="Zaginiony w krzakach" data-description="'Zaginiony w krzakach' to dynamiczna gra typu horror, oparta na wciągającej fabule
-               związanej z przekleństwem (fatum). Gracz wciela się w rolę głównego bohatera, który znalazł się
-               uwięziony w tajemniczym labiryncie pełnym groźnych przeciwników. Celem gry jest odnalezienie
-               wyjścia z labiryntu, jednocześnie unikając niebezpieczeństw czyhających na każdym kroku."
-
-               data-gallery='[
-               "./assets/images/projects/Zespolowy/1.png", "./assets/images/projects/Zespolowy/2.png",
-               "./assets/images/projects/Zespolowy/3.png", "./assets/images/projects/Zespolowy/4.png",
-               "./assets/images/projects/Zespolowy/5.png", "./assets/images/projects/Zespolowy/6.png",
-               "./assets/images/projects/Zespolowy/7.png", "./assets/images/projects/Zespolowy/8.png"
-               ]'>
-
-
-            <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/Zespolowy/1.png" alt="Zaginiony w krzakach" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Zaginiony w krzakach</h3>
-
-              <p class="project-category">Z użyciem Unreal Engine lub Unity</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="z użyciem unreal engine lub unity">
-            <a href="#" class="open-modal" data-project="inzynierka"
-               data-title="Praca inżynierska — geograficzna gra edukacyjna" data-description="Projekt i implementacja gry edukacyjnej o tematyce geografii stanowi innowacyjne podejście do nauki poprzez wykorzystywanie interaktywnej formy przyswajania wiedzy. Praca skupia się na opracowaniu autorskiego oprogramowania, obejmującego interaktywne mapy, tematyczne quizy i zadania, które wspierają rozwój wiedzy graczy. Kluczowymi elementami są zróżnicowane pod względem trudności pytania, atrakcyjna szata audiowizualna oraz mnogość informacji. Stworzona gra jest ciekawym, nowatorskim sposobem na wspieranie procesu nauki."
-               data-gallery='[
-               "./assets/images/projects/Inżynierka/1.png", "./assets/images/projects/Inżynierka/2.png",
-               "./assets/images/projects/Inżynierka/3.png", "./assets/images/projects/Inżynierka/4.png",
-               "./assets/images/projects/Inżynierka/5.png", "./assets/images/projects/Inżynierka/6.png",
-               "./assets/images/projects/Inżynierka/7.png", "./assets/images/projects/Inżynierka/8.png",
-               "./assets/images/projects/Inżynierka/9.png"
-               ]'>
-
-
-            <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/Inżynierka/1.png" alt="Praca inżynierska" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Praca inżynierska — geograficzna gra edukacyjna</h3>
-
-              <p class="project-category">Z użyciem Unreal Engine lub Unity</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="gry i ai">
-            <a href="#" class="open-modal" data-project="minegl"
-               data-title="MineGL" data-description="MineGL jest grą inspirowaną Minecraftem, stworzoną z użyciem OpenGL.
-                Możemy w niej eksplorować proceduralnie generowany świat, różnorakie biomy pokryte roślinnością oraz wioski.<br>
-
-Wykorzystane technologie:
-<ul>
-<li>Gra została napisana przy użyciu OpenGL w wersji 3.3 w IDE Microsoft Visual Studio.</li>
-<li>Do stworzenia tekstur albedo, map normalnych oraz wysokości użyty został GIMP.</li>
-</ul>
-Ciekawe cechy gry:
-<ul>
-<li>Generowanie proceduralne</li>
-<li>Tekstury PBR, mapy normalnych</li>
-<li>Algorytm Wave Collapse</li>
-<li>Efekt zwierciadła oraz kaustyka wody</li>
-<li>Techniki optymalizacyjne: greedy meshing, culling, łączenie chunków</li>
-</ul>
-"
-               data-gallery='[
-               "./assets/images/projects/MineGL/1.png", "./assets/images/projects/MineGL/2.png",
-               "./assets/images/projects/MineGL/3.png", "./assets/images/projects/MineGL/4.png",
-               "./assets/images/projects/MineGL/5.png", "./assets/images/projects/MineGL/6.png",
-               "./assets/images/projects/MineGL/7.png", "./assets/images/projects/MineGL/8.png"
-               ]'>
-
-
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/MineGL/4.png" alt="MineGL" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">MineGL</h3>
-
-              <p class="project-category">Gry i AI</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="gry i ai">
-            <a href="#" class="open-modal" data-project="mario"
-               data-title="MarioAI" data-description="Klon popularnej gry Super Mario Bros. wraz z wbudowanym edytorem map
-                i systemem sztucznej inteligencji, który ma zdolność uczenia się, jak grać w tę grę.
-                 Głównym celem projektu jest opracowanie efektywnych algorytmów uczenia maszynowego,
-                  które umożliwią agentowi osiągnięcie optymalnej zdolności do przechodzenia poziomów w grze.
-"
-               data-gallery='[
-               "./assets/images/projects/MarioAI/1.png", "./assets/images/projects/MarioAI/2.png",
-               "./assets/images/projects/MarioAI/3.png", "./assets/images/projects/MarioAI/4.png"
-               ]'>
-
-
-            <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/MarioAI/2.png" alt="MarioAI" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">MarioAI</h3>
-
-              <p class="project-category">Gry i AI</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="gry i ai">
-            <a href="#" class="open-modal" data-project="snakec"
-               data-title="Snake w C/C++"
-               data-description="Snake został napisany w języku C++ z użyciem biblioteki Allegro.
-               Gra zawiera dużą ilość ciekawych map oraz różnorodne węże i owoce, co znacząco zwiększa atrakcyjność i złożoność rozgrywki."
-               data-gallery='[
-               "./assets/images/projects/Snake/1.png", "./assets/images/projects/Snake/2.png",
-               "./assets/images/projects/Snake/3.png", "./assets/images/projects/Snake/4.png",
-               "./assets/images/projects/Snake/5.png"
-               ]'>
-
-
-            <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/Snake/3.png" alt="Snake" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Snake w C/C++</h3>
-
-              <p class="project-category">Gry i AI</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="gry i ai">
-            <a href="#" class="open-modal" data-project="tanks"
-               data-title="Czołgi - własny silnik"
-               data-description="
-Opis projektu Czołgi:<br><br>
-Projekt ten został napisany w języku C++ przy użyciu własnego silnika 2D, do którego stworzenia użyta została biblioteka graficzna Raylib.
-<ul>
-  <li>Oprogramowanie graficzne:
-    <ul>
-      <li>GIMP – tworzenie i edycja grafiki</li>
-    </ul>
-  </li>
-  <li>Środowisko programistyczne:
-    <ul>
-      <li>Visual Studio – pisanie, debugowanie i testowanie kodu</li>
-    </ul>
-  </li>
-  <li>Oprogramowanie do tworzenia dźwięku:
-    <ul>
-      <li>FL Studio – tworzenie muzyki</li>
-      <li>Audacity – edycja dźwięku</li>
-    </ul>
-  </li>
-</ul>
-"
-               data-gallery='[
-               "./assets/images/projects/Czołgi/1.png", "./assets/images/projects/Czołgi/2.png",
-               "./assets/images/projects/Czołgi/3.png", "./assets/images/projects/Czołgi/4.png",
-               "./assets/images/projects/Czołgi/5.png", "./assets/images/projects/Czołgi/6.png"
-               ]'>
-
-
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/Czołgi/3.png" alt="Czołgi" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Czołgi — własny silnik</h3>
-
-              <p class="project-category">Gry i AI</p>
-
-            </a>
-          </li>
-          <li class="project-item  active" data-filter-item data-category="gry i ai">
-            <a href="#" class="open-modal" data-project="traffic-watch"
-               data-title="Traffic Watch"
-               data-description="
-Celem projektu było stworzenie kompleksowego systemu w postaci aplikacji umożliwiającej zliczanie ilości samochodów z podziałem na ich typ i kolor oraz rozpoznawanie tablic rejestracyjnych na zdjęciach, oraz plikach wideo.<br><br>
-Wykorzystane zostały następujące technologie i narzędzia:<br>
-<ul>
-  <li>Język programowania: Python 3.12 – całość implementacji projektu</li>
-  <li>Biblioteki:
-    <ul>
-      <li>OpenCV – przetwarzanie obrazu, detekcja aut, tablic i operacje związane z grafiką</li>
-      <li>EasyOCR – rozpoznawanie tekstu na tablicach rejestracyjnych</li>
-      <li>YOLOv5 – biblioteka posłużyła nam do wykrycia aut na obrazach oraz wideo</li>
-      <li>Torch – framework do uczenia maszynowego, wykorzystany w celu implementacji YOLO</li>
-      <li>ReportLab – biblioteka do generowania dokumentów PDF, użyta w celu zapisywania wyników analizy</li>
-    </ul>
-  </li>
-  <li>GUI: PyQt5 wraz z QtDesignerem – użyte do stworzenia interfejsu aplikacji</li>
-  <li>Środowisko programistyczne: Jetbrains PyCharm – pisanie, debugowanie i testowanie kodu</li>
-  <li>Inne:
-    <ul>
-      <li>GitHub Desktop – używane do kontroli wersji i współpracy nad projektem</li>
-      <li>Inkscape – program do grafiki wektorowej, użyty do zaprojektowania logo</li>
-    </ul>
-  </li>
-</ul>
-"
-               data-gallery='[
-               "./assets/images/projects/Traffic Watch/1.png", "./assets/images/projects/Traffic Watch/2.png",
-               "./assets/images/projects/Traffic Watch/3.png", "./assets/images/projects/Traffic Watch/4.png",
-               "./assets/images/projects/Traffic Watch/5.png", "./assets/images/projects/Traffic Watch/6.png"
-               ]'>
-
-            <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/Traffic Watch/3.png" alt="Traffic Watch" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Traffic Watch</h3>
-
-              <p class="project-category">Gry i AI</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="gry i ai">
-            <a href="#" class="open-modal" data-project="flaga"
-               data-title="Symulacja flagi"
-               data-description="Tematem projektu jest symulacja flagi powiewającej na wietrze. Prócz samej symulacji istnieje również interakcja użytkownika z programem – gra polegająca na zgadywaniu flag.<br>
-               Użyte biblioteki i oprogramowanie:<br>
-               <ul>
-                   <li>OpenGL – język oraz API do aplikacji generujących grafikę 2D i 3D. Dzięki niemu renderujemy flagi i symulujemy ich ruch.</li>
-                   <li>GLSL – język programowania do tworzenia shaderów w OpenGL.</li>
-                   <li>Glm – biblioteka matematyczna do pracy z OpenGL. Wykorzystano z niej głównie funkcje trygonometryczne.</li>
-                   <li>Stb_image – biblioteka do wczytywania obrazów.</li>
-                   <li>Doxygen – program do tworzenia dokumentacji kodu.</li>
-                   <li>GIMP / Inkscape – programy graficzne, w których otworzone zostały tekstury flag, logo i tym podobne elementy.</li>
-               </ul>"
-
-               data-gallery='[
-                "./assets/images/projects/Flaga/1.png", "./assets/images/projects/Flaga/2.png",
-                "./assets/images/projects/Flaga/3.png", "./assets/images/projects/Flaga/4.png"
-                ]'>
-
-
-              <figure class="project-img">
-                <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div>
-
-                <img src="./assets/images/projects/Flaga/1.png" alt="flaga" loading="lazy" class="main-img">
-              </figure>
-
-              <h3 class="project-title">Symulacja flagi - OpenGL</h3>
-
-              <p class="project-category">Gry i AI</p>
-
-            </a>
-          </li>
-          <!--
-          MODELE
-          -->
-          <li class="project-item  active" data-filter-item data-category="modelowanie">
-            <a href="#">
-
-              <div class="sketchfab-embed-wrapper">
-                <iframe title="Maluch / Fiat 126p / Polski Fiat Cabrio"
-                        frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-                        src="https://sketchfab.com/models/e0491ca1102d4f2196013f0c596d8888/embed?ui_theme=dark" class="project-img"> </iframe> </div>
-              <h3 class="project-title">Fiat 126p Cabrio</h3>
-
-              <p class="project-category">Modelowanie</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="modelowanie">
-            <a href="#">
-
-              <div class="sketchfab-embed-wrapper">
-                <iframe title="Lemon Can Simple"
-                        frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
-                        xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-                        src="https://sketchfab.com/models/68b9b45b76114a4d9ac23798d744d2e1/embed?ui_theme=dark" class="project-img"> </iframe>
-              </div>
-              <h3 class="project-title">Puszka napoju</h3>
-
-              <p class="project-category">Modelowanie</p>
-
-            </a>
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="modelowanie">
-            <a href="#">
-
-              <div class="sketchfab-embed-wrapper">
-                <iframe title="Gold bar for test, low poly, textured" frameborder="0"
-                        allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                        execution-while-out-of-viewport execution-while-not-rendered web-share
-                        src="https://sketchfab.com/models/7b0df28f9fb84da8a528ff828cba6041/embed?ui_theme=dark" class="project-img">
-                </iframe>
-              </div>
-
-              <h3 class="project-title">Złoto</h3>
-
-              <p class="project-category">Modelowanie</p>
-
-            </a>
-          </li>
-
-
-          <li class="project-item  active" data-filter-item data-category="modelowanie">
-            <a href="#">
-
-              <div class="sketchfab-embed-wrapper">
-                <iframe title="Troll Rigged" frameborder="0"
-                        allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                        execution-while-out-of-viewport execution-while-not-rendered web-share
-                        src="https://sketchfab.com/models/40f5242892e949bf9f7d5200888f1677/embed?ui_theme=dark" class="project-img">
-                </iframe>
-              </div>
-              <h3 class="project-title">Troll</h3>
-
-              <p class="project-category">Modelowanie</p>
-
-            </a>
-          </li>
-
-
-        </ul>
-
-        <div id="project-modal" class="modal">
-          <span class="close">&times;</span>
-          <div class="modal-content">
-            <button class="gallery-arrow left-arrow">&lt;</button>
-            <img src="" alt="" class="main-image">
-            <button class="gallery-arrow right-arrow">&gt;</button>
-            <h3 class="modal-title"></h3>
-            <p class="modal-description"></p>
-            <div class="gallery">
-            </div>
-          </div>
         </div>
 
-      </section>
+    </footer>
 
-    </article>
+</div>
 
 
-    <!--
-      - #CONTACT
-    -->
+<script>
 
-    <article class="contact" data-page="kontakt">
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
 
-      <header>
-        <h2 class="h2 article-title">Kontakt</h2>
-      </header>
+/* =========================================================
+   MOUSE
+========================================================= */
 
-      <section class="mapbox" data-mapbox>
-        <figure>
-          <iframe
-                  src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Kielce,%20%C5%9Awi%C4%99tokrzyskie,%20Polska+(Kontakt)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                  width="400" height="300" loading="lazy"></iframe>
-        </figure>
-      </section>
+const root = document.documentElement;
 
-      <section class="contact-form">
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
 
-        <h3 class="h3 form-title">Formularz kontaktowy</h3>
+let targetX = mouseX;
+let targetY = mouseY;
 
-        <form class="form" data-form>
+const mouseXLabel = document.getElementById("mouseX");
+const mouseYLabel = document.getElementById("mouseY");
 
-          <div class="input-wrapper">
-            <input type="text" name="fullname" class="form-input" placeholder="Imię/Nazwa" required data-form-input>
+window.addEventListener("pointermove", (event) => {
 
-            <input type="email" name="email" class="form-input" placeholder="Adres email" required data-form-input>
-          </div>
+    targetX = event.clientX;
+    targetY = event.clientY;
 
-          <textarea name="message" class="form-input" placeholder="Wiadomość" required data-form-input></textarea>
+    root.style.setProperty(
+        "--mx",
+        `${targetX}px`
+    );
 
-          <button class="form-btn" type="submit" disabled data-form-btn>
-            <ion-icon name="paper-plane"></ion-icon>
-            <span>Wyślij wiadomość</span>
-          </button>
+    root.style.setProperty(
+        "--my",
+        `${targetY}px`
+    );
 
-        </form>
+    mouseXLabel.textContent =
+        String(Math.round(targetX)).padStart(3, "0");
 
-      </section>
+    mouseYLabel.textContent =
+        String(Math.round(targetY)).padStart(3, "0");
 
-    </article>
+});
 
-  </div>
 
-</main>
+/* =========================================================
+   WIREFRAME
+========================================================= */
 
-<script src="./assets/js/script.js"></script>
+const canvas = document.getElementById("wireframe");
+const ctx = canvas.getContext("2d");
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+let width = 0;
+let height = 0;
+
+let points = [];
+
+const GRID = 65;
+const REPEL_RADIUS = 300;
+const MAX_PUSH = 82;
+
+function resize() {
+
+    const dpr =
+        Math.min(window.devicePixelRatio || 1, 2);
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    createGrid();
+}
+
+
+function createGrid() {
+
+    points = [];
+
+    const cols =
+        Math.ceil(width / GRID) + 2;
+
+    const rows =
+        Math.ceil(height / GRID) + 2;
+
+    for (let y = -GRID; y <= height + GRID; y += GRID) {
+
+        for (let x = -GRID; x <= width + GRID; x += GRID) {
+
+            points.push({
+                x,
+                y,
+                ox: x,
+                oy: y
+            });
+
+        }
+    }
+}
+
+
+function draw() {
+
+    ctx.clearRect(0, 0, width, height);
+
+    mouseX += (targetX - mouseX) * .08;
+    mouseY += (targetY - mouseY) * .08;
+
+
+    const cols =
+        Math.ceil(width / GRID) + 2;
+
+    const rows =
+        Math.ceil(height / GRID) + 2;
+
+
+    /*
+        MOVE POINTS
+    */
+
+    for (const point of points) {
+
+        const dx = point.ox - mouseX;
+        const dy = point.oy - mouseY;
+
+        const distance =
+            Math.sqrt(dx * dx + dy * dy);
+
+        let influence =
+            Math.max(
+                0,
+                1 - distance / REPEL_RADIUS
+            );
+
+        influence =
+            influence * influence;
+
+
+        if (distance > 0) {
+
+            const push =
+                influence * MAX_PUSH;
+
+            point.x =
+                point.ox +
+                (dx / distance) * push;
+
+            point.y =
+                point.oy +
+                (dy / distance) * push;
+
+        } else {
+
+            point.x = point.ox;
+            point.y = point.oy;
+
+        }
+
+    }
+
+
+    /*
+        LINES
+    */
+
+    ctx.lineCap = "round";
+
+    for (let row = 0; row < rows; row++) {
+
+        for (let col = 0; col < cols; col++) {
+
+            const index =
+                row * cols + col;
+
+            const point =
+                points[index];
+
+            if (!point) continue;
+
+
+            /*
+                HORIZONTAL
+            */
+
+            const right =
+                points[index + 1];
+
+            if (right && col < cols - 1) {
+
+                drawLine(point, right);
+
+            }
+
+
+            /*
+                VERTICAL
+            */
+
+            const bottom =
+                points[index + cols];
+
+            if (bottom) {
+
+                drawLine(point, bottom);
+
+            }
+
+        }
+
+    }
+
+
+    /*
+        POINTS
+    */
+
+    for (const point of points) {
+
+        const dx = point.x - mouseX;
+        const dy = point.y - mouseY;
+
+        const distance =
+            Math.sqrt(dx * dx + dy * dy);
+
+        const influence =
+            Math.max(
+                0,
+                1 - distance / REPEL_RADIUS
+            );
+
+        const radius =
+            .7 + influence * 2.3;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            point.x,
+            point.y,
+            radius,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `rgba(239,122,27,${.12 + influence * .65})`;
+
+        ctx.fill();
+
+    }
+
+
+    /*
+        MOUSE RING
+    */
+
+    ctx.beginPath();
+
+    ctx.arc(
+        mouseX,
+        mouseY,
+        26,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.strokeStyle =
+        "rgba(239,122,27,.18)";
+
+    ctx.lineWidth = 1;
+
+    ctx.stroke();
+
+
+    /*
+        MOUSE CORE
+    */
+
+    const glow =
+        ctx.createRadialGradient(
+            mouseX,
+            mouseY,
+            0,
+            mouseX,
+            mouseY,
+            90
+        );
+
+    glow.addColorStop(
+        0,
+        "rgba(239,122,27,.16)"
+    );
+
+    glow.addColorStop(
+        1,
+        "rgba(239,122,27,0)"
+    );
+
+    ctx.beginPath();
+
+    ctx.arc(
+        mouseX,
+        mouseY,
+        90,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fillStyle = glow;
+
+    ctx.fill();
+
+
+    requestAnimationFrame(draw);
+}
+
+
+function drawLine(a, b) {
+
+    const centerX =
+        (a.x + b.x) / 2;
+
+    const centerY =
+        (a.y + b.y) / 2;
+
+    const dx =
+        centerX - mouseX;
+
+    const dy =
+        centerY - mouseY;
+
+    const distance =
+        Math.sqrt(dx * dx + dy * dy);
+
+    const influence =
+        Math.max(
+            0,
+            1 - distance / REPEL_RADIUS
+        );
+
+
+    ctx.beginPath();
+
+    ctx.moveTo(a.x, a.y);
+
+    ctx.lineTo(b.x, b.y);
+
+    ctx.strokeStyle =
+        `rgba(239,122,27,${.045 + influence * .30})`;
+
+    ctx.lineWidth =
+        .45 + influence * 1.25;
+
+    ctx.stroke();
+}
+
+
+window.addEventListener(
+    "resize",
+    resize
+);
+
+
+resize();
+draw();
+
+</script>
 
 </body>
-
 </html>
